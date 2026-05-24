@@ -1,5 +1,10 @@
+'use client';
+
+import { useLanguage } from '@/components/language-provider';
+
 export function AdSlot({ slot }: { slot: 'header-banner' | 'sidebar' | 'in-content' | 'footer' | 'mobile-sticky' }) {
-  // Placeholder for ad integration - will be replaced with real ad code
+  const { t } = useLanguage();
+
   const sizeClasses: Record<string, string> = {
     'header-banner': 'h-[90px] w-full',
     'sidebar': 'h-[250px] w-full',

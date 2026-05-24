@@ -1,9 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import type { ArticleMeta } from '@/lib/content';
+import { useLanguage } from '@/components/language-provider';
+import { getCategoryLabel, formatMonthDay } from '@/lib/i18n';
 
 export function ArticleListItem({ article }: { article: ArticleMeta }) {
+  const { locale } = useLanguage();
   const href = `/${article.game}/${article.slug}`;
-  const categoryLabel = article.category === 'codes' ? 'Codes' : article.category === 'tier-list' ? 'Tier List' : 'Guide';
+  const categoryLabel = getCategoryLabel(article.category, locale);
 
   return (
     <Link
@@ -21,7 +26,7 @@ export function ArticleListItem({ article }: { article: ArticleMeta }) {
         </div>
       </div>
       <time className="shrink-0 text-xs text-muted-foreground">
-        {new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+        {formatMonthDay(article.date, locale)}
       </time>
     </Link>
   );

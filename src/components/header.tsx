@@ -2,16 +2,19 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-
-const navItems = [
-  { label: 'Games', href: '/#games' },
-  { label: 'Codes', href: '/codes' },
-  { label: 'Tier List', href: '/tier-list' },
-  { label: 'Guides', href: '/guides' },
-];
+import { useLanguage } from '@/components/language-provider';
+import { LanguageSwitcher } from '@/components/language-switcher';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navItems = [
+    { label: t('nav.games'), href: '/#games' },
+    { label: t('nav.codes'), href: '/codes' },
+    { label: t('nav.tierList'), href: '/tier-list' },
+    { label: t('nav.guides'), href: '/guides' },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -30,11 +33,11 @@ export function Header() {
           >
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
           </svg>
-          <span>AnimeGameHub</span>
+          <span className="hidden sm:inline">{t('site.name')}</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-4 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -44,25 +47,29 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <LanguageSwitcher />
         </nav>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-primary md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        {/* Mobile: language + menu button */}
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-primary"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

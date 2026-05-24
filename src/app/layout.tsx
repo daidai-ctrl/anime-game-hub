@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inspector } from 'react-dev-inspector';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import { LanguageProvider } from '@/components/language-provider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -52,11 +53,13 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`antialiased`}>
         {isDev && <Inspector />}
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        <LanguageProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );

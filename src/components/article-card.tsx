@@ -1,9 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import type { ArticleMeta } from '@/lib/content';
+import { useLanguage } from '@/components/language-provider';
+import { getCategoryLabel, formatShortDate } from '@/lib/i18n';
 
 export function ArticleCard({ article }: { article: ArticleMeta }) {
+  const { locale } = useLanguage();
   const href = `/${article.game}/${article.slug}`;
-  const categoryLabel = article.category === 'codes' ? 'Codes' : article.category === 'tier-list' ? 'Tier List' : 'Guide';
+  const categoryLabel = getCategoryLabel(article.category, locale);
 
   return (
     <Link
@@ -16,7 +21,7 @@ export function ArticleCard({ article }: { article: ArticleMeta }) {
             {categoryLabel}
           </span>
           <span className="text-xs text-muted-foreground">
-            {new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            {formatShortDate(article.date, locale)}
           </span>
         </div>
         <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
