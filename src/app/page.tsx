@@ -1,35 +1,109 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
+import Link from 'next/link';
+import { games } from '@/lib/games';
+import { getAllArticles } from '@/lib/content';
+import { GameCard } from '@/components/game-card';
+import { ArticleListItem } from '@/components/article-list-item';
+import { AdSlot } from '@/components/ad-slot';
 
-export const metadata: Metadata = {
-  title: '扣子编程 - AI 开发伙伴',
-  description: '扣子编程，你的 AI 开发伙伴已就位',
-};
+export default function HomePage() {
+  const articles = getAllArticles();
+  const codesArticles = articles.filter((a) => a.category === 'codes').slice(0, 5);
+  const tierListArticles = articles.filter((a) => a.category === 'tier-list').slice(0, 5);
 
-export default function Home() {
   return (
-    <div className="flex h-full items-center justify-center bg-background text-foreground transition-colors duration-300 dark:bg-background dark:text-foreground overflow-hidden min-h-screen">
-      {/* 主容器 */}
-      <main className="flex w-full h-full max-w-3xl flex-col items-center justify-center px-16 py-32 sm:items-center">
-        <div className="flex flex-col items-center justify-between gap-4">
-           <Image
-            src="https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze-coding/icon/coze-coding.gif"
-            alt="扣子编程 Logo"
-            width={156}
-            height={130}
-          />
-          <div>
-            <div className="flex flex-col items-center gap-2 text-center sm:items-center sm:text-center">
-              <h1 className="max-w-xl text-base font-semibold leading-tight tracking-tight text-foreground dark:text-foreground">
-                应用开发中
-              </h1>
-              <p className="max-w-2xl text-sm leading-8 text-muted-foreground dark:text-muted-foreground">
-                请稍后，页面即将呈现
-              </p>
-            </div>
+    <>
+      {/* Hero Section */}
+      <section className="border-b border-border bg-gradient-to-b from-primary/5 to-transparent">
+        <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:py-24">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
+            Latest Roblox Anime Game{' '}
+            <span className="text-primary">Codes</span>,{' '}
+            <span className="text-chart-2">Tier Lists</span> &{' '}
+            <span className="text-chart-3">Guides</span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            Stay updated with the latest codes, rankings, and strategies for your favorite Roblox anime games.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            {games.map((game) => (
+              <Link
+                key={game.slug}
+                href={`/${game.slug}`}
+                className="inline-flex items-center rounded-lg bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+              >
+                {game.name}
+              </Link>
+            ))}
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <div className="mx-auto max-w-7xl px-4 py-10">
+        {/* Ad Banner */}
+        <div className="mb-8">
+          <AdSlot slot="header-banner" />
+        </div>
+
+        {/* Popular Games */}
+        <section id="games" className="mb-12">
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="text-2xl font-bold text-foreground">Popular Games</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {games.map((game) => (
+              <GameCard key={game.slug} game={game} />
+            ))}
+          </div>
+        </section>
+
+        <div className="grid gap-10 lg:grid-cols-3">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-10">
+            {/* Latest Codes */}
+            <section>
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="text-xl font-bold text-foreground">Latest Codes</h2>
+                <Link href="/codes" className="text-sm font-medium text-primary hover:underline">
+                  View All
+                </Link>
+              </div>
+              <div className="rounded-lg border border-border bg-card">
+                {codesArticles.length > 0 ? (
+                  codesArticles.map((article) => (
+                    <ArticleListItem key={`${article.game}-${article.slug}`} article={article} />
+                  ))
+                ) : (
+                  <p className="p-4 text-sm text-muted-foreground">No codes articles yet.</p>
+                )}
+              </div>
+            </section>
+
+            {/* Latest Tier Lists */}
+            <section>
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="text-xl font-bold text-foreground">Latest Tier Lists</h2>
+                <Link href="/tier-list" className="text-sm font-medium text-primary hover:underline">
+                  View All
+                </Link>
+              </div>
+              <div className="rounded-lg border border-border bg-card">
+                {tierListArticles.length > 0 ? (
+                  tierListArticles.map((article) => (
+                    <ArticleListItem key={`${article.game}-${article.slug}`} article={article} />
+                  ))
+                ) : (
+                  <p className="p-4 text-sm text-muted-foreground">No tier list articles yet.</p>
+                )}
+              </div>
+            </section>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="space-y-6">
+            <AdSlot slot="sidebar" />
+          </aside>
+        </div>
+      </div>
+    </>
   );
 }
