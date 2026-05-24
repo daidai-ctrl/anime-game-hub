@@ -17,8 +17,17 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
   return (
     <>
       {/* Game Banner */}
-      <section className="border-b border-border bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="mx-auto max-w-7xl px-4 py-12">
+      <section className="border-b border-border relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={game.coverImage}
+            alt={game.name}
+            className="h-full w-full object-cover opacity-20"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0f1117] via-[#0f1117]/80 to-[#0f1117]" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 py-12">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h1 className="text-3xl font-bold text-foreground sm:text-4xl">{game.name}</h1>

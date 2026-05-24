@@ -16,9 +16,12 @@ export function GameCard({ game }: { game: Game }) {
       className="group block overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
     >
       <div className="aspect-video bg-muted flex items-center justify-center overflow-hidden">
-        <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-chart-2/20">
-          <span className="text-3xl font-bold text-primary/60">{game.name.charAt(0)}</span>
-        </div>
+        <img
+          src={game.coverImage}
+          alt={game.name}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
       </div>
       <div className="p-4">
         <div className="flex items-center justify-between mb-1">

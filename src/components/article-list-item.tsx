@@ -20,14 +20,28 @@ export function ArticleListItem({ article }: { article: ArticleMeta }) {
     fixes: 'bg-orange-500/10 text-orange-400',
   };
 
+  // Thumbnail image map for categories
+  const categoryThumbs: Record<string, string> = {
+    codes: '/images/codes-thumb.jpeg',
+    'tier-list': '/images/tier-list-thumb.jpeg',
+    guides: '/images/guides-thumb.jpeg',
+    updates: '/images/codes-thumb.jpeg',
+    fixes: '/images/guides-thumb.jpeg',
+  };
+
   return (
     <Link
       href={href}
       className="group flex items-center gap-4 border-b border-border py-3 transition-colors hover:bg-muted/30 last:border-0 px-2 -mx-2 rounded"
     >
-      {/* Thumbnail placeholder */}
-      <div className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-chart-2/20">
-        <span className="text-sm font-bold text-primary/60">{gameName.charAt(0)}</span>
+      {/* Thumbnail */}
+      <div className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-lg overflow-hidden">
+        <img
+          src={categoryThumbs[article.category] || '/images/guides-thumb.jpeg'}
+          alt={categoryLabel}
+          className="h-full w-full object-cover"
+          loading="lazy"
+        />
       </div>
 
       <div className="min-w-0 flex-1">
