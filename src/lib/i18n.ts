@@ -1,0 +1,742 @@
+export type Locale = 'en' | 'zh' | 'ja' | 'es' | 'pt';
+
+export interface LocaleOption {
+  code: Locale;
+  label: string;
+  flag: string;
+}
+
+export const locales: LocaleOption[] = [
+  { code: 'en', label: 'English', flag: '🇺🇸' },
+  { code: 'zh', label: '简体中文', flag: '🇨🇳' },
+  { code: 'ja', label: '日本語', flag: '🇯🇵' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'pt', label: 'Português', flag: '🇧🇷' },
+];
+
+export const defaultLocale: Locale = 'en';
+
+export const localeNames: Record<Locale, string> = {
+  en: 'English',
+  zh: '简体中文',
+  ja: '日本語',
+  es: 'Español',
+  pt: 'Português',
+};
+
+// ─── Translation dictionaries ────────────────────────────────────────────────
+
+const translations: Record<Locale, Record<string, string>> = {
+  en: {
+    // Site
+    'site.name': 'AnimeGameHub',
+    'site.tagline': 'Your go-to source for Roblox anime game codes, tier lists, and guides.',
+
+    // Nav
+    'nav.games': 'Games',
+    'nav.codes': 'Codes',
+    'nav.tierList': 'Tier List',
+    'nav.guides': 'Guides',
+    'nav.language': 'Language',
+    'nav.search': 'Search games, codes, tier lists...',
+    'nav.searchButton': 'Search',
+
+    // Hero
+    'hero.title': 'Latest Roblox Anime Game {codes}, {tierLists} & {guides}',
+    'hero.subtitle': 'Stay updated with the latest codes, rankings, and strategies for your favorite Roblox anime games.',
+
+    // Home sections
+    'home.popularGames': 'Popular Games',
+    'home.latestCodes': 'Latest Codes',
+    'home.latestTierLists': 'Latest Tier Lists',
+    'home.latestUpdates': 'Latest Updates',
+    'home.viewAll': 'View All',
+    'home.noCodes': 'No codes articles yet.',
+    'home.noTierLists': 'No tier list articles yet.',
+    'home.trendingSearches': 'Trending Searches',
+
+    // Game card
+    'game.viewGame': 'View Game',
+    'game.playOnRoblox': 'Play on Roblox',
+    'game.updatedToday': 'Updated Today',
+    'game.guides': '{count} Guides',
+    'game.lastUpdated': 'Updated {date}',
+
+    // Game page
+    'game.latestContent': 'Latest Content',
+    'game.noContent': 'No content available yet for {game}.',
+
+    // Category labels
+    'category.codes': 'Codes',
+    'category.tierList': 'Tier List',
+    'category.guides': 'Guide',
+    'category.updates': 'Updates',
+    'category.fixes': 'Fixes',
+
+    // Update types
+    'update.type.update': 'Update',
+    'update.type.patch': 'Patch Notes',
+    'update.type.new-character': 'New Character',
+    'update.type.new-version': 'New Version',
+
+    // Category pages
+    'codes.title': 'Game Codes',
+    'codes.description': 'All the latest Roblox anime game codes. Get free rewards, XP boosts, and more!',
+    'codes.noArticles': 'No codes articles yet.',
+    'tierlist.title': 'Tier Lists',
+    'tierlist.description': 'Comprehensive tier lists for Roblox anime games. Find the best characters, fruits, and strategies!',
+    'tierlist.noArticles': 'No tier list articles yet.',
+    'guides.title': 'Guides',
+    'guides.description': 'In-depth guides for Roblox anime games. Learn strategies, tips, and tricks to level up fast!',
+    'guides.noArticles': 'No guides yet.',
+
+    // Article
+    'article.lastUpdated': 'Last Updated',
+    'article.tableOfContents': 'Table of Contents',
+    'article.relatedArticles': 'Related Articles',
+    'article.code': 'Code',
+    'article.reward': 'Reward',
+    'article.status': 'Status',
+    'article.active': 'Active',
+    'article.expired': 'Expired',
+    'article.readMore': 'Read More',
+
+    // Breadcrumb
+    'breadcrumb.home': 'Home',
+
+    // Sidebar
+    'sidebar.popularPosts': 'Popular Posts',
+    'sidebar.trendingCodes': 'Trending Codes',
+    'sidebar.mostViewedTierLists': 'Most Viewed Tier Lists',
+
+    // Footer
+    'footer.games': 'Top Games',
+    'footer.categories': 'Categories',
+    'footer.legal': 'Legal',
+    'footer.privacy': 'Privacy Policy',
+    'footer.disclaimer': 'Disclaimer',
+    'footer.about': 'About',
+    'footer.contact': 'Contact',
+    'footer.copyright': '© {year} AnimeGameHub. Not affiliated with Roblox Corporation.',
+    'footer.latestCodes': 'Latest Codes',
+    'footer.trendingSearches': 'Trending Searches',
+    'footer.latestGuides': 'Latest Guides',
+
+    // Search
+    'search.title': 'Search Results',
+    'search.noResults': 'No results found for "{query}".',
+    'search.placeholder': 'Search games, codes, tier lists...',
+
+    // Legal pages
+    'about.title': 'About AnimeGameHub',
+    'about.description': 'AnimeGameHub is your go-to source for the latest Roblox anime game codes, tier lists, guides, and updates. We help players stay informed and get the most out of their favorite games.',
+    'about.mission': 'Our mission is to provide accurate, up-to-date information for the Roblox anime gaming community. Whether you are looking for the latest codes to redeem, the best tier lists to optimize your gameplay, or in-depth guides to master your favorite games, we have you covered.',
+    'about.community': 'We are a passionate team of gamers and content creators dedicated to serving the Roblox anime game community. Our content is regularly updated to ensure you always have access to the most current information.',
+
+    'contact.title': 'Contact Us',
+    'contact.description': 'Have questions, suggestions, or found an error? We would love to hear from you!',
+    'contact.email': 'Email',
+    'contact.emailAddress': 'contact@animegamehub.com',
+    'contact.response': 'We typically respond within 24-48 hours.',
+
+    'privacy.title': 'Privacy Policy',
+    'privacy.lastUpdated': 'Last updated: May 24, 2026',
+    'privacy.intro': 'This Privacy Policy describes how AnimeGameHub ("we", "us", or "our") collects, uses, and protects information when you use our website.',
+    'privacy.info': 'Information We Collect',
+    'privacy.infoContent': 'We may collect non-personal information such as browser type, device type, and browsing behavior through cookies and analytics tools. We do not collect personal identification information unless you voluntarily provide it.',
+    'privacy.cookies': 'Cookies',
+    'privacy.cookiesContent': 'We use cookies to improve your experience, analyze site traffic, and serve personalized advertisements through Google AdSense. You can disable cookies in your browser settings.',
+    'privacy.ads': 'Advertising',
+    'privacy.adsContent': 'We use Google AdSense to display advertisements. Google may use cookies to serve ads based on your prior visits to our site or other websites.',
+    'privacy.thirdParty': 'Third-Party Services',
+    'privacy.thirdPartyContent': 'Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites.',
+    'privacy.children': 'Children\'s Privacy',
+    'privacy.childrenContent': 'Our website is intended for general audiences. We do not knowingly collect personal information from children under 13.',
+
+    'disclaimer.title': 'Disclaimer',
+    'disclaimer.intro': 'AnimeGameHub is an independent, fan-run website and is NOT affiliated with, endorsed by, or connected to Roblox Corporation in any way.',
+    'disclaimer.roblox': 'Roblox and all related names, logos, and brands are trademarks of Roblox Corporation. All game content, images, and assets belong to their respective owners.',
+    'disclaimer.accuracy': 'While we strive to keep information accurate and up-to-date, we make no warranties about the completeness or reliability of the content. Game codes and features may change without notice.',
+    'disclaimer.ads': 'This website displays advertisements through Google AdSense. We are not responsible for the content of third-party advertisements.',
+    'disclaimer.contact': 'If you have concerns about any content on this site, please contact us at contact@animegamehub.com.',
+
+    // Game descriptions
+    'game.blox-fruits.desc': 'Become a master swordsman or a powerful blox fruit user as you train to become the strongest player. Explore the world, find new fruits, and battle enemies!',
+    'game.anime-rangers.desc': 'Collect and battle with your favorite anime characters! Build the ultimate team, level up your rangers, and conquer challenging quests.',
+    'game.anime-vanguards.desc': 'Defend your base with powerful anime heroes! Strategically place your vanguards, upgrade their abilities, and protect against waves of enemies.',
+  },
+
+  zh: {
+    'site.name': 'AnimeGameHub',
+    'site.tagline': '您获取 Roblox 动漫游戏兑换码、排行榜和攻略的首选平台。',
+
+    'nav.games': '游戏',
+    'nav.codes': '兑换码',
+    'nav.tierList': '排行榜',
+    'nav.guides': '攻略',
+    'nav.language': '语言',
+    'nav.search': '搜索游戏、兑换码、排行榜...',
+    'nav.searchButton': '搜索',
+
+    'hero.title': '最新 Roblox 动漫游戏{codes}、{tierLists}与{guides}',
+    'hero.subtitle': '为您喜爱的 Roblox 动漫游戏获取最新兑换码、排行和攻略。',
+
+    'home.popularGames': '热门游戏',
+    'home.latestCodes': '最新兑换码',
+    'home.latestTierLists': '最新排行榜',
+    'home.latestUpdates': '最新更新',
+    'home.viewAll': '查看全部',
+    'home.noCodes': '暂无兑换码文章。',
+    'home.noTierLists': '暂无排行榜文章。',
+    'home.trendingSearches': '热门搜索',
+
+    'game.viewGame': '查看游戏',
+    'game.playOnRoblox': '在 Roblox 中游玩',
+    'game.updatedToday': '今日更新',
+    'game.guides': '{count} 篇攻略',
+    'game.lastUpdated': '{date} 更新',
+
+    'game.latestContent': '最新内容',
+    'game.noContent': '{game} 暂无可用内容。',
+
+    'category.codes': '兑换码',
+    'category.tierList': '排行榜',
+    'category.guides': '攻略',
+    'category.updates': '更新',
+    'category.fixes': '修复',
+
+    'update.type.update': '更新',
+    'update.type.patch': '补丁说明',
+    'update.type.new-character': '新角色',
+    'update.type.new-version': '新版本',
+
+    'codes.title': '游戏兑换码',
+    'codes.description': '所有最新的 Roblox 动漫游戏兑换码。获取免费奖励、经验加成等！',
+    'codes.noArticles': '暂无兑换码文章。',
+    'tierlist.title': '排行榜',
+    'tierlist.description': '全面的 Roblox 动漫游戏排行榜。找到最强角色、果实和策略！',
+    'tierlist.noArticles': '暂无排行榜文章。',
+    'guides.title': '攻略',
+    'guides.description': '深度 Roblox 动漫游戏攻略。学习策略、技巧和窍门，快速升级！',
+    'guides.noArticles': '暂无攻略。',
+
+    'article.lastUpdated': '最后更新',
+    'article.tableOfContents': '目录',
+    'article.relatedArticles': '相关文章',
+    'article.code': '兑换码',
+    'article.reward': '奖励',
+    'article.status': '状态',
+    'article.active': '有效',
+    'article.expired': '已过期',
+    'article.readMore': '阅读更多',
+
+    'breadcrumb.home': '首页',
+
+    'sidebar.popularPosts': '热门文章',
+    'sidebar.trendingCodes': '热门兑换码',
+    'sidebar.mostViewedTierLists': '最多浏览排行榜',
+
+    'footer.games': '热门游戏',
+    'footer.categories': '分类',
+    'footer.legal': '法律信息',
+    'footer.privacy': '隐私政策',
+    'footer.disclaimer': '免责声明',
+    'footer.about': '关于我们',
+    'footer.contact': '联系我们',
+    'footer.copyright': '© {year} AnimeGameHub. 与 Roblox Corporation 无关联。',
+    'footer.latestCodes': '最新兑换码',
+    'footer.trendingSearches': '热门搜索',
+    'footer.latestGuides': '最新攻略',
+
+    'search.title': '搜索结果',
+    'search.noResults': '未找到与"{query}"相关的结果。',
+    'search.placeholder': '搜索游戏、兑换码、排行榜...',
+
+    'about.title': '关于 AnimeGameHub',
+    'about.description': 'AnimeGameHub 是您获取最新 Roblox 动漫游戏兑换码、排行榜、攻略和更新的首选平台。我们帮助玩家保持信息灵通，充分发挥游戏体验。',
+    'about.mission': '我们的使命是为 Roblox 动漫游戏社区提供准确、最新的信息。无论您是在寻找最新的兑换码、最优排行榜，还是深度攻略，我们都能满足您的需求。',
+    'about.community': '我们是一支由玩家和内容创作者组成的热情团队，致力于为 Roblox 动漫游戏社区服务。我们的内容定期更新，确保您始终能够获取最新信息。',
+
+    'contact.title': '联系我们',
+    'contact.description': '有问题、建议或发现错误？欢迎联系我们！',
+    'contact.email': '邮箱',
+    'contact.emailAddress': 'contact@animegamehub.com',
+    'contact.response': '我们通常会在24-48小时内回复。',
+
+    'privacy.title': '隐私政策',
+    'privacy.lastUpdated': '最后更新：2026年5月24日',
+    'privacy.intro': '本隐私政策描述了 AnimeGameHub（"我们"）在您使用我们的网站时如何收集、使用和保护信息。',
+    'privacy.info': '我们收集的信息',
+    'privacy.infoContent': '我们可能通过 Cookie 和分析工具收集非个人信息，例如浏览器类型、设备类型和浏览行为。除非您主动提供，否则我们不会收集个人身份信息。',
+    'privacy.cookies': 'Cookie',
+    'privacy.cookiesContent': '我们使用 Cookie 来改善您的体验、分析网站流量，并通过 Google AdSense 投放个性化广告。您可以在浏览器设置中禁用 Cookie。',
+    'privacy.ads': '广告',
+    'privacy.adsContent': '我们使用 Google AdSense 展示广告。Google 可能使用 Cookie 根据您之前访问我们网站或其他网站的情况投放广告。',
+    'privacy.thirdParty': '第三方服务',
+    'privacy.thirdPartyContent': '我们的网站可能包含指向第三方网站的链接。我们不对外部网站的隐私做法负责。',
+    'privacy.children': '儿童隐私',
+    'privacy.childrenContent': '我们的网站面向普通受众。我们不会故意收集13岁以下儿童的个人信息。',
+
+    'disclaimer.title': '免责声明',
+    'disclaimer.intro': 'AnimeGameHub 是一个独立的粉丝运营网站，与 Roblox Corporation 没有任何关联、认可或联系。',
+    'disclaimer.roblox': 'Roblox 及所有相关名称、标志和品牌均为 Roblox Corporation 的商标。所有游戏内容、图片和资产归其各自所有者所有。',
+    'disclaimer.accuracy': '虽然我们努力保持信息的准确和最新，但我们对内容的完整性或可靠性不作任何保证。游戏兑换码和功能可能会随时更改。',
+    'disclaimer.ads': '本网站通过 Google AdSense 展示广告。我们对第三方广告的内容不承担责任。',
+    'disclaimer.contact': '如果您对本网站的任何内容有疑虑，请通过 contact@animegamehub.com 联系我们。',
+
+    'game.blox-fruits.desc': '成为剑术大师或强大的果实能力者，训练成为最强玩家。探索世界、寻找新果实、与敌人战斗！',
+    'game.anime-rangers.desc': '收集并与您最喜爱的动漫角色一起战斗！组建最强队伍、升级您的角色、征服挑战任务。',
+    'game.anime-vanguards.desc': '用强大的动漫英雄保卫基地！策略性部署守卫、升级技能、抵御敌人的进攻浪潮。',
+  },
+
+  ja: {
+    'site.name': 'AnimeGameHub',
+    'site.tagline': 'Robloxアニメゲームのコード、ティアリスト、攻略の最強情報源。',
+
+    'nav.games': 'ゲーム',
+    'nav.codes': 'コード',
+    'nav.tierList': 'ティアリスト',
+    'nav.guides': '攻略',
+    'nav.language': '言語',
+    'nav.search': 'ゲーム、コード、ティアリストを検索...',
+    'nav.searchButton': '検索',
+
+    'hero.title': '最新Robloxアニメゲームの{codes}、{tierLists}＆{guides}',
+    'hero.subtitle': 'お気に入りのRobloxアニメゲームの最新コード、ランキング、攻略情報をお届けします。',
+
+    'home.popularGames': '人気ゲーム',
+    'home.latestCodes': '最新コード',
+    'home.latestTierLists': '最新ティアリスト',
+    'home.latestUpdates': '最新アップデート',
+    'home.viewAll': 'すべて見る',
+    'home.noCodes': 'コード記事はまだありません。',
+    'home.noTierLists': 'ティアリスト記事はまだありません。',
+    'home.trendingSearches': 'トレンド検索',
+
+    'game.viewGame': 'ゲームを見る',
+    'game.playOnRoblox': 'Robloxでプレイ',
+    'game.updatedToday': '本日更新',
+    'game.guides': '{count} 攻略',
+    'game.lastUpdated': '{date} 更新',
+
+    'game.latestContent': '最新コンテンツ',
+    'game.noContent': '{game}のコンテンツはまだありません。',
+
+    'category.codes': 'コード',
+    'category.tierList': 'ティアリスト',
+    'category.guides': '攻略',
+    'category.updates': 'アップデート',
+    'category.fixes': '修正',
+
+    'update.type.update': 'アップデート',
+    'update.type.patch': 'パッチノート',
+    'update.type.new-character': '新キャラクター',
+    'update.type.new-version': '新バージョン',
+
+    'codes.title': 'ゲームコード',
+    'codes.description': '最新のRobloxアニメゲームコードまとめ。無料報酬、経験値ブーストなどを入手！',
+    'codes.noArticles': 'コード記事はまだありません。',
+    'tierlist.title': 'ティアリスト',
+    'tierlist.description': 'Robloxアニメゲームの包括的なティアリスト。最強キャラ、フルーツ、戦略を見つけよう！',
+    'tierlist.noArticles': 'ティアリスト記事はまだありません。',
+    'guides.title': '攻略',
+    'guides.description': 'Robloxアニメゲームの詳細攻略。戦略、ヒント、コツを学んでレベルアップ！',
+    'guides.noArticles': '攻略記事はまだありません。',
+
+    'article.lastUpdated': '最終更新',
+    'article.tableOfContents': '目次',
+    'article.relatedArticles': '関連記事',
+    'article.code': 'コード',
+    'article.reward': '報酬',
+    'article.status': 'ステータス',
+    'article.active': '有効',
+    'article.expired': '期限切れ',
+    'article.readMore': '続きを読む',
+
+    'breadcrumb.home': 'ホーム',
+
+    'sidebar.popularPosts': '人気記事',
+    'sidebar.trendingCodes': 'トレンドコード',
+    'sidebar.mostViewedTierLists': '閲覧数トップのティアリスト',
+
+    'footer.games': '人気ゲーム',
+    'footer.categories': 'カテゴリー',
+    'footer.legal': '法的事情',
+    'footer.privacy': 'プライバシーポリシー',
+    'footer.disclaimer': '免責事項',
+    'footer.about': 'について',
+    'footer.contact': 'お問い合わせ',
+    'footer.copyright': '© {year} AnimeGameHub. Roblox Corporationとは無関係です。',
+    'footer.latestCodes': '最新コード',
+    'footer.trendingSearches': 'トレンド検索',
+    'footer.latestGuides': '最新攻略',
+
+    'search.title': '検索結果',
+    'search.noResults': '「{query}」の検索結果が見つかりませんでした。',
+    'search.placeholder': 'ゲーム、コード、ティアリストを検索...',
+
+    'about.title': 'AnimeGameHubについて',
+    'about.description': 'AnimeGameHubは、最新のRobloxアニメゲームコード、ティアリスト、攻略、アップデートの最強情報源です。',
+    'about.mission': '私たちの使命は、Robloxアニメゲームコミュニティに正確で最新の情報を提供することです。',
+    'about.community': '私たちはゲームとコンテンツ制作に情熱を注ぐチームです。コミュニティのために常に最新情報をお届けします。',
+
+    'contact.title': 'お問い合わせ',
+    'contact.description': 'ご質問、ご提案、エラーの報告がございましたら、お気軽にご連絡ください！',
+    'contact.email': 'メール',
+    'contact.emailAddress': 'contact@animegamehub.com',
+    'contact.response': '通常24〜48時間以内に返信いたします。',
+
+    'privacy.title': 'プライバシーポリシー',
+    'privacy.lastUpdated': '最終更新：2026年5月24日',
+    'privacy.intro': 'このプライバシーポリシーは、AnimeGameHubがウェブサイト利用時にどのように情報を収集、使用、保護するかを説明します。',
+    'privacy.info': '収集する情報',
+    'privacy.infoContent': 'Cookieや分析ツールを通じて、ブラウザの種類やデバイスの種類などの非個人情報を収集する場合があります。',
+    'privacy.cookies': 'Cookie',
+    'privacy.cookiesContent': 'Cookieを使用して体験を向上させ、トラフィックを分析し、Google AdSenseを通じてパーソナライズされた広告を配信しています。',
+    'privacy.ads': '広告',
+    'privacy.adsContent': 'Google AdSenseを使用して広告を表示しています。GoogleはCookieを使用して広告を配信する場合があります。',
+    'privacy.thirdParty': 'サードパーティサービス',
+    'privacy.thirdPartyContent': '当サイトにはサードパーティのウェブサイトへのリンクが含まれる場合があります。',
+    'privacy.children': '子どものプライバシー',
+    'privacy.childrenContent': '当サイトは一般向けです。13歳未満の子どもの個人情報を意図的に収集することはありません。',
+
+    'disclaimer.title': '免責事項',
+    'disclaimer.intro': 'AnimeGameHubは独立したファン運営ウェブサイトであり、Roblox Corporationとは一切関係ありません。',
+    'disclaimer.roblox': 'Robloxおよび関連するすべての名称、ロゴ、ブランドはRoblox Corporationの商標です。',
+    'disclaimer.accuracy': '情報の正確性と最新性に努めていますが、内容の完全性や信頼性について保証するものではありません。',
+    'disclaimer.ads': '本ウェブサイトはGoogle AdSenseを通じて広告を表示しています。',
+    'disclaimer.contact': '当サイトの内容に懸念がある場合は、contact@animegamehub.comまでご連絡ください。',
+
+    'game.blox-fruits.desc': '剣術マスターまたは強力なフルーツ使いとなり、最強のプレイヤーを目指して修行しましょう。',
+    'game.anime-rangers.desc': 'お気に入りのアニメキャラを集めてバトル！最強チームを組み、レンジャーをレベルアップしよう。',
+    'game.anime-vanguards.desc': '強力なアニメヒーローでベースを防衛！戦略的にヴァンガードを配置し、敵の波から守ろう。',
+  },
+
+  es: {
+    'site.name': 'AnimeGameHub',
+    'site.tagline': 'Tu fuente de códigos, tier lists y guías para juegos de anime en Roblox.',
+
+    'nav.games': 'Juegos',
+    'nav.codes': 'Códigos',
+    'nav.tierList': 'Tier List',
+    'nav.guides': 'Guías',
+    'nav.language': 'Idioma',
+    'nav.search': 'Buscar juegos, códigos, tier lists...',
+    'nav.searchButton': 'Buscar',
+
+    'hero.title': 'Últimos {codes}, {tierLists} y {guides} de juegos de anime en Roblox',
+    'hero.subtitle': 'Mantente actualizado con los últimos códigos, rankings y estrategias para tus juegos de anime favoritos en Roblox.',
+
+    'home.popularGames': 'Juegos Populares',
+    'home.latestCodes': 'Últimos Códigos',
+    'home.latestTierLists': 'Últimos Tier Lists',
+    'home.latestUpdates': 'Últimas Actualizaciones',
+    'home.viewAll': 'Ver Todo',
+    'home.noCodes': 'No hay artículos de códigos todavía.',
+    'home.noTierLists': 'No hay artículos de tier list todavía.',
+    'home.trendingSearches': 'Búsquedas Populares',
+
+    'game.viewGame': 'Ver Juego',
+    'game.playOnRoblox': 'Jugar en Roblox',
+    'game.updatedToday': 'Actualizado Hoy',
+    'game.guides': '{count} Guías',
+    'game.lastUpdated': 'Actualizado {date}',
+
+    'game.latestContent': 'Último Contenido',
+    'game.noContent': 'No hay contenido disponible para {game} todavía.',
+
+    'category.codes': 'Códigos',
+    'category.tierList': 'Tier List',
+    'category.guides': 'Guía',
+    'category.updates': 'Actualizaciones',
+    'category.fixes': 'Correcciones',
+
+    'update.type.update': 'Actualización',
+    'update.type.patch': 'Notas de Parche',
+    'update.type.new-character': 'Nuevo Personaje',
+    'update.type.new-version': 'Nueva Versión',
+
+    'codes.title': 'Códigos de Juegos',
+    'codes.description': 'Todos los últimos códigos de juegos de anime en Roblox. ¡Consigue recompensas gratis, boosts de XP y más!',
+    'codes.noArticles': 'No hay artículos de códigos todavía.',
+    'tierlist.title': 'Tier Lists',
+    'tierlist.description': 'Tier lists completas para juegos de anime en Roblox. ¡Encuentra los mejores personajes, frutas y estrategias!',
+    'tierlist.noArticles': 'No hay artículos de tier list todavía.',
+    'guides.title': 'Guías',
+    'guides.description': 'Guías detalladas para juegos de anime en Roblox. ¡Aprende estrategias, consejos y trucos para subir de nivel rápido!',
+    'guides.noArticles': 'No hay guías todavía.',
+
+    'article.lastUpdated': 'Última Actualización',
+    'article.tableOfContents': 'Tabla de Contenidos',
+    'article.relatedArticles': 'Artículos Relacionados',
+    'article.code': 'Código',
+    'article.reward': 'Recompensa',
+    'article.status': 'Estado',
+    'article.active': 'Activo',
+    'article.expired': 'Expirado',
+    'article.readMore': 'Leer Más',
+
+    'breadcrumb.home': 'Inicio',
+
+    'sidebar.popularPosts': 'Artículos Populares',
+    'sidebar.trendingCodes': 'Códigos Populares',
+    'sidebar.mostViewedTierLists': 'Tier Lists Más Vistos',
+
+    'footer.games': 'Juegos Populares',
+    'footer.categories': 'Categorías',
+    'footer.legal': 'Legal',
+    'footer.privacy': 'Política de Privacidad',
+    'footer.disclaimer': 'Aviso Legal',
+    'footer.about': 'Acerca de',
+    'footer.contact': 'Contacto',
+    'footer.copyright': '© {year} AnimeGameHub. No afiliado con Roblox Corporation.',
+    'footer.latestCodes': 'Últimos Códigos',
+    'footer.trendingSearches': 'Búsquedas Populares',
+    'footer.latestGuides': 'Últimas Guías',
+
+    'search.title': 'Resultados de Búsqueda',
+    'search.noResults': 'No se encontraron resultados para "{query}".',
+    'search.placeholder': 'Buscar juegos, códigos, tier lists...',
+
+    'about.title': 'Sobre AnimeGameHub',
+    'about.description': 'AnimeGameHub es tu fuente principal para los últimos códigos, tier lists, guías y actualizaciones de juegos de anime en Roblox.',
+    'about.mission': 'Nuestra misión es proporcionar información precisa y actualizada para la comunidad de juegos de anime en Roblox.',
+    'about.community': 'Somos un equipo apasionado de jugadores y creadores de contenido dedicados a servir a la comunidad.',
+
+    'contact.title': 'Contacto',
+    'contact.description': '¿Tienes preguntas, sugerencias o encontraste un error? ¡Nos encantaría saber de ti!',
+    'contact.email': 'Correo Electrónico',
+    'contact.emailAddress': 'contact@animegamehub.com',
+    'contact.response': 'Normalmente respondemos en 24-48 horas.',
+
+    'privacy.title': 'Política de Privacidad',
+    'privacy.lastUpdated': 'Última actualización: 24 de mayo de 2026',
+    'privacy.intro': 'Esta Política de Privacidad describe cómo AnimeGameHub recopila, usa y protege la información cuando usas nuestro sitio web.',
+    'privacy.info': 'Información que Recopilamos',
+    'privacy.infoContent': 'Podemos recopilar información no personal como tipo de navegador y comportamiento de navegación a través de cookies y herramientas de análisis.',
+    'privacy.cookies': 'Cookies',
+    'privacy.cookiesContent': 'Usamos cookies para mejorar tu experiencia, analizar el tráfico y servir anuncios personalizados a través de Google AdSense.',
+    'privacy.ads': 'Publicidad',
+    'privacy.adsContent': 'Usamos Google AdSense para mostrar anuncios. Google puede usar cookies para servir anuncios basados en tus visitas previas.',
+    'privacy.thirdParty': 'Servicios de Terceros',
+    'privacy.thirdPartyContent': 'Nuestro sitio puede contener enlaces a sitios web de terceros.',
+    'privacy.children': 'Privacidad de Menores',
+    'privacy.childrenContent': 'Nuestro sitio está destinado a audiencias generales. No recopilamos información personal de menores de 13 años.',
+
+    'disclaimer.title': 'Aviso Legal',
+    'disclaimer.intro': 'AnimeGameHub es un sitio web independiente operado por fans y NO está afiliado con Roblox Corporation.',
+    'disclaimer.roblox': 'Roblox y todos los nombres, logotipos y marcas relacionados son marcas registradas de Roblox Corporation.',
+    'disclaimer.accuracy': 'Nos esforzamos por mantener la información precisa y actualizada, pero no garantizamos la integridad del contenido.',
+    'disclaimer.ads': 'Este sitio web muestra anuncios a través de Google AdSense.',
+    'disclaimer.contact': 'Si tienes inquietudes sobre el contenido, contáctanos en contact@animegamehub.com.',
+
+    'game.blox-fruits.desc': 'Conviértete en un maestro espadachín o un poderoso usuario de frutas mientras entrenas para ser el jugador más fuerte.',
+    'game.anime-rangers.desc': '¡Recoge y lucha con tus personajes de anime favoritos! Construye el equipo definitivo.',
+    'game.anime-vanguards.desc': '¡Defiende tu base con poderosos héroes de anime! Coloca estratégicamente a tus vanguardias.',
+  },
+
+  pt: {
+    'site.name': 'AnimeGameHub',
+    'site.tagline': 'Sua fonte de códigos, tier lists e guias para jogos de anime no Roblox.',
+
+    'nav.games': 'Jogos',
+    'nav.codes': 'Códigos',
+    'nav.tierList': 'Tier List',
+    'nav.guides': 'Guias',
+    'nav.language': 'Idioma',
+    'nav.search': 'Buscar jogos, códigos, tier lists...',
+    'nav.searchButton': 'Buscar',
+
+    'hero.title': 'Últimos {codes}, {tierLists} e {guides} de jogos de anime no Roblox',
+    'hero.subtitle': 'Fique atualizado com os últimos códigos, rankings e estratégias para seus jogos de anime favoritos no Roblox.',
+
+    'home.popularGames': 'Jogos Populares',
+    'home.latestCodes': 'Últimos Códigos',
+    'home.latestTierLists': 'Últimos Tier Lists',
+    'home.latestUpdates': 'Últimas Atualizações',
+    'home.viewAll': 'Ver Tudo',
+    'home.noCodes': 'Nenhum artigo de códigos ainda.',
+    'home.noTierLists': 'Nenhum artigo de tier list ainda.',
+    'home.trendingSearches': 'Pesquisas em Alta',
+
+    'game.viewGame': 'Ver Jogo',
+    'game.playOnRoblox': 'Jogar no Roblox',
+    'game.updatedToday': 'Atualizado Hoje',
+    'game.guides': '{count} Guias',
+    'game.lastUpdated': 'Atualizado {date}',
+
+    'game.latestContent': 'Último Conteúdo',
+    'game.noContent': 'Nenhum conteúdo disponível para {game} ainda.',
+
+    'category.codes': 'Códigos',
+    'category.tierList': 'Tier List',
+    'category.guides': 'Guia',
+    'category.updates': 'Atualizações',
+    'category.fixes': 'Correções',
+
+    'update.type.update': 'Atualização',
+    'update.type.patch': 'Notas de Patch',
+    'update.type.new-character': 'Novo Personagem',
+    'update.type.new-version': 'Nova Versão',
+
+    'codes.title': 'Códigos de Jogos',
+    'codes.description': 'Todos os últimos códigos de jogos de anime no Roblox. Ganhe recompensas grátis, boosts de XP e mais!',
+    'codes.noArticles': 'Nenhum artigo de códigos ainda.',
+    'tierlist.title': 'Tier Lists',
+    'tierlist.description': 'Tier lists completas para jogos de anime no Roblox. Encontre os melhores personagens, frutas e estratégias!',
+    'tierlist.noArticles': 'Nenhum artigo de tier list ainda.',
+    'guides.title': 'Guias',
+    'guides.description': 'Guias detalhados para jogos de anime no Roblox. Aprenda estratégias, dicas e truques para subir de nível rápido!',
+    'guides.noArticles': 'Nenhum guia ainda.',
+
+    'article.lastUpdated': 'Última Atualização',
+    'article.tableOfContents': 'Índice',
+    'article.relatedArticles': 'Artigos Relacionados',
+    'article.code': 'Código',
+    'article.reward': 'Recompensa',
+    'article.status': 'Status',
+    'article.active': 'Ativo',
+    'article.expired': 'Expirado',
+    'article.readMore': 'Ler Mais',
+
+    'breadcrumb.home': 'Início',
+
+    'sidebar.popularPosts': 'Artigos Populares',
+    'sidebar.trendingCodes': 'Códigos em Alta',
+    'sidebar.mostViewedTierLists': 'Tier Lists Mais Vistos',
+
+    'footer.games': 'Jogos Populares',
+    'footer.categories': 'Categorias',
+    'footer.legal': 'Legal',
+    'footer.privacy': 'Política de Privacidade',
+    'footer.disclaimer': 'Aviso Legal',
+    'footer.about': 'Sobre',
+    'footer.contact': 'Contato',
+    'footer.copyright': '© {year} AnimeGameHub. Não afiliado à Roblox Corporation.',
+    'footer.latestCodes': 'Últimos Códigos',
+    'footer.trendingSearches': 'Pesquisas em Alta',
+    'footer.latestGuides': 'Últimos Guias',
+
+    'search.title': 'Resultados da Busca',
+    'search.noResults': 'Nenhum resultado encontrado para "{query}".',
+    'search.placeholder': 'Buscar jogos, códigos, tier lists...',
+
+    'about.title': 'Sobre AnimeGameHub',
+    'about.description': 'AnimeGameHub é sua fonte principal para os últimos códigos, tier lists, guias e atualizações de jogos de anime no Roblox.',
+    'about.mission': 'Nossa missão é fornecer informações precisas e atualizadas para a comunidade de jogos de anime no Roblox.',
+    'about.community': 'Somos uma equipe apaixonada de jogadores e criadores de conteúdo dedicados a servir a comunidade.',
+
+    'contact.title': 'Contato',
+    'contact.description': 'Tem perguntas, sugestões ou encontrou um erro? Adoraríamos ouvir você!',
+    'contact.email': 'E-mail',
+    'contact.emailAddress': 'contact@animegamehub.com',
+    'contact.response': 'Normalmente respondemos em 24-48 horas.',
+
+    'privacy.title': 'Política de Privacidade',
+    'privacy.lastUpdated': 'Última atualização: 24 de maio de 2026',
+    'privacy.intro': 'Esta Política de Privacidade descreve como o AnimeGameHub coleta, usa e protege informações quando você usa nosso site.',
+    'privacy.info': 'Informações que Coletamos',
+    'privacy.infoContent': 'Podemos coletar informações não pessoais como tipo de navegador e comportamento de navegação através de cookies e ferramentas de análise.',
+    'privacy.cookies': 'Cookies',
+    'privacy.cookiesContent': 'Usamos cookies para melhorar sua experiência, analisar o tráfego e veicular anúncios personalizados através do Google AdSense.',
+    'privacy.ads': 'Publicidade',
+    'privacy.adsContent': 'Usamos o Google AdSense para exibir anúncios. O Google pode usar cookies para veicular anúncios com base em suas visitas anteriores.',
+    'privacy.thirdParty': 'Serviços de Terceiros',
+    'privacy.thirdPartyContent': 'Nosso site pode conter links para sites de terceiros.',
+    'privacy.children': 'Privacidade de Menores',
+    'privacy.childrenContent': 'Nosso site é destinado a públicos em geral. Não coletamos informações pessoais de menores de 13 anos.',
+
+    'disclaimer.title': 'Aviso Legal',
+    'disclaimer.intro': 'AnimeGameHub é um site independente operado por fãs e NÃO é afiliado à Roblox Corporation.',
+    'disclaimer.roblox': 'Roblox e todos os nomes, logotipos e marcas relacionados são marcas registradas da Roblox Corporation.',
+    'disclaimer.accuracy': 'Esforçamo-nos para manter as informações precisas e atualizadas, mas não garantimos a integridade do conteúdo.',
+    'disclaimer.ads': 'Este site exibe anúncios através do Google AdSense.',
+    'disclaimer.contact': 'Se você tiver preocupações sobre o conteúdo, entre em contato em contact@animegamehub.com.',
+
+    'game.blox-fruits.desc': 'Torne-se um mestre espadachim ou um poderoso usuário de frutas enquanto treina para ser o jogador mais forte.',
+    'game.anime-rangers.desc': 'Colete e lute com seus personagens de anime favoritos! Monte o time definitivo.',
+    'game.anime-vanguards.desc': 'Defenda sua base com poderosos heróis de anime! Posicione estrategicamente suas vanguardas.',
+  },
+};
+
+// ─── Helper functions ────────────────────────────────────────────────────────
+
+export function t(key: string, locale: Locale = defaultLocale, params?: Record<string, string>): string {
+  let value = translations[locale]?.[key] ?? translations[defaultLocale]?.[key] ?? key;
+  if (params) {
+    for (const [paramKey, paramValue] of Object.entries(params)) {
+      value = value.replace(`{${paramKey}}`, paramValue);
+    }
+  }
+  return value;
+}
+
+export function getCategoryLabel(category: string, locale: Locale = defaultLocale): string {
+  if (category === 'codes') return t('category.codes', locale);
+  if (category === 'tier-list') return t('category.tierList', locale);
+  if (category === 'guides') return t('category.guides', locale);
+  if (category === 'updates') return t('category.updates', locale);
+  if (category === 'fixes') return t('category.fixes', locale);
+  return category;
+}
+
+export function getGameDescription(gameSlug: string, locale: Locale = defaultLocale): string {
+  return t(`game.${gameSlug}.desc`, locale);
+}
+
+export function isValidLocale(value: string): value is Locale {
+  return ['en', 'zh', 'ja', 'es', 'pt'].includes(value);
+}
+
+export function getLocaleFromCookie(cookieValue: string | undefined): Locale {
+  if (cookieValue && isValidLocale(cookieValue)) return cookieValue;
+  return defaultLocale;
+}
+
+// Date formatting per locale
+export function formatDate(dateString: string, locale: Locale = defaultLocale): string {
+  const date = new Date(dateString);
+  const localeMap: Record<Locale, string> = {
+    en: 'en-US',
+    zh: 'zh-CN',
+    ja: 'ja-JP',
+    es: 'es-ES',
+    pt: 'pt-BR',
+  };
+  return date.toLocaleDateString(localeMap[locale], {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+export function formatShortDate(dateString: string, locale: Locale = defaultLocale): string {
+  const date = new Date(dateString);
+  const localeMap: Record<Locale, string> = {
+    en: 'en-US',
+    zh: 'zh-CN',
+    ja: 'ja-JP',
+    es: 'es-ES',
+    pt: 'pt-BR',
+  };
+  return date.toLocaleDateString(localeMap[locale], {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+export function formatMonthDay(dateString: string, locale: Locale = defaultLocale): string {
+  const date = new Date(dateString);
+  const localeMap: Record<Locale, string> = {
+    en: 'en-US',
+    zh: 'zh-CN',
+    ja: 'ja-JP',
+    es: 'es-ES',
+    pt: 'pt-BR',
+  };
+  return date.toLocaleDateString(localeMap[locale], {
+    month: 'short',
+    day: 'numeric',
+  });
+}
