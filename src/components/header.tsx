@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '@/components/language-provider';
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { SearchBox } from '@/components/search-box';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,7 +38,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-4 md:flex">
+        <nav className="hidden items-center gap-3 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -47,11 +48,15 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <LanguageSwitcher />
+          <div className="flex items-center gap-2 ml-2 border-l border-border pl-3">
+            <SearchBox />
+            <LanguageSwitcher />
+          </div>
         </nav>
 
-        {/* Mobile: language + menu button */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile: search + language + menu button */}
+        <div className="flex items-center gap-1 md:hidden">
+          <SearchBox />
           <LanguageSwitcher />
           <button
             type="button"

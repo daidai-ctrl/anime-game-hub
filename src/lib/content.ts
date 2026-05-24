@@ -121,3 +121,8 @@ export function getAllArticleSlugs(): { game: string; article: string }[] {
 
   return slugs;
 }
+
+// Get article count for a specific game
+export function getArticleCountByGame(gameSlug: string): number {
+  return getAllArticles().filter((a) => a.game === gameSlug).length;
+}

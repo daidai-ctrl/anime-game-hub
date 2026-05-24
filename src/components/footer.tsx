@@ -2,15 +2,23 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/components/language-provider';
+import { games } from '@/lib/games';
 
 export function Footer() {
   const { t, locale } = useLanguage();
 
+  const trendingItems = [
+    { label: 'Blox Fruits Codes', href: '/blox-fruits/codes' },
+    { label: 'Anime Rangers Tier List', href: '/anime-rangers/tier-list' },
+    { label: 'Anime Vanguards Codes', href: '/anime-vanguards/codes' },
+  ];
+
   return (
     <footer className="border-t border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 py-10">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          {/* Brand */}
+          <div className="col-span-2 sm:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-bold text-primary">
               <svg
                 width="20"
@@ -26,36 +34,56 @@ export function Footer() {
               </svg>
               {t('site.name')}
             </Link>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="mt-3 text-xs text-muted-foreground line-clamp-3">
               {t('site.tagline')}
             </p>
           </div>
 
+          {/* Top Games */}
           <div>
             <h3 className="mb-3 text-sm font-semibold text-foreground">{t('footer.games')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/blox-fruits" className="hover:text-primary transition-colors">Blox Fruits</Link></li>
-              <li><Link href="/anime-rangers" className="hover:text-primary transition-colors">Anime Rangers</Link></li>
-              <li><Link href="/anime-vanguards" className="hover:text-primary transition-colors">Anime Vanguards</Link></li>
+              {games.map((game) => (
+                <li key={game.slug}>
+                  <Link href={`/${game.slug}`} className="hover:text-primary transition-colors">{game.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Latest Codes + Guides */}
           <div>
-            <h3 className="mb-3 text-sm font-semibold text-foreground">{t('footer.categories')}</h3>
+            <h3 className="mb-3 text-sm font-semibold text-foreground">{t('footer.latestCodes')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/codes" className="hover:text-primary transition-colors">{t('category.codes')}</Link></li>
-              <li><Link href="/tier-list" className="hover:text-primary transition-colors">{t('category.tierList')}</Link></li>
+              <li><Link href="/blox-fruits/codes" className="hover:text-primary transition-colors">Blox Fruits Codes</Link></li>
+              <li><Link href="/anime-vanguards/codes" className="hover:text-primary transition-colors">Anime Vanguards Codes</Link></li>
+            </ul>
+            <h3 className="mb-2 mt-4 text-sm font-semibold text-foreground">{t('footer.latestGuides')}</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/guides" className="hover:text-primary transition-colors">{t('category.guides')}</Link></li>
             </ul>
           </div>
 
+          {/* Trending Searches */}
+          <div>
+            <h3 className="mb-3 text-sm font-semibold text-foreground">{t('footer.trendingSearches')}</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {trendingItems.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-primary transition-colors">{item.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
           <div>
             <h3 className="mb-3 text-sm font-semibold text-foreground">{t('footer.legal')}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/privacy" className="hover:text-primary transition-colors">{t('footer.privacy')}</Link></li>
-              <li><Link href="/disclaimer" className="hover:text-primary transition-colors">{t('footer.disclaimer')}</Link></li>
               <li><Link href="/about" className="hover:text-primary transition-colors">{t('footer.about')}</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">{t('footer.contact')}</Link></li>
+              <li><Link href="/privacy" className="hover:text-primary transition-colors">{t('footer.privacy')}</Link></li>
+              <li><Link href="/disclaimer" className="hover:text-primary transition-colors">{t('footer.disclaimer')}</Link></li>
             </ul>
           </div>
         </div>

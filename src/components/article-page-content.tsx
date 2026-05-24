@@ -72,15 +72,32 @@ export function ArticlePageContent({
         />
       )}
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb - Home > Game > Category > Article */}
       <nav className="border-b border-border bg-card/50" aria-label="Breadcrumb">
         <div className="mx-auto max-w-7xl px-4 py-2">
-          <ol className="flex items-center gap-2 text-sm text-muted-foreground">
-            <li><Link href="/" className="hover:text-primary">{translate('breadcrumb.home', locale)}</Link></li>
-            <li>/</li>
-            <li><Link href={`/${article.game}`} className="hover:text-primary">{game?.name || article.game}</Link></li>
-            <li>/</li>
-            <li className="text-foreground">{categoryLabel}</li>
+          <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+            <li>
+              <Link href="/" className="hover:text-primary transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline -mt-0.5">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span className="ml-1">{translate('breadcrumb.home', locale)}</span>
+              </Link>
+            </li>
+            <li className="text-muted-foreground/50">/</li>
+            <li><Link href={`/${article.game}`} className="hover:text-primary transition-colors">{game?.name || article.game}</Link></li>
+            <li className="text-muted-foreground/50">/</li>
+            <li>
+              <Link
+                href={`/${article.category === 'codes' ? 'codes' : article.category === 'tier-list' ? 'tier-list' : 'guides'}`}
+                className="hover:text-primary transition-colors"
+              >
+                {categoryLabel}
+              </Link>
+            </li>
+            <li className="text-muted-foreground/50">/</li>
+            <li className="text-foreground font-medium truncate max-w-[200px]">{article.title}</li>
           </ol>
         </div>
       </nav>
