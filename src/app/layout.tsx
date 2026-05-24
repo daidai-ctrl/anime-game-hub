@@ -3,6 +3,7 @@ import { Inspector } from 'react-dev-inspector';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { LanguageProvider } from '@/components/language-provider';
+import Script from 'next/script';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -51,7 +52,15 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark">
-      <body className={`antialiased`}>
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4857703822591488"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
+      <body className="antialiased">
         {isDev && <Inspector />}
         <LanguageProvider>
           <div className="flex min-h-screen flex-col">
@@ -62,5 +71,5 @@ export default function RootLayout({
         </LanguageProvider>
       </body>
     </html>
-  );
+);
 }
