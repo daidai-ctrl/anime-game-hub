@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inspector } from 'react-dev-inspector';
+import { DevInspector } from '@/components/dev-inspector';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { LanguageProvider } from '@/components/language-provider';
@@ -52,16 +52,14 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark">
-      <head>
+      <body className="antialiased">
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4857703822591488"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-      </head>
-      <body className="antialiased">
-        {isDev && <Inspector />}
+        {isDev && <DevInspector />}
         <LanguageProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
@@ -71,5 +69,5 @@ export default function RootLayout({
         </LanguageProvider>
       </body>
     </html>
-);
+  );
 }
