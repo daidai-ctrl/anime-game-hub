@@ -52,12 +52,13 @@ export interface GameUpdate {
   title: string;
   type: 'update' | 'patch' | 'new-character' | 'new-version';
   date: string;
+  href?: string;
 }
 
 export const latestUpdates: GameUpdate[] = [
-  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Dragon Rework', type: 'update', date: '2026-05-24' },
-  { game: 'Anime Rangers', gameSlug: 'anime-rangers', title: 'Anime Rangers Update 4', type: 'new-version', date: '2026-05-22' },
-  { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards New Units', type: 'new-character', date: '2026-05-20' },
-  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Patch Notes v24.1', type: 'patch', date: '2026-05-18' },
-  { game: 'Anime Rangers', gameSlug: 'anime-rangers', title: 'Anime Rangers New Character: Gojo', type: 'new-character', date: '2026-05-15' },
+  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Update 26 — New Fruits, Reworks & More', type: 'update', date: '2026-05-24', href: '/blox-fruits/update-26' },
+  { game: 'Anime Rangers', gameSlug: 'anime-rangers', title: 'Anime Rangers Update 4 — New Characters & Events', type: 'new-version', date: '2026-05-22', href: '/anime-rangers/tier-list' },
+  { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards New Units — Summer Banner', type: 'new-character', date: '2026-05-20', href: '/anime-vanguards/tier-list' },
+  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Eagle & Creation Fruit Released', type: 'new-character', date: '2026-05-18', href: '/blox-fruits/tier-list' },
+  { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards Balance Patch — Meta Shift', type: 'patch', date: '2026-05-15', href: '/anime-vanguards/guides' },
 ];

@@ -138,7 +138,7 @@ export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
                   return (
                     <Link
                       key={i}
-                      href={`/${update.gameSlug}`}
+                      href={update.href || `/${update.gameSlug}`}
                       className="group flex items-center gap-4 p-4 transition-colors hover:bg-muted/30"
                     >
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
