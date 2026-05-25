@@ -62,6 +62,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.playOnRoblox': 'Play on Roblox',
     'game.updatedToday': 'Updated Today',
     'game.guides': '{count} Guides',
+    'game.guidesLabel': 'Guides',
+    'game.tierListLabel': 'Tier Lists',
+    'game.codesLabel': 'Codes',
     'game.lastUpdated': 'Updated {date}',
 
     // Game page
@@ -213,6 +216,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.playOnRoblox': '在 Roblox 中游玩',
     'game.updatedToday': '今日更新',
     'game.guides': '{count} 篇攻略',
+    'game.guidesLabel': '攻略',
+    'game.tierListLabel': '排行榜',
+    'game.codesLabel': '兑换码',
     'game.lastUpdated': '{date} 更新',
 
     'game.latestContent': '最新内容',
@@ -352,6 +358,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.playOnRoblox': 'Robloxでプレイ',
     'game.updatedToday': '本日更新',
     'game.guides': '{count} 攻略',
+    'game.guidesLabel': '攻略',
+    'game.tierListLabel': 'ティアリスト',
+    'game.codesLabel': 'コード',
     'game.lastUpdated': '{date} 更新',
 
     'game.latestContent': '最新コンテンツ',
@@ -491,6 +500,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.playOnRoblox': 'Jugar en Roblox',
     'game.updatedToday': 'Actualizado Hoy',
     'game.guides': '{count} Guías',
+    'game.guidesLabel': 'Guías',
+    'game.tierListLabel': 'Tier Lists',
+    'game.codesLabel': 'Códigos',
     'game.lastUpdated': 'Actualizado {date}',
 
     'game.latestContent': 'Último Contenido',
@@ -630,6 +642,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.playOnRoblox': 'Jogar no Roblox',
     'game.updatedToday': 'Atualizado Hoje',
     'game.guides': '{count} Guias',
+    'game.guidesLabel': 'Guias',
+    'game.tierListLabel': 'Tier Lists',
+    'game.codesLabel': 'Códigos',
     'game.lastUpdated': 'Atualizado {date}',
 
     'game.latestContent': 'Último Conteúdo',

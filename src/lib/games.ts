@@ -5,6 +5,9 @@ export interface Game {
   robloxUrl: string;
   coverImage: string;
   articleCount: number;
+  codesCount: number;
+  tierListCount: number;
+  guidesCount: number;
   tags: string[];
   lastUpdated: string;
 }
@@ -17,6 +20,9 @@ export const games: Game[] = [
     robloxUrl: 'https://www.roblox.com/games/2753915549',
     coverImage: '/images/blox-fruits.jpeg',
     articleCount: 24,
+    codesCount: 2,
+    tierListCount: 3,
+    guidesCount: 5,
     tags: ['Adventure', 'Fruits', 'PvP'],
     lastUpdated: '2026-05-24',
   },
@@ -27,6 +33,9 @@ export const games: Game[] = [
     robloxUrl: 'https://www.roblox.com/games/anime-rangers',
     coverImage: '/images/anime-rangers.jpeg',
     articleCount: 12,
+    codesCount: 2,
+    tierListCount: 3,
+    guidesCount: 3,
     tags: ['Tower Defense', 'Anime', 'Collection'],
     lastUpdated: '2026-05-22',
   },
@@ -37,6 +46,9 @@ export const games: Game[] = [
     robloxUrl: 'https://www.roblox.com/games/anime-vanguards',
     coverImage: '/images/anime-vanguards.jpeg',
     articleCount: 8,
+    codesCount: 2,
+    tierListCount: 2,
+    guidesCount: 3,
     tags: ['Strategy', 'Defense', 'Anime'],
     lastUpdated: '2026-05-20',
   },

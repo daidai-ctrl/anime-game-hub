@@ -38,21 +38,39 @@ export function GameCard({ game }: { game: Game }) {
         <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
           {description}
         </p>
-        <div className="mt-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {game.tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-block rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <span className="text-xs text-muted-foreground">
-            {t('game.guides', { count: String(game.articleCount) })}
+        {/* Stats row */}
+        <div className="mt-3 flex items-center gap-3 text-xs">
+          <span className="inline-flex items-center gap-1 text-muted-foreground">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#00d4aa]">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
+            </svg>
+            {game.guidesCount} {t('game.guidesLabel')}
+          </span>
+          <span className="inline-flex items-center gap-1 text-muted-foreground">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#6366f1]">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+            </svg>
+            {game.tierListCount} {t('game.tierListLabel')}
+          </span>
+          <span className="inline-flex items-center gap-1 text-muted-foreground">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-[#f59e0b]">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            {game.codesCount} {t('game.codesLabel')}
           </span>
         </div>
+        {/* Tags row */}
+        <div className="mt-2 flex items-center gap-2">
+          {game.tags.map((tag) => (
+            <span
+              key={tag}
+              className="inline-block rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        {/* Footer */}
         <div className="mt-2 flex items-center justify-between border-t border-border pt-2">
           <span className="text-xs text-muted-foreground">
             {t('game.lastUpdated', { date: formatMonthDay(game.lastUpdated, locale) })}
