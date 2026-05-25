@@ -17,6 +17,8 @@ export function AdSlot({ slot, format = 'auto', responsive = true }: AdSlotProps
 
   useEffect(() => {
     if (!mounted) return;
+    // Only push ad in production to avoid TagError in dev
+    if (process.env.NODE_ENV !== 'production') return;
     try {
       (window as unknown as { adsbygoogle: Array<Record<string, unknown>> }).adsbygoogle =
         (window as unknown as { adsbygoogle: Array<Record<string, unknown>> }).adsbygoogle || [];
@@ -34,8 +36,8 @@ export function AdSlot({ slot, format = 'auto', responsive = true }: AdSlotProps
     'mobile-sticky': 'h-[50px] w-full',
   };
 
-  // Always render placeholder first (SSR-safe), then replace with ad on client
-  if (!mounted) {
+  // In dev or before mount, show placeholder
+  if (!mounted || process.env.NODE_ENV !== 'production') {
     return (
       <div
         className={`${sizeClasses[slot]} flex items-center justify-center rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30 text-xs text-[#94a3b8]`}

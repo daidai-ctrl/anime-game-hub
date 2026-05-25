@@ -53,12 +53,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="antialiased">
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4857703822591488"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        {!isDev && (
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4857703822591488"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
         {isDev && <DevInspector />}
         <LanguageProvider>
           <div className="flex min-h-screen flex-col">
