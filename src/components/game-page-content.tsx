@@ -83,7 +83,7 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
             <div className="flex flex-wrap gap-2">
               {game.popularTopics.map((topic) => (
                 <Link
-                  key={topic.slug}
+                  key={topic.label}
                   href={`/${game.slug}/${topic.slug}`}
                   className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary hover:bg-primary/5"
                 >
@@ -268,7 +268,7 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
               <h3 className="mb-3 text-sm font-semibold text-foreground">{translate('sidebar.quickLinks', locale)}</h3>
               <div className="space-y-2">
                 {game.popularTopics && game.popularTopics.slice(0, 6).map((topic) => (
-                  <Link key={topic.slug} href={`/${game.slug}/${topic.slug}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link key={topic.label} href={`/${game.slug}/${topic.slug}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                     <span className="text-xs">{topic.icon}</span>
                     {topic.label}
                   </Link>
