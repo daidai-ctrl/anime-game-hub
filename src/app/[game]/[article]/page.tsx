@@ -47,7 +47,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const allArticles = getAllArticles();
   const relatedArticles = allArticles
     .filter((a) => a.game === gameSlug && a.slug !== articleSlug)
-    .slice(0, 3);
+    .slice(0, 6);
 
   return (
     <ArticlePageContent

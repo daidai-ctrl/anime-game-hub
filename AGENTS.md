@@ -16,16 +16,30 @@ Roblox Anime Games SEO 聚合站 MVP，用于 Google SEO 获取流量、AdSense 
 ## 目录结构
 
 ```
-├── content/                    # MDX 内容文件
-│   ├── blox-fruits/            # Blox Fruits 游戏内容
+├── content/                    # MDX 内容文件 (57 篇)
+│   ├── blox-fruits/            # Blox Fruits 游戏内容 (22 篇)
 │   │   ├── codes.mdx           # 兑换码文章
 │   │   ├── tier-list.mdx       # Tier List 文章
-│   │   └── guides.mdx          # 攻略文章
-│   ├── anime-rangers/          # Anime Rangers 游戏内容
+│   │   ├── guides.mdx          # 攻略文章
+│   │   ├── best-dps-units.mdx  # pSEO: Best DPS
+│   │   ├── best-support-units.mdx  # pSEO: Best Support
+│   │   ├── best-traits.mdx     # pSEO: Best Traits
+│   │   ├── best-relics.mdx     # pSEO: Best Relics
+│   │   ├── best-teams.mdx      # pSEO: Best Teams
+│   │   ├── best-farming-stages.mdx  # pSEO: Best Farming
+│   │   ├── best-starter-units.mdx   # pSEO: Best Starter
+│   │   ├── xp-guide.mdx        # pSEO: XP Guide
+│   │   ├── gems-guide.mdx      # pSEO: Gems Guide
+│   │   ├── leveling-guide.mdx  # pSEO: Leveling Guide
+│   │   └── update-history.mdx  # pSEO: Update History
+│   ├── anime-rangers/          # Anime Rangers 游戏内容 (17 篇)
 │   │   ├── codes.mdx
-│   │   └── tier-list.mdx
-│   └── anime-vanguards/        # Anime Vanguards 游戏内容
-│       └── codes.mdx
+│   │   ├── tier-list.mdx
+│   │   └── (同上 pSEO 模板)
+│   └── anime-vanguards/        # Anime Vanguards 游戏内容 (18 篇)
+│       ├── codes.mdx
+│       ├── tier-list.mdx
+│       └── (同上 pSEO 模板)
 ├── public/                     # 静态资源
 ├── scripts/                    # 构建与启动脚本
 ├── src/

@@ -471,9 +471,13 @@ export function ArticlePageContent({
 function getTrendingSearches(gameSlug: string, gameName: string): { label: string; href: string }[] {
   return [
     { label: `${gameName} Tier List`, href: `/${gameSlug}/tier-list` },
-    { label: `${gameName} Update`, href: `/${gameSlug}` },
-    { label: `${gameName} Best Units`, href: `/${gameSlug}/tier-list` },
-    { label: `${gameName} Beginner Guide`, href: `/${gameSlug}/guides` },
+    { label: `${gameName} Codes`, href: `/${gameSlug}/codes` },
+    { label: `${gameName} Best Units`, href: `/${gameSlug}/best-dps-units` },
+    { label: `${gameName} Best DPS`, href: `/${gameSlug}/best-dps-units` },
+    { label: `${gameName} Leveling Guide`, href: `/${gameSlug}/leveling-guide` },
+    { label: `${gameName} Best Teams`, href: `/${gameSlug}/best-teams` },
+    { label: `${gameName} Update History`, href: `/${gameSlug}/update-history` },
+    { label: `${gameName} XP Guide`, href: `/${gameSlug}/xp-guide` },
   ];
 }
 
