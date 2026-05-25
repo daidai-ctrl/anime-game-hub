@@ -85,9 +85,14 @@ const translations: Record<Locale, Record<string, string>> = {
     'update.type.new-version': 'New Version',
 
     // Category pages
-    'codes.title': 'Game Codes',
-    'codes.description': 'All the latest Roblox anime game codes. Get free rewards, XP boosts, and more!',
+    'codes.title': 'Latest Roblox Anime Game Codes',
+    'codes.description': 'Find the latest Roblox anime game codes, including Anime Rangers X, Anime Vanguards, Blox Fruits and more. Redeem free gems, boosts, rerolls, currencies and exclusive rewards.',
+    'codes.descriptionExtra': 'We update our codes daily to ensure players always have access to active rewards.',
     'codes.noArticles': 'No codes articles yet.',
+    'codes.lastUpdated': 'Last Updated: {date}',
+    'codes.featuredGames': 'Popular Games',
+    'codes.trendingCodes': 'Trending Codes',
+    'codes.trendingItem': '{game} Codes',
     'tierlist.title': 'Tier Lists',
     'tierlist.description': 'Comprehensive tier lists for Roblox anime games. Find the best characters, fruits, and strategies!',
     'tierlist.noArticles': 'No tier list articles yet.',
@@ -113,6 +118,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.popularPosts': 'Popular Posts',
     'sidebar.trendingCodes': 'Trending Codes',
     'sidebar.mostViewedTierLists': 'Most Viewed Tier Lists',
+    'sidebar.latestUpdates': 'Latest Updates',
+    'sidebar.trendingSearches': 'Trending Searches',
+
+    // Pagination
+    'pagination.prev': 'Previous',
+    'pagination.next': 'Next',
+    'pagination.page': 'Page {page}',
 
     // Footer
     'footer.games': 'Top Games',
@@ -235,9 +247,14 @@ const translations: Record<Locale, Record<string, string>> = {
     'update.type.new-character': '新角色',
     'update.type.new-version': '新版本',
 
-    'codes.title': '游戏兑换码',
-    'codes.description': '所有最新的 Roblox 动漫游戏兑换码。获取免费奖励、经验加成等！',
+    'codes.title': '最新 Roblox 动漫游戏兑换码',
+    'codes.description': '查找最新的 Roblox 动漫游戏兑换码，包括 Anime Rangers X、Anime Vanguards、Blox Fruits 等。兑换免费宝石、加成、重roll、货币和独家奖励。',
+    'codes.descriptionExtra': '我们每天更新兑换码，确保玩家始终能获取有效奖励。',
     'codes.noArticles': '暂无兑换码文章。',
+    'codes.lastUpdated': '最后更新：{date}',
+    'codes.featuredGames': '热门游戏',
+    'codes.trendingCodes': '热门兑换码',
+    'codes.trendingItem': '{game} 兑换码',
     'tierlist.title': '排行榜',
     'tierlist.description': '全面的 Roblox 动漫游戏排行榜。找到最强角色、果实和策略！',
     'tierlist.noArticles': '暂无排行榜文章。',
@@ -260,6 +277,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.popularPosts': '热门文章',
     'sidebar.trendingCodes': '热门兑换码',
     'sidebar.mostViewedTierLists': '最多浏览排行榜',
+    'sidebar.latestUpdates': '最新更新',
+    'sidebar.trendingSearches': '热门搜索',
+
+    // Pagination
+    'pagination.prev': '上一页',
+    'pagination.next': '下一页',
+    'pagination.page': '第 {page} 页',
 
     'footer.games': '热门游戏',
     'footer.categories': '分类',
@@ -377,9 +401,14 @@ const translations: Record<Locale, Record<string, string>> = {
     'update.type.new-character': '新キャラクター',
     'update.type.new-version': '新バージョン',
 
-    'codes.title': 'ゲームコード',
-    'codes.description': '最新のRobloxアニメゲームコードまとめ。無料報酬、経験値ブーストなどを入手！',
+    'codes.title': '最新Robloxアニメゲームコード',
+    'codes.description': 'Anime Rangers X、Anime Vanguards、Blox Fruitsなど、最新のRobloxアニメゲームコードを見つけよう。無料ジェム、ブースト、リロール、通貨、限定報酬を入手。',
+    'codes.descriptionExtra': 'コードは毎日更新し、プレイヤーが常に有効な報酬にアクセスできるようにしています。',
     'codes.noArticles': 'コード記事はまだありません。',
+    'codes.lastUpdated': '最終更新：{date}',
+    'codes.featuredGames': '人気ゲーム',
+    'codes.trendingCodes': 'トレンドコード',
+    'codes.trendingItem': '{game} コード',
     'tierlist.title': 'ティアリスト',
     'tierlist.description': 'Robloxアニメゲームの包括的なティアリスト。最強キャラ、フルーツ、戦略を見つけよう！',
     'tierlist.noArticles': 'ティアリスト記事はまだありません。',
@@ -402,6 +431,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.popularPosts': '人気記事',
     'sidebar.trendingCodes': 'トレンドコード',
     'sidebar.mostViewedTierLists': '閲覧数トップのティアリスト',
+    'sidebar.latestUpdates': '最新アップデート',
+    'sidebar.trendingSearches': 'トレンド検索',
+
+    // Pagination
+    'pagination.prev': '前へ',
+    'pagination.next': '次へ',
+    'pagination.page': '{page}ページ',
 
     'footer.games': '人気ゲーム',
     'footer.categories': 'カテゴリー',
@@ -519,9 +555,14 @@ const translations: Record<Locale, Record<string, string>> = {
     'update.type.new-character': 'Nuevo Personaje',
     'update.type.new-version': 'Nueva Versión',
 
-    'codes.title': 'Códigos de Juegos',
-    'codes.description': 'Todos los últimos códigos de juegos de anime en Roblox. ¡Consigue recompensas gratis, boosts de XP y más!',
+    'codes.title': 'Últimos Códigos de Juegos de Anime en Roblox',
+    'codes.description': 'Encuentra los últimos códigos de juegos de anime en Roblox, incluyendo Anime Rangers X, Anime Vanguards, Blox Fruits y más. Canjea gemas gratis, boosts, rerrols, monedas y recompensas exclusivas.',
+    'codes.descriptionExtra': 'Actualizamos nuestros códigos diariamente para que los jugadores siempre tengan acceso a recompensas activas.',
     'codes.noArticles': 'No hay artículos de códigos todavía.',
+    'codes.lastUpdated': 'Última actualización: {date}',
+    'codes.featuredGames': 'Juegos Populares',
+    'codes.trendingCodes': 'Códigos Populares',
+    'codes.trendingItem': 'Códigos de {game}',
     'tierlist.title': 'Tier Lists',
     'tierlist.description': 'Tier lists completas para juegos de anime en Roblox. ¡Encuentra los mejores personajes, frutas y estrategias!',
     'tierlist.noArticles': 'No hay artículos de tier list todavía.',
@@ -544,6 +585,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.popularPosts': 'Artículos Populares',
     'sidebar.trendingCodes': 'Códigos Populares',
     'sidebar.mostViewedTierLists': 'Tier Lists Más Vistos',
+    'sidebar.latestUpdates': 'Últimas Actualizaciones',
+    'sidebar.trendingSearches': 'Búsquedas Populares',
+
+    // Pagination
+    'pagination.prev': 'Anterior',
+    'pagination.next': 'Siguiente',
+    'pagination.page': 'Página {page}',
 
     'footer.games': 'Juegos Populares',
     'footer.categories': 'Categorías',
@@ -661,9 +709,14 @@ const translations: Record<Locale, Record<string, string>> = {
     'update.type.new-character': 'Novo Personagem',
     'update.type.new-version': 'Nova Versão',
 
-    'codes.title': 'Códigos de Jogos',
-    'codes.description': 'Todos os últimos códigos de jogos de anime no Roblox. Ganhe recompensas grátis, boosts de XP e mais!',
+    'codes.title': 'Últimos Códigos de Jogos de Anime no Roblox',
+    'codes.description': 'Encontre os últimos códigos de jogos de anime no Roblox, incluindo Anime Rangers X, Anime Vanguards, Blox Fruits e mais. Resgate gemas grátis, boosts, rerrolagens, moedas e recompensas exclusivas.',
+    'codes.descriptionExtra': 'Atualizamos nossos códigos diariamente para garantir que os jogadores sempre tenham acesso a recompensas ativas.',
     'codes.noArticles': 'Nenhum artigo de códigos ainda.',
+    'codes.lastUpdated': 'Última atualização: {date}',
+    'codes.featuredGames': 'Jogos Populares',
+    'codes.trendingCodes': 'Códigos em Alta',
+    'codes.trendingItem': 'Códigos de {game}',
     'tierlist.title': 'Tier Lists',
     'tierlist.description': 'Tier lists completas para jogos de anime no Roblox. Encontre os melhores personagens, frutas e estratégias!',
     'tierlist.noArticles': 'Nenhum artigo de tier list ainda.',
@@ -686,6 +739,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.popularPosts': 'Artigos Populares',
     'sidebar.trendingCodes': 'Códigos em Alta',
     'sidebar.mostViewedTierLists': 'Tier Lists Mais Vistos',
+    'sidebar.latestUpdates': 'Últimas Atualizações',
+    'sidebar.trendingSearches': 'Pesquisas em Alta',
+
+    // Pagination
+    'pagination.prev': 'Anterior',
+    'pagination.next': 'Próximo',
+    'pagination.page': 'Página {page}',
 
     'footer.games': 'Jogos Populares',
     'footer.categories': 'Categorias',
