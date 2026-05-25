@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import type { Game } from '@/lib/games';
 import type { ArticleMeta } from '@/lib/content';
@@ -13,6 +14,11 @@ const categorySlugs = ['codes', 'tier-list', 'guides', 'updates', 'fixes'] as co
 export function GamePageContent({ game, articles }: { game: Game; articles: ArticleMeta[] }) {
   const { locale } = useLanguage();
   const description = getGameDescription(game.slug, locale);
+
+  // Split articles by category
+  const codesArticles = articles.filter((a) => a.category === 'codes').slice(0, 3);
+  const tierListArticles = articles.filter((a) => a.category === 'tier-list').slice(0, 3);
+  const guidesArticles = articles.filter((a) => a.category === 'guides').slice(0, 6);
 
   return (
     <>
@@ -32,6 +38,25 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
             <div>
               <h1 className="text-3xl font-bold text-foreground sm:text-4xl">{game.name}</h1>
               <p className="mt-2 max-w-xl text-muted-foreground">{description}</p>
+              {/* Stats row */}
+              <div className="mt-4 flex flex-wrap gap-4 text-sm">
+                <span className="flex items-center gap-1.5 text-emerald-400">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+                  {game.codesCount} {translate('related.codes', locale)}
+                </span>
+                <span className="flex items-center gap-1.5 text-purple-400">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  {game.tierListCount} Tier Lists
+                </span>
+                <span className="flex items-center gap-1.5 text-blue-400">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                  {game.guidesCount} {translate('related.guides', locale)}
+                </span>
+                <span className="flex items-center gap-1.5 text-muted-foreground">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  {translate('game.lastUpdated', locale, { date: game.lastUpdated })}
+                </span>
+              </div>
             </div>
             <a
               href={game.robloxUrl}
@@ -75,25 +100,199 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Main Content */}
-          <div className="lg:col-span-2">
-            <h2 className="mb-4 text-xl font-bold text-foreground">{translate('game.latestContent', locale)}</h2>
-            {articles.length > 0 ? (
-              <div className="grid gap-4 sm:grid-cols-2">
-                {articles.map((article) => (
-                  <ArticleCard key={`${article.game}-${article.slug}`} article={article} />
-                ))}
-              </div>
-            ) : (
-              <p className="text-muted-foreground">{translate('game.noContent', locale, { game: game.name })}</p>
+          <div className="lg:col-span-2 space-y-10">
+
+            {/* Section 1: What is [Game]? */}
+            <section className="rounded-lg border border-border bg-card p-6">
+              <h2 className="mb-3 text-xl font-bold text-foreground">
+                {translate('game.whatIs', locale, { game: game.name })}
+              </h2>
+              <p className="leading-relaxed text-muted-foreground">{game.whatIs}</p>
+            </section>
+
+            {/* Section 2: Latest Codes */}
+            {codesArticles.length > 0 && (
+              <section>
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-emerald-500/10 text-emerald-400">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+                    </span>
+                    {translate('game.latestCodes', locale)}
+                  </h2>
+                  <Link
+                    href={`/${game.slug}/codes`}
+                    className="text-sm font-medium text-primary hover:underline"
+                  >
+                    {translate('related.viewAll', locale)} →
+                  </Link>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {codesArticles.map((article) => (
+                    <Link
+                      key={`${article.game}-${article.slug}`}
+                      href={`/${article.game}/${article.slug}`}
+                      className="group flex items-center gap-3 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/50"
+                    >
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-emerald-500/10 text-emerald-400">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-sm font-semibold text-foreground group-hover:text-primary truncate">{article.title}</h3>
+                        <p className="text-xs text-muted-foreground">{article.date}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
             )}
+
+            {/* Section 3: Best Items (Tier List highlight) */}
+            {tierListArticles.length > 0 && (
+              <section>
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-purple-500/10 text-purple-400">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </span>
+                    {game.bestItemLabel}
+                  </h2>
+                  <Link
+                    href={`/${game.slug}/${game.bestItemSlug}`}
+                    className="text-sm font-medium text-primary hover:underline"
+                  >
+                    {translate('related.viewAll', locale)} →
+                  </Link>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {tierListArticles.map((article) => (
+                    <Link
+                      key={`${article.game}-${article.slug}`}
+                      href={`/${article.game}/${article.slug}`}
+                      className="group flex items-center gap-3 rounded-lg border border-border bg-card p-4 transition-colors hover:border-purple-500/50"
+                    >
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-purple-500/10 text-purple-400">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-sm font-semibold text-foreground group-hover:text-purple-400 truncate">{article.title}</h3>
+                        <p className="text-xs text-muted-foreground">{article.date}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Section 4: Best Guides */}
+            {guidesArticles.length > 0 && (
+              <section>
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-blue-500/10 text-blue-400">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    </span>
+                    {translate('game.bestGuides', locale)}
+                  </h2>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {guidesArticles.map((article) => (
+                    <ArticleCard key={`${article.game}-${article.slug}`} article={article} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Section 5: FAQ */}
+            {game.faqs && game.faqs.length > 0 && (
+              <section>
+                <h2 className="mb-4 text-xl font-bold text-foreground flex items-center gap-2">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-primary/10 text-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  </span>
+                  {game.name} FAQ
+                </h2>
+                <div className="space-y-3">
+                  {game.faqs.map((faq, index) => (
+                    <FAQItem key={index} question={faq.question} answer={faq.answer} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* All Articles List */}
+            <section>
+              <h2 className="mb-4 text-xl font-bold text-foreground">{translate('game.latestContent', locale)}</h2>
+              {articles.length > 0 ? (
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {articles.map((article) => (
+                    <ArticleCard key={`${article.game}-${article.slug}`} article={article} />
+                  ))}
+                </div>
+              ) : (
+                <p className="text-muted-foreground">{translate('game.noContent', locale, { game: game.name })}</p>
+              )}
+            </section>
           </div>
 
           {/* Sidebar */}
           <aside className="space-y-6">
             <AdSlot slot="sidebar" />
+            {/* Quick Links */}
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="mb-3 text-sm font-semibold text-foreground">{translate('sidebar.quickLinks', locale)}</h3>
+              <div className="space-y-2">
+                {codesArticles.length > 0 && (
+                  <Link href={`/${game.slug}/codes`} className="flex items-center gap-2 text-sm text-emerald-400 hover:underline">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                    {game.name} Codes
+                  </Link>
+                )}
+                <Link href={`/${game.slug}/${game.bestItemSlug}`} className="flex items-center gap-2 text-sm text-purple-400 hover:underline">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                  {game.bestItemLabel}
+                </Link>
+                <Link href={`/${game.slug}/beginner-guide`} className="flex items-center gap-2 text-sm text-blue-400 hover:underline">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                  {translate('game.beginnerGuide', locale)}
+                </Link>
+              </div>
+            </div>
+            <AdSlot slot="footer" />
           </aside>
         </div>
       </div>
     </>
+  );
+}
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="rounded-lg border border-border bg-card overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between px-4 py-3 text-left text-sm font-medium text-foreground hover:bg-muted/50 transition-colors"
+      >
+        <span>{question}</span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className={`shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      {open && (
+        <div className="border-t border-border px-4 py-3 text-sm text-muted-foreground leading-relaxed">
+          {answer}
+        </div>
+      )}
+    </div>
   );
 }

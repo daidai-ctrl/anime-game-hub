@@ -70,6 +70,10 @@ const translations: Record<Locale, Record<string, string>> = {
     // Game page
     'game.latestContent': 'Latest Content',
     'game.noContent': 'No content available yet for {game}.',
+    'game.whatIs': 'What is {game}?',
+    'game.latestCodes': 'Latest Codes',
+    'game.bestGuides': 'Best Guides',
+    'game.beginnerGuide': 'Beginner Guide',
 
     // Category labels
     'category.codes': 'Codes',
@@ -141,6 +145,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.mostViewedTierLists': 'Most Viewed Tier Lists',
     'sidebar.latestUpdates': 'Latest Updates',
     'sidebar.trendingSearches': 'Trending Searches',
+    'sidebar.quickLinks': 'Quick Links',
 
     // Pagination
     'pagination.prev': 'Previous',
@@ -268,6 +273,10 @@ const translations: Record<Locale, Record<string, string>> = {
 
     'game.latestContent': '最新内容',
     'game.noContent': '{game} 暂无可用内容。',
+    'game.whatIs': '什么是{game}？',
+    'game.latestCodes': '最新兑换码',
+    'game.bestGuides': '最佳攻略',
+    'game.beginnerGuide': '新手攻略',
 
     'category.codes': '兑换码',
     'category.tierList': '排行榜',
@@ -455,6 +464,10 @@ const translations: Record<Locale, Record<string, string>> = {
 
     'game.latestContent': '最新コンテンツ',
     'game.noContent': '{game}のコンテンツはまだありません。',
+    'game.whatIs': '{game}とは？',
+    'game.latestCodes': '最新コード',
+    'game.bestGuides': 'ベストガイド',
+    'game.beginnerGuide': '初心者ガイド',
 
     'category.codes': 'コード',
     'category.tierList': 'ティアリスト',
@@ -642,6 +655,10 @@ const translations: Record<Locale, Record<string, string>> = {
 
     'game.latestContent': 'Último Contenido',
     'game.noContent': 'No hay contenido disponible para {game} todavía.',
+    'game.whatIs': '¿Qué es {game}?',
+    'game.latestCodes': 'Últimos Códigos',
+    'game.bestGuides': 'Mejores Guías',
+    'game.beginnerGuide': 'Guía para Principiantes',
 
     'category.codes': 'Códigos',
     'category.tierList': 'Tier List',
@@ -829,6 +846,10 @@ const translations: Record<Locale, Record<string, string>> = {
 
     'game.latestContent': 'Último Conteúdo',
     'game.noContent': 'Nenhum conteúdo disponível para {game} ainda.',
+    'game.whatIs': 'O que é {game}?',
+    'game.latestCodes': 'Últimos Códigos',
+    'game.bestGuides': 'Melhores Guias',
+    'game.beginnerGuide': 'Guia para Iniciantes',
 
     'category.codes': 'Códigos',
     'category.tierList': 'Tier List',
