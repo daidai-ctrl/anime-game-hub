@@ -52,6 +52,19 @@ export const games: Game[] = [
     tags: ['Strategy', 'Defense', 'Anime'],
     lastUpdated: '2026-05-25',
   },
+  {
+    slug: 'anime-last-stand',
+    name: 'Anime Last Stand',
+    description: 'Defend your base with legendary anime heroes in Anime Last Stand! Summon powerful units, evolve them, and battle through endless waves of enemies.',
+    robloxUrl: 'https://www.roblox.com/games/anime-last-stand',
+    coverImage: '/images/anime-last-stand.jpeg',
+    articleCount: 14,
+    codesCount: 2,
+    tierListCount: 3,
+    guidesCount: 9,
+    tags: ['Tower Defense', 'Anime', 'Evolution'],
+    lastUpdated: '2026-05-25',
+  },
 ];
 
 export function getGame(slug: string): Game | undefined {
@@ -73,4 +86,6 @@ export const latestUpdates: GameUpdate[] = [
   { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards New Units — Summer Banner', type: 'new-character', date: '2026-05-20', href: '/anime-vanguards/tier-list' },
   { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Eagle & Creation Fruit Released', type: 'new-character', date: '2026-05-18', href: '/blox-fruits/tier-list' },
   { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards Balance Patch — Meta Shift', type: 'patch', date: '2026-05-15', href: '/anime-vanguards/guides' },
+  { game: 'Anime Last Stand', gameSlug: 'anime-last-stand', title: 'Anime Last Stand Update — New Secret Units & Evolution', type: 'update', date: '2026-05-25', href: '/anime-last-stand/update-guide' },
+  { game: 'Anime Last Stand', gameSlug: 'anime-last-stand', title: 'Anime Last Stand Codes — Free Gems & Summons', type: 'new-version', date: '2026-05-25', href: '/anime-last-stand/codes' },
 ];

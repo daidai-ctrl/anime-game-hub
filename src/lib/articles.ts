@@ -87,6 +87,25 @@ export const articles: ArticleEntry[] = [
   { slug: 'update-30', title: 'Blox Fruits Update 30 Guide (2026) – Fourth Sea, Magnet Fruit & All Leaks', game: 'blox-fruits', type: 'update' },
   { slug: 'update-history', title: 'Blox Fruits Update History (2026) – All Patch Notes & Changes', game: 'blox-fruits', type: 'guides' },
   { slug: 'xp-guide', title: 'Blox Fruits XP Guide (2026) – Fastest Leveling Methods & XP Farming', game: 'blox-fruits', type: 'guides' },
+
+  // ========================
+  // Anime Last Stand
+  // ========================
+  { slug: 'codes', title: 'Anime Last Stand Codes (May 2026) – Free Gems, Summons & Rewards', game: 'anime-last-stand', type: 'codes' },
+  { slug: 'expired-codes', title: 'Anime Last Stand Expired Codes List (2026) – All Old & Removed Codes', game: 'anime-last-stand', type: 'codes' },
+  { slug: 'tier-list', title: 'Anime Last Stand Tier List (2026) – Best Units Ranked S to D', game: 'anime-last-stand', type: 'tier-list' },
+  { slug: 'best-units', title: 'Anime Last Stand Best Units (2026) – Top Characters for Every Mode', game: 'anime-last-stand', type: 'tier-list' },
+  { slug: 'relic-tier-list', title: 'Anime Last Stand Relic Tier List (2026) – Best Relics Ranked S to D', game: 'anime-last-stand', type: 'tier-list' },
+  { slug: 'best-traits', title: 'Anime Last Stand Best Traits (2026) – Optimal Trait for Every Unit', game: 'anime-last-stand', type: 'guides' },
+  { slug: 'best-teams', title: 'Anime Last Stand Best Teams (2026) – Meta Compositions & Synergies', game: 'anime-last-stand', type: 'guides' },
+  { slug: 'beginner-guide', title: 'Anime Last Stand Beginner Guide (2026) – Complete Starter Walkthrough', game: 'anime-last-stand', type: 'guides' },
+  { slug: 'xp-guide', title: 'Anime Last Stand XP Guide (2026) – Fastest Leveling Methods & XP Farming', game: 'anime-last-stand', type: 'guides' },
+  { slug: 'farming-guide', title: 'Anime Last Stand Farming Guide (2026) – Best Stages for Gems, Gold & XP', game: 'anime-last-stand', type: 'guides' },
+  { slug: 'evolution-guide', title: 'Anime Last Stand Evolution Guide (2026) – How to Evolve Every Unit', game: 'anime-last-stand', type: 'guides' },
+  { slug: 'secret-units-guide', title: 'Anime Last Stand Secret Units Guide (2026) – How to Unlock Every Secret Unit', game: 'anime-last-stand', type: 'guides' },
+  { slug: 'update-guide', title: 'Anime Last Stand Update Guide (2026) – Latest Patch Notes & Changes', game: 'anime-last-stand', type: 'update' },
+  { slug: 'patch-notes', title: 'Anime Last Stand Patch Notes (2026) – Complete Changelog & History', game: 'anime-last-stand', type: 'update' },
+  { slug: 'challenge-guide', title: 'Anime Last Stand Challenge Guide (2026) – Clear Every Challenge & Tower Floor', game: 'anime-last-stand', type: 'guides' },
 ];
 
 /**
