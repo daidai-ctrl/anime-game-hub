@@ -218,6 +218,10 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.anime-rangers.desc': 'Collect and battle with your favorite anime characters! Build the ultimate team, level up your rangers, and conquer challenging quests.',
     'game.anime-vanguards.desc': 'Defend your base with powerful anime heroes! Strategically place your vanguards, upgrade their abilities, and protect against waves of enemies.',
     'game.anime-last-stand.desc': 'Summon powerful anime units, evolve them, and defend against endless waves! Collect secret units, unlock evolutions, and conquer every challenge.',
+    'game.anime-defenders.desc': 'Collect legendary anime defenders, evolve them, and battle through challenging stages! Build the ultimate defense team and conquer every mode.',
+    'game.arise-crossover.desc': 'Explore multiple anime worlds, collect iconic characters, and master unique abilities! Conquer crossover challenges and build the strongest team.',
+    'game.blue-lock-rivals.desc': 'Compete in intense anime soccer battles! Build your dream team, unlock powerful players, and dominate the field in this competitive Roblox experience.',
+    'game.anime-saga.desc': 'Embark on an epic anime adventure! Collect heroes, explore dungeons, evolve your team, and become the strongest in this Roblox RPG saga.',
 
     // Related Articles
     'related.title': 'Related Articles',
@@ -401,6 +405,10 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.anime-rangers.desc': '收集并与您最喜爱的动漫角色一起战斗！组建最强队伍、升级您的角色、征服挑战任务。',
     'game.anime-vanguards.desc': '用强大的动漫英雄保卫基地！策略性部署守卫、升级技能、抵御敌人的进攻浪潮。',
     'game.anime-last-stand.desc': '召唤强大的动漫角色、进化升级、抵御无尽敌潮！收集秘密角色、解锁进化、征服所有挑战。',
+    'game.anime-defenders.desc': '收集传奇动漫守卫、进化升级、挑战高难度关卡！组建最强防御团队，征服所有模式。',
+    'game.arise-crossover.desc': '探索多个动漫世界、收集标志性角色、掌握独特技能！征服跨界挑战，组建最强团队。',
+    'game.blue-lock-rivals.desc': '在激烈的动漫足球对战中竞技！组建梦之队、解锁强力球员、统治球场。',
+    'game.anime-saga.desc': '踏上史诗般的动漫冒险！收集英雄、探索地牢、进化团队，成为这个Roblox RPG传奇中最强者。',
 
     // Related Articles
     'related.title': '相关文章',
@@ -584,6 +592,10 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.anime-rangers.desc': 'お気に入りのアニメキャラを集めてバトル！最強チームを組み、レンジャーをレベルアップしよう。',
     'game.anime-vanguards.desc': '強力なアニメヒーローでベースを防衛！戦略的にヴァンガードを配置し、敵の波から守ろう。',
     'game.anime-last-stand.desc': '強力なアニメユニットを召喚・進化させ、無限の敵波から防衛！秘密ユニットを集め、全チャレンジを制覇しよう。',
+    'game.anime-defenders.desc': '伝説のアニメディフェンダーを集め、進化させ、困難なステージを攻略！最強の防御チームを組もう。',
+    'game.arise-crossover.desc': '複数のアニメ世界を探索、象徴的なキャラを集め、ユニークな能力をマスター！クロスオーバーチャレンジを征服しよう。',
+    'game.blue-lock-rivals.desc': '激しいアニメサッカーバトルで競え！ドリームチームを組み、強力な選手を解放し、フィールドを支配しよう。',
+    'game.anime-saga.desc': '壮大なアニメ冒険に出発！ヒーローを集め、ダンジョンを探索、チームを進化させ、最強を目指そう。',
 
     // Related Articles
     'related.title': '関連記事',
@@ -767,6 +779,10 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.anime-rangers.desc': '¡Recoge y lucha con tus personajes de anime favoritos! Construye el equipo definitivo.',
     'game.anime-vanguards.desc': '¡Defiende tu base con poderosos héroes de anime! Coloca estratégicamente a tus vanguardias.',
     'game.anime-last-stand.desc': '¡Invoca poderosas unidades de anime, evolucionalas y defiende contra oleadas infinitas! Colecciona unidades secretas y conquista cada desafío.',
+    'game.anime-defenders.desc': '¡Colecciona legendarios defensores de anime, evolucionalos y combate en etapas desafiantes! Construye el equipo de defensa definitivo.',
+    'game.arise-crossover.desc': '¡Explora múltiples mundos de anime, colecciona personajes icónicos y domina habilidades únicas! Conquista los desafíos crossover.',
+    'game.blue-lock-rivals.desc': '¡Compite en intensas batallas de fútbol anime! Construye tu equipo soño, desbloquea jugadores poderosos y domina el campo.',
+    'game.anime-saga.desc': '¡Embárcate en una épica aventura anime! Colecciona héroes, explora mazmorras, evoluciona tu equipo y conviértete en el más fuerte.',
 
     // Related Articles
     'related.title': 'Artículos Relacionados',
@@ -947,6 +963,10 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.anime-rangers.desc': 'Colete e lute com seus personagens de anime favoritos! Monte o time definitivo.',
     'game.anime-vanguards.desc': 'Defenda sua base com poderosos heróis de anime! Posicione estrategicamente suas vanguardas.',
     'game.anime-last-stand.desc': 'Invoque poderosas unidades de anime, evolua-as e defenda contra ondas infinitas! Colete unidades secretas e conquiste cada desafío.',
+    'game.anime-defenders.desc': 'Colete lendários defensores de anime, evolua-os e batalhe em estágios desafiadores! Construa a equipe de defesa definitiva.',
+    'game.arise-crossover.desc': 'Explore múltiplos mundos de anime, coleccione personagens icônicos e domine habilidades únicas! Conquiste desafios crossover.',
+    'game.blue-lock-rivals.desc': 'Compita em intensas batalhas de futebol anime! Construa seu time dos sonhos, desbloqueie jogadores poderosos e domine o campo.',
+    'game.anime-saga.desc': 'Embarque em uma épica aventura anime! Colete heróis, explore masmorras, evolua seu time e torne-se o mais forte.',
 
     // Related Articles
     'related.title': 'Artigos Relacionados',
