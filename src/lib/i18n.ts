@@ -53,6 +53,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.viewAll': 'View All',
     'home.noCodes': 'No codes articles yet.',
     'home.noTierLists': 'No tier list articles yet.',
+    'home.popularGuides': 'Popular Guides',
+    'home.noGuides': 'No guide articles yet.',
     'home.trendingSearches': 'Trending Searches',
 
     // Game card
@@ -203,6 +205,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.viewAll': '查看全部',
     'home.noCodes': '暂无兑换码文章。',
     'home.noTierLists': '暂无排行榜文章。',
+    'home.popularGuides': '热门攻略',
+    'home.noGuides': '暂无攻略文章。',
     'home.trendingSearches': '热门搜索',
 
     'game.viewGame': '查看游戏',
@@ -340,6 +344,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.viewAll': 'すべて見る',
     'home.noCodes': 'コード記事はまだありません。',
     'home.noTierLists': 'ティアリスト記事はまだありません。',
+    'home.popularGuides': '人気ガイド',
+    'home.noGuides': 'ガイド記事はまだありません。',
     'home.trendingSearches': 'トレンド検索',
 
     'game.viewGame': 'ゲームを見る',
@@ -477,6 +483,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.viewAll': 'Ver Todo',
     'home.noCodes': 'No hay artículos de códigos todavía.',
     'home.noTierLists': 'No hay artículos de tier list todavía.',
+    'home.popularGuides': 'Guías Populares',
+    'home.noGuides': 'No hay artículos de guía todavía.',
     'home.trendingSearches': 'Búsquedas Populares',
 
     'game.viewGame': 'Ver Juego',
@@ -614,6 +622,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'home.viewAll': 'Ver Tudo',
     'home.noCodes': 'Nenhum artigo de códigos ainda.',
     'home.noTierLists': 'Nenhum artigo de tier list ainda.',
+    'home.popularGuides': 'Guias Populares',
+    'home.noGuides': 'Nenhum artigo de guia ainda.',
     'home.trendingSearches': 'Pesquisas em Alta',
 
     'game.viewGame': 'Ver Jogo',

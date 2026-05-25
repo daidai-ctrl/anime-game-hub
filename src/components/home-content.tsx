@@ -127,6 +127,25 @@ export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
               </div>
             </section>
 
+            {/* Popular Guides */}
+            <section>
+              <div className="mb-4 flex items-center justify-between">
+                <h2 className="text-lg font-bold text-foreground">{t('home.popularGuides')}</h2>
+                <Link href="/guides" className="text-sm font-medium text-primary hover:underline">
+                  {t('home.viewAll')}
+                </Link>
+              </div>
+              <div className="rounded-lg border border-border bg-card">
+                {guidesArticles.length > 0 ? (
+                  guidesArticles.map((article) => (
+                    <ArticleListItem key={`${article.game}-${article.slug}`} article={article} />
+                  ))
+                ) : (
+                  <p className="p-4 text-sm text-muted-foreground">{t('home.noGuides')}</p>
+                )}
+              </div>
+            </section>
+
             {/* Latest Updates */}
             <section>
               <div className="mb-4 flex items-center justify-between">
