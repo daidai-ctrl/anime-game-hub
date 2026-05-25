@@ -18,9 +18,9 @@ const trendingSearches = [
 
 export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
   const { t, locale } = useLanguage();
-  const codesArticles = articles.filter((a) => a.category === 'codes').slice(0, 5);
-  const tierListArticles = articles.filter((a) => a.category === 'tier-list').slice(0, 5);
-  const guidesArticles = articles.filter((a) => a.category === 'guides').slice(0, 5);
+  const codesArticles = articles.filter((a) => a.category === 'codes').slice(0, 10);
+  const tierListArticles = articles.filter((a) => a.category === 'tier-list').slice(0, 10);
+  const guidesArticles = articles.filter((a) => a.category === 'guides').slice(0, 10);
 
   return (
     <>
