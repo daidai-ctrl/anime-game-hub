@@ -37,7 +37,7 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h1 className="text-3xl font-bold text-foreground sm:text-4xl">{game.name}</h1>
-              <p className="mt-2 max-w-xl text-muted-foreground">{description}</p>
+              <p className="mt-2 max-w-xl text-muted-foreground">{game.whatIs.slice(0, 120)}...</p>
               {/* Stats row */}
               <div className="mt-4 flex flex-wrap gap-4 text-sm">
                 <span className="flex items-center gap-1.5 text-emerald-400">
@@ -72,6 +72,31 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
           </div>
         </div>
       </section>
+
+      {/* Popular Topics Navigation */}
+      {game.popularTopics && game.popularTopics.length > 0 && (
+        <div className="border-b border-border bg-[#1a1d2e]/60">
+          <div className="mx-auto max-w-7xl px-4 py-4">
+            <h2 className="mb-3 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              {translate('game.popularTopics', locale)}
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {game.popularTopics.map((topic) => (
+                <Link
+                  key={topic.slug}
+                  href={`/${game.slug}/${topic.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary hover:bg-primary/5"
+                >
+                  {topic.icon && (
+                    <span className="text-xs opacity-70">{topic.icon}</span>
+                  )}
+                  {topic.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Category Navigation */}
       <div className="border-b border-border bg-card">
@@ -242,20 +267,12 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
             <div className="rounded-lg border border-border bg-card p-4">
               <h3 className="mb-3 text-sm font-semibold text-foreground">{translate('sidebar.quickLinks', locale)}</h3>
               <div className="space-y-2">
-                {codesArticles.length > 0 && (
-                  <Link href={`/${game.slug}/codes`} className="flex items-center gap-2 text-sm text-emerald-400 hover:underline">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-                    {game.name} Codes
+                {game.popularTopics && game.popularTopics.slice(0, 6).map((topic) => (
+                  <Link key={topic.slug} href={`/${game.slug}/${topic.slug}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <span className="text-xs">{topic.icon}</span>
+                    {topic.label}
                   </Link>
-                )}
-                <Link href={`/${game.slug}/${game.bestItemSlug}`} className="flex items-center gap-2 text-sm text-purple-400 hover:underline">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  {game.bestItemLabel}
-                </Link>
-                <Link href={`/${game.slug}/beginner-guide`} className="flex items-center gap-2 text-sm text-blue-400 hover:underline">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-                  {translate('game.beginnerGuide', locale)}
-                </Link>
+                ))}
               </div>
             </div>
             <AdSlot slot="footer" />

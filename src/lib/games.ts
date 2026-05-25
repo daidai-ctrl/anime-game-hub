@@ -3,6 +3,12 @@ export interface GameFAQ {
   answer: string;
 }
 
+export interface PopularTopic {
+  label: string;
+  slug: string;
+  icon?: string;
+}
+
 export interface Game {
   slug: string;
   name: string;
@@ -18,6 +24,7 @@ export interface Game {
   whatIs: string;
   bestItemLabel: string;
   bestItemSlug: string;
+  popularTopics: PopularTopic[];
   faqs: GameFAQ[];
 }
 
@@ -34,14 +41,28 @@ export const games: Game[] = [
     guidesCount: 13,
     tags: ['Adventure', 'Fruits', 'PvP'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Blox Fruits is one of the most popular Roblox anime games, inspired by the anime One Piece. Players can become master swordsmen or powerful fruit users, explore a vast world, collect Devil Fruits, battle enemies and bosses, and trade with other players. The game features regular updates with new fruits, islands, and content.',
+    whatIs: 'Blox Fruits is one of the most popular Roblox anime games, inspired by the anime One Piece. In this massive open-world adventure, players can choose to become master swordsmen or powerful Devil Fruit users as they train to become the strongest player on the seas. The game features over 100 unique Fruits with devastating abilities, dozens of powerful Swords and Fighting Styles to master, and a deep PvP system where players can battle each other on the high seas. Explore vast oceans, discover hidden islands, take on challenging Sea Events like Sea Beast raids and Ship Raids, and collect rare items through the Trading system. With regular updates bringing new Fruits, Swords, islands, and reworks, Blox Fruits offers endless content for both casual and hardcore players. Whether you prefer grinding alone, trading with others, or fighting in competitive PvP, there is something for everyone.',
     bestItemLabel: 'Best Fruits',
     bestItemSlug: 'tier-list',
+    popularTopics: [
+      { label: 'Best Fruits', slug: 'tier-list' },
+      { label: 'Best Race', slug: 'best-traits' },
+      { label: 'Best Sword', slug: 'best-dps-units' },
+      { label: 'Best Fighting Style', slug: 'best-support-units' },
+      { label: 'Trading Values', slug: 'best-farming-stages' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Tier List', slug: 'tier-list', icon: '⭐' },
+      { label: 'Leveling Guide', slug: 'leveling-guide' },
+    ],
     faqs: [
       { question: 'What are the best fruits in Blox Fruits?', answer: 'The best fruits include Dragon, Venom, Shadow, and Dough. Check our Blox Fruits Tier List for the full ranking.' },
       { question: 'How do I redeem codes in Blox Fruits?', answer: 'Open the game, tap the Twitter bird icon on the left side, enter the code, and press Try to redeem your rewards.' },
       { question: 'How often does Blox Fruits update?', answer: 'Blox Fruits typically receives major updates every 1-2 months, with smaller patches and bug fixes in between.' },
       { question: 'Is Blox Fruits free to play?', answer: 'Yes, Blox Fruits is free to play on Roblox. You can purchase in-game items with Robux, but all core gameplay is accessible for free.' },
+      { question: 'What are Sea Events in Blox Fruits?', answer: 'Sea Events include Sea Beast spawns, Ship Raids, and other ocean encounters that give valuable rewards. They appear randomly while sailing.' },
+      { question: 'How do I trade in Blox Fruits?', answer: 'You need to be at least Level 700 to unlock trading. Visit the Trading Hub to exchange fruits and items with other players.' },
+      { question: 'What is the max level in Blox Fruits?', answer: 'The current max level is 2550. The cap increases with major updates, so check our Leveling Guide for the fastest way to reach it.' },
+      { question: 'What fighting styles are best for PvP?', answer: 'Death Step, Electric Claw, and Dragon Talon are top-tier for PvP. See our Best Fighting Style guide for detailed comparisons.' },
     ],
   },
   {
@@ -56,14 +77,28 @@ export const games: Game[] = [
     guidesCount: 10,
     tags: ['Tower Defense', 'Anime', 'Collection'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Anime Rangers is a popular Roblox tower defense game where players collect anime characters, deploy them strategically to defend against waves of enemies, and upgrade their abilities. The game features characters from multiple anime series, regular updates with new units and maps.',
+    whatIs: 'Anime Rangers is a popular Roblox tower defense game where players collect iconic anime characters from multiple series and deploy them strategically to defend against waves of enemies. Build the ultimate team by summoning rare units, upgrading their abilities, and equipping powerful traits and relics. The game features a deep team-building system with DPS units, support characters, and crowd control specialists, allowing for countless strategic combinations. Earn gems through completing stages, daily quests, and limited-time events to summon more characters. With regular updates introducing new units, maps, and game modes like Challenges and Infinite Mode, Anime Rangers keeps players engaged with fresh content. Whether you are a casual collector or a competitive strategist, mastering unit placement, trait synergy, and team composition is the key to victory.',
     bestItemLabel: 'Best Units',
     bestItemSlug: 'tier-list',
+    popularTopics: [
+      { label: 'Best Units', slug: 'best-units' },
+      { label: 'Best DPS Units', slug: 'best-dps-units' },
+      { label: 'Best Support Units', slug: 'best-support-units' },
+      { label: 'Best Traits', slug: 'best-traits' },
+      { label: 'Best Teams', slug: 'best-teams' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Tier List', slug: 'tier-list', icon: '⭐' },
+      { label: 'Gems Guide', slug: 'gems-guide' },
+    ],
     faqs: [
       { question: 'What are the best units in Anime Rangers?', answer: 'The best units change with each update. Check our Anime Rangers Tier List for the current meta ranking.' },
       { question: 'How do I get more gems in Anime Rangers?', answer: 'You can earn gems by completing stages, daily quests, using codes, and participating in events. Check our Gems Guide for details.' },
       { question: 'How do I redeem codes in Anime Rangers?', answer: 'Open the game, click the Settings icon, find the code redemption box, enter your code, and press Redeem.' },
       { question: 'What is the best team comp in Anime Rangers?', answer: 'A balanced team with DPS, support, and crowd control units works best. See our Best Teams guide for specific recommendations.' },
+      { question: 'How do traits work in Anime Rangers?', answer: 'Traits are passive abilities that enhance your units. Each unit can roll different traits that affect damage, speed, or special effects. See our Best Traits guide.' },
+      { question: 'What are relics in Anime Rangers?', answer: 'Relics are powerful items that provide team-wide bonuses. Higher rarity relics give stronger effects. Check our Best Relics guide for top picks.' },
+      { question: 'How do I level up fast in Anime Rangers?', answer: 'Farm stages that give the best XP per energy, complete daily missions, and use XP boosters. Our XP Guide has the optimal routes.' },
+      { question: 'What is the best farming stage in Anime Rangers?', answer: 'The best farming stage depends on what you need. Our Best Farming Stages guide breaks down the best spots for XP, gems, and materials.' },
     ],
   },
   {
@@ -78,14 +113,28 @@ export const games: Game[] = [
     guidesCount: 11,
     tags: ['Strategy', 'Defense', 'Anime'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Anime Vanguards is a Roblox strategy defense game where players deploy powerful anime heroes to protect their base from waves of enemies. With deep team-building mechanics, trait systems, and relic enhancements, players must strategize the best combinations to conquer increasingly difficult challenges.',
+    whatIs: 'Anime Vanguards is a Roblox strategy defense game where players deploy powerful anime heroes to protect their base from relentless waves of enemies. With deep team-building mechanics, a trait system that adds unique passive bonuses, and relic enhancements that provide team-wide buffs, players must carefully strategize the best combinations to conquer increasingly difficult challenges. Collect vanguards from multiple anime universes, each with unique abilities and upgrade paths. Master the art of unit placement, time your ultimate abilities perfectly, and experiment with different team synergies to push through Story Mode, Infinite Mode, and Raid Challenges. The game regularly adds new vanguards, traits, relics, and balance patches, keeping the meta fresh and competitive. Whether you are climbing the leaderboards or just enjoying the story, Anime Vanguards rewards strategic thinking and smart resource management.',
     bestItemLabel: 'Best Vanguards',
     bestItemSlug: 'tier-list',
+    popularTopics: [
+      { label: 'Best Vanguards', slug: 'tier-list' },
+      { label: 'Best DPS', slug: 'best-dps-units' },
+      { label: 'Best Support', slug: 'best-support-units' },
+      { label: 'Best Traits', slug: 'best-traits' },
+      { label: 'Best Relics', slug: 'best-relics' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Best Teams', slug: 'best-teams' },
+      { label: 'Leveling Guide', slug: 'leveling-guide' },
+    ],
     faqs: [
       { question: 'What are the best vanguards in Anime Vanguards?', answer: 'Top vanguards change with each update. Check our Anime Vanguards Tier List for the latest rankings.' },
       { question: 'How do traits work in Anime Vanguards?', answer: 'Traits provide passive bonuses to your units. Each unit can have multiple traits that affect their stats and abilities. See our Best Traits guide.' },
       { question: 'How do I level up fast in Anime Vanguards?', answer: 'Focus on farming stages that give the most XP per energy spent. Our Leveling Guide has the optimal routes.' },
       { question: 'What are relics in Anime Vanguards?', answer: 'Relics are powerful items that provide team-wide bonuses. Check our Best Relics guide for the top picks.' },
+      { question: 'What is the best team composition in Anime Vanguards?', answer: 'The best team depends on the game mode. Generally, a mix of DPS, support, and crowd control vanguards works best. See our Best Teams guide.' },
+      { question: 'How do I get more gems in Anime Vanguards?', answer: 'Complete story stages, daily quests, participate in raids, and redeem codes. Our Gems Guide covers all the best methods.' },
+      { question: 'What is Infinite Mode in Anime Vanguards?', answer: 'Infinite Mode is an endless wave challenge where enemies get progressively stronger. It is a great way to test your team and earn rewards.' },
+      { question: 'How often does Anime Vanguards update?', answer: 'Major updates typically arrive every 2-4 weeks, with new vanguards, balance changes, and occasionally new game modes or events.' },
     ],
   },
   {
@@ -100,14 +149,28 @@ export const games: Game[] = [
     guidesCount: 9,
     tags: ['Tower Defense', 'Anime', 'Evolution'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Anime Last Stand is a Roblox tower defense game where players summon legendary anime heroes to defend against endless waves of enemies. With a deep evolution system, secret units to discover, and challenging game modes, players must build the strongest team possible to survive.',
+    whatIs: 'Anime Last Stand is a Roblox tower defense game where players summon legendary anime heroes to defend against endless waves of enemies. The game features a deep Evolution system that lets you transform your units into significantly stronger versions with new abilities and visual upgrades. Discover rare Secret Units hidden throughout the game, take on challenging game modes like Challenge Mode and Infinite Mode, and build the strongest possible team to survive. Collect gems through farming, quests, and codes to summon more heroes from the gacha system. Master the art of unit placement, understand element advantages and team synergies, and strategically evolve your units at the right time. With frequent updates adding new secret units, evolution paths, and challenging content, Anime Last Stand offers a rewarding experience for tower defense fans and anime collectors alike.',
     bestItemLabel: 'Best Units',
     bestItemSlug: 'best-units',
+    popularTopics: [
+      { label: 'Best Units', slug: 'best-units' },
+      { label: 'Secret Units', slug: 'secret-units-guide' },
+      { label: 'Relic Tier List', slug: 'relic-tier-list' },
+      { label: 'Evolution Guide', slug: 'evolution-guide' },
+      { label: 'Best Traits', slug: 'best-traits' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Tier List', slug: 'tier-list', icon: '⭐' },
+      { label: 'Challenge Guide', slug: 'challenge-guide' },
+    ],
     faqs: [
       { question: 'What are the best units in Anime Last Stand?', answer: 'The meta shifts with each update. Check our Anime Last Stand Tier List and Best Units guide for the current top picks.' },
       { question: 'How do I evolve units in Anime Last Stand?', answer: 'You need specific materials and enough currency to evolve units. Check our Evolution Guide for the full details.' },
       { question: 'Are there secret units in Anime Last Stand?', answer: 'Yes! Secret units are rare and powerful. See our Secret Units Guide for how to unlock them.' },
       { question: 'How do I get more gems in Anime Last Stand?', answer: 'Complete stages, daily quests, use codes, and participate in challenges. Our XP Guide has optimal farming strategies.' },
+      { question: 'What are relics in Anime Last Stand?', answer: 'Relics are special items that give powerful bonuses to your team. Higher-tier relics are harder to get but provide massive stat boosts. Check our Relic Tier List.' },
+      { question: 'What is Challenge Mode in Anime Last Stand?', answer: 'Challenge Mode features specially designed levels with unique modifiers and restrictions. They offer great rewards but require strategic team building. See our Challenge Guide.' },
+      { question: 'How do I redeem codes in Anime Last Stand?', answer: 'Open the game, tap the Settings icon, find the code redemption box, enter your code, and press Redeem.' },
+      { question: 'What are the best traits in Anime Last Stand?', answer: 'The best traits depend on the unit and game mode. Generally, damage-boosting and cooldown-reduction traits are strongest. See our Best Traits guide.' },
     ],
   },
   {
@@ -122,14 +185,28 @@ export const games: Game[] = [
     guidesCount: 10,
     tags: ['Tower Defense', 'Anime', 'Strategy'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Anime Defenders is a Roblox tower defense game where players collect and deploy anime heroes to protect their base from waves of enemies. With strategic placement, evolution mechanics, and challenging modes, players must build the ultimate defense team.',
+    whatIs: 'Anime Defenders is a Roblox tower defense game where players collect and deploy anime heroes to protect their base from waves of enemies. With strategic placement mechanics, a deep Evolution system that transforms your units into more powerful versions, and challenging game modes, players must build the ultimate defense team. Collect defenders from popular anime series, each with unique abilities and upgrade paths. Equip traits to enhance their performance, use relics to gain team-wide bonuses, and master the art of positioning to maximize damage output. The game features Story Mode progression, Infinite Mode for endless challenges, and limited-time events with exclusive rewards. With regular updates bringing new defenders, evolution paths, and balance changes, Anime Defenders keeps the gameplay fresh and competitive for tower defense enthusiasts.',
     bestItemLabel: 'Best Defenders',
     bestItemSlug: 'best-units',
+    popularTopics: [
+      { label: 'Best Defenders', slug: 'best-units' },
+      { label: 'Best Traits', slug: 'best-traits' },
+      { label: 'Best Teams', slug: 'best-teams' },
+      { label: 'Relic Tier List', slug: 'relic-tier-list' },
+      { label: 'Evolution Guide', slug: 'evolution-guide' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Tier List', slug: 'tier-list', icon: '⭐' },
+      { label: 'Farming Guide', slug: 'farming-guide' },
+    ],
     faqs: [
       { question: 'What are the best defenders in Anime Defenders?', answer: 'Top defenders change with updates. Check our Anime Defenders Tier List and Best Units guide for current rankings.' },
       { question: 'How do I redeem codes in Anime Defenders?', answer: 'Open the game, find the code redemption button in settings, enter your code, and press Redeem.' },
       { question: 'How do I evolve units in Anime Defenders?', answer: 'Collect the required materials from farming stages, then use the evolve feature. See our Evolution Guide for details.' },
       { question: 'What are relics in Anime Defenders?', answer: 'Relics provide powerful bonuses to your team. Check our Relic Tier List for the best ones to use.' },
+      { question: 'What is the best team composition in Anime Defenders?', answer: 'A mix of AoE damage, single-target DPS, and support defenders works best. See our Best Teams guide for specific setups.' },
+      { question: 'How do I get more gems in Anime Defenders?', answer: 'Complete stages, daily quests, redeem codes, and participate in events. Our Gems Guide covers all methods in detail.' },
+      { question: 'What are the best farming stages in Anime Defenders?', answer: 'The best stages depend on what you need. Our Farming Guide breaks down the optimal stages for XP, gems, and materials.' },
+      { question: 'How do traits work in Anime Defenders?', answer: 'Traits are passive bonuses that enhance your defenders. You can reroll traits using in-game currency. See our Best Traits guide for recommendations.' },
     ],
   },
   {
@@ -144,14 +221,28 @@ export const games: Game[] = [
     guidesCount: 10,
     tags: ['RPG', 'Anime', 'Crossover'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Arise Crossover is a Roblox RPG that brings together characters from multiple anime universes. Players can collect iconic heroes, master unique crossover abilities, explore different anime worlds, and battle through challenging content in this massive crossover adventure.',
+    whatIs: 'Arise Crossover is a Roblox RPG that brings together characters from multiple anime universes into one massive crossover adventure. Players can collect iconic heroes from different anime series, master unique crossover abilities that combine powers from multiple worlds, and explore diverse anime-inspired environments. The game features a deep summoning system where you roll for characters of varying rarities, an evolution system to upgrade your favorites, and challenging content including Story Mode, Raids, and PvP arenas. Build teams with synergistic character combinations, equip traits and relics to boost performance, and tackle increasingly difficult challenges. With regular updates introducing new anime worlds, characters, and crossover events, Arise Crossover offers a constantly evolving experience for fans of anime RPGs and crossover content.',
     bestItemLabel: 'Best Characters',
     bestItemSlug: 'best-units',
+    popularTopics: [
+      { label: 'Best Characters', slug: 'best-units' },
+      { label: 'Best Traits', slug: 'best-traits' },
+      { label: 'Best Teams', slug: 'best-teams' },
+      { label: 'Evolution Guide', slug: 'evolution-guide' },
+      { label: 'Secret Units', slug: 'secret-units-guide' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Tier List', slug: 'tier-list', icon: '⭐' },
+      { label: 'XP Guide', slug: 'xp-guide' },
+    ],
     faqs: [
       { question: 'What are the best characters in Arise Crossover?', answer: 'The best characters vary by game mode. Check our Arise Crossover Tier List and Best Units guide for rankings.' },
       { question: 'How do I get new characters in Arise Crossover?', answer: 'Characters can be obtained through summoning, events, and completing specific stages. See our Beginner Guide for tips.' },
       { question: 'How do I redeem codes in Arise Crossover?', answer: 'Open the game, go to Settings, find the code box, enter your code, and press Redeem.' },
       { question: 'What are traits in Arise Crossover?', answer: 'Traits are passive abilities that enhance your characters. Check our Best Traits guide for the top picks.' },
+      { question: 'How do I evolve characters in Arise Crossover?', answer: 'You need specific materials and currency. Each character has unique evolution requirements. See our Evolution Guide for all details.' },
+      { question: 'What are secret units in Arise Crossover?', answer: 'Secret units are rare, powerful characters hidden in the game. They have low drop rates but are extremely strong. Check our Secret Units Guide.' },
+      { question: 'How do I level up fast in Arise Crossover?', answer: 'Farm the best XP stages, complete daily quests, use XP boosters, and redeem codes. Our XP Guide has the optimal routes.' },
+      { question: 'What is the best team composition in Arise Crossover?', answer: 'It depends on the content, but generally a balanced team with a tank, DPS, and support works best. See our Best Teams guide.' },
     ],
   },
   {
@@ -166,14 +257,28 @@ export const games: Game[] = [
     guidesCount: 10,
     tags: ['Sports', 'Anime', 'Competitive'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Blue Lock Rivals is a Roblox sports game inspired by the anime Blue Lock. Players compete in intense soccer matches, build their dream teams with iconic anime players, develop strategies, and climb the competitive ranks to become the ultimate striker.',
+    whatIs: 'Blue Lock Rivals is a Roblox sports game inspired by the anime Blue Lock, where players compete in intense anime-style soccer matches. Build your dream team with iconic characters from the series, develop unique playstyles and strategies, and climb the competitive ranks to prove yourself as the ultimate striker. The game features a deep player collection system where you roll for characters of varying rarities, each with unique stats and special abilities. Equip traits to enhance your players, master different formations and tactics, and compete in both casual and ranked matches. With regular updates adding new characters, traits, and competitive events, Blue Lock Rivals captures the competitive spirit of the anime. Whether you are a fan of soccer games or anime, the blend of strategic team building and fast-paced matches offers a unique Roblox experience.',
     bestItemLabel: 'Best Players',
     bestItemSlug: 'best-units',
+    popularTopics: [
+      { label: 'Best Players', slug: 'best-units' },
+      { label: 'Best Traits', slug: 'best-traits' },
+      { label: 'Best Teams', slug: 'best-teams' },
+      { label: 'Evolution Guide', slug: 'evolution-guide' },
+      { label: 'Challenge Guide', slug: 'challenge-guide' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Tier List', slug: 'tier-list', icon: '⭐' },
+      { label: 'Farming Guide', slug: 'farming-guide' },
+    ],
     faqs: [
       { question: 'What are the best players in Blue Lock Rivals?', answer: 'Top players change with updates. Check our Blue Lock Rivals Tier List and Best Units guide for the latest rankings.' },
       { question: 'How do I redeem codes in Blue Lock Rivals?', answer: 'Open the game, find the code button on the main screen, enter your code, and press Redeem.' },
       { question: 'How do I get more XP in Blue Lock Rivals?', answer: 'Play matches, complete daily quests, and use XP boosters. Our XP Guide has the best strategies.' },
-      { question: 'What are traits in Blue Lock Rivals?', answer: 'Traits are special abilities that boost player performance. Check our Best Traits guide for optimal builds.' },
+      { question: 'What are traits in Blue Lock Rivals?', answer: 'Traits are special abilities that boost player performance on the field. Check our Best Traits guide for optimal builds.' },
+      { question: 'How do I evolve players in Blue Lock Rivals?', answer: 'Collect evolution materials from matches and events, then use the evolve feature. See our Evolution Guide for all requirements.' },
+      { question: 'What is Challenge Mode in Blue Lock Rivals?', answer: 'Challenge Mode features special matches with unique rules and modifiers. They offer great rewards and test your team building skills. See our Challenge Guide.' },
+      { question: 'How do I build the best team in Blue Lock Rivals?', answer: 'Focus on synergy between players, balance offense and defense, and use complementary traits. See our Best Teams guide for specific setups.' },
+      { question: 'Is Blue Lock Rivals pay-to-win?', answer: 'No, while you can spend Robux on summons, all content can be cleared with free-to-play units if you build smart teams and farm efficiently.' },
     ],
   },
   {
@@ -188,14 +293,28 @@ export const games: Game[] = [
     guidesCount: 10,
     tags: ['RPG', 'Anime', 'Adventure'],
     lastUpdated: '2026-05-25',
-    whatIs: 'Anime Saga is a Roblox RPG adventure where players collect anime heroes, explore dungeons, complete quests, and build the ultimate team. With deep team-building mechanics, evolution systems, and challenging boss fights, Anime Saga offers a rich anime RPG experience.',
+    whatIs: 'Anime Saga is a Roblox RPG adventure where players collect anime heroes, explore dangerous dungeons, complete epic quests, and build the ultimate team. With deep team-building mechanics featuring DPS, tank, and support roles, an Evolution system that transforms your heroes into powerful new forms, and challenging boss fights that test your strategy, Anime Saga delivers a rich anime RPG experience. Discover Secret Units hidden throughout the world, farm materials to upgrade your heroes, and tackle increasingly difficult content including Story Mode, Raids, and Infinite Dungeon. The game features a gacha summoning system, trait customization, relic equipment, and regular updates with new heroes, dungeons, and events. Whether you enjoy collecting rare characters, optimizing team compositions, or pushing through challenging content, Anime Saga offers a compelling adventure that keeps growing with each update.',
     bestItemLabel: 'Best Heroes',
     bestItemSlug: 'best-units',
+    popularTopics: [
+      { label: 'Best Heroes', slug: 'best-units' },
+      { label: 'Best Traits', slug: 'best-traits' },
+      { label: 'Best Teams', slug: 'best-teams' },
+      { label: 'Relic Tier List', slug: 'relic-tier-list' },
+      { label: 'Evolution Guide', slug: 'evolution-guide' },
+      { label: 'Codes', slug: 'codes', icon: '🔑' },
+      { label: 'Tier List', slug: 'tier-list', icon: '⭐' },
+      { label: 'Dungeon Guide', slug: 'farming-guide' },
+    ],
     faqs: [
       { question: 'What are the best heroes in Anime Saga?', answer: 'The best heroes depend on your team composition. Check our Anime Saga Tier List and Best Units guide for rankings.' },
       { question: 'How do I redeem codes in Anime Saga?', answer: 'Open the game, go to Settings, find the code redemption box, enter your code, and press Redeem.' },
       { question: 'How do I evolve heroes in Anime Saga?', answer: 'Collect evolution materials from dungeons and farming stages. Our Evolution Guide has all the details.' },
       { question: 'What is the best team comp in Anime Saga?', answer: 'A balanced team with DPS, support, and tank heroes works best. See our Best Teams guide for specifics.' },
+      { question: 'How do I get more gems in Anime Saga?', answer: 'Complete dungeons, daily quests, redeem codes, and participate in events. Our Gems Guide covers all the best methods.' },
+      { question: 'What are relics in Anime Saga?', answer: 'Relics are equippable items that provide stat bonuses and special effects to your team. Check our Relic Tier List for the best ones.' },
+      { question: 'Are there secret units in Anime Saga?', answer: 'Yes! Secret units are rare and powerful heroes that can be found through special methods. See our Secret Units Guide for details.' },
+      { question: 'What are the best farming stages in Anime Saga?', answer: 'The best stages depend on what you need. Our Farming Guide breaks down optimal stages for XP, gems, and evolution materials.' },
     ],
   },
 ];
@@ -211,22 +330,23 @@ export interface GameUpdate {
   type: 'update' | 'patch' | 'new-character' | 'new-version';
   date: string;
   href?: string;
+  slug?: string;
 }
 
 export const latestUpdates: GameUpdate[] = [
-  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Update 26 — New Fruits, Reworks & More', type: 'update', date: '2026-05-24', href: '/blox-fruits/update-26' },
-  { game: 'Anime Rangers', gameSlug: 'anime-rangers', title: 'Anime Rangers Update 4 — New Characters & Events', type: 'new-version', date: '2026-05-22', href: '/anime-rangers/tier-list' },
-  { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards New Units — Summer Banner', type: 'new-character', date: '2026-05-20', href: '/anime-vanguards/tier-list' },
-  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Eagle & Creation Fruit Released', type: 'new-character', date: '2026-05-18', href: '/blox-fruits/tier-list' },
-  { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards Balance Patch — Meta Shift', type: 'patch', date: '2026-05-15', href: '/anime-vanguards/guides' },
-  { game: 'Anime Last Stand', gameSlug: 'anime-last-stand', title: 'Anime Last Stand Update — New Secret Units & Evolution', type: 'update', date: '2026-05-25', href: '/anime-last-stand/update-guide' },
-  { game: 'Anime Last Stand', gameSlug: 'anime-last-stand', title: 'Anime Last Stand Codes — Free Gems & Summons', type: 'new-version', date: '2026-05-25', href: '/anime-last-stand/codes' },
-  { game: 'Anime Defenders', gameSlug: 'anime-defenders', title: 'Anime Defenders Update — New Defenders & Relics', type: 'update', date: '2026-05-25', href: '/anime-defenders/update-guide' },
-  { game: 'Anime Defenders', gameSlug: 'anime-defenders', title: 'Anime Defenders Codes — Free Gems & Rolls', type: 'new-version', date: '2026-05-25', href: '/anime-defenders/codes' },
-  { game: 'Arise Crossover', gameSlug: 'arise-crossover', title: 'Arise Crossover Update — New Characters & Worlds', type: 'update', date: '2026-05-25', href: '/arise-crossover/update-guide' },
-  { game: 'Arise Crossover', gameSlug: 'arise-crossover', title: 'Arise Crossover Codes — Free Summons & Currency', type: 'new-version', date: '2026-05-25', href: '/arise-crossover/codes' },
-  { game: 'Blue Lock Rivals', gameSlug: 'blue-lock-rivals', title: 'Blue Lock Rivals Update — New Characters & Modes', type: 'update', date: '2026-05-25', href: '/blue-lock-rivals/update-guide' },
-  { game: 'Blue Lock Rivals', gameSlug: 'blue-lock-rivals', title: 'Blue Lock Rivals Codes — Free Currency & Rolls', type: 'new-version', date: '2026-05-25', href: '/blue-lock-rivals/codes' },
-  { game: 'Anime Saga', gameSlug: 'anime-saga', title: 'Anime Saga Update — New Heroes & Dungeons', type: 'update', date: '2026-05-25', href: '/anime-saga/update-guide' },
-  { game: 'Anime Saga', gameSlug: 'anime-saga', title: 'Anime Saga Codes — Free Gems & Summons', type: 'new-version', date: '2026-05-25', href: '/anime-saga/codes' },
+  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Update 26 — New Fruits, Reworks & More', type: 'update', date: '2026-05-24', slug: 'update-26' },
+  { game: 'Anime Rangers', gameSlug: 'anime-rangers', title: 'Anime Rangers Update 4 — New Characters & Events', type: 'new-version', date: '2026-05-22', slug: 'tier-list' },
+  { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards New Units — Summer Banner', type: 'new-character', date: '2026-05-20', slug: 'tier-list' },
+  { game: 'Blox Fruits', gameSlug: 'blox-fruits', title: 'Blox Fruits Eagle & Creation Fruit Released', type: 'new-character', date: '2026-05-18', slug: 'tier-list' },
+  { game: 'Anime Vanguards', gameSlug: 'anime-vanguards', title: 'Anime Vanguards Balance Patch — Meta Shift', type: 'patch', date: '2026-05-15', slug: 'guides' },
+  { game: 'Anime Last Stand', gameSlug: 'anime-last-stand', title: 'Anime Last Stand Update — New Secret Units & Evolution', type: 'update', date: '2026-05-25', slug: 'update-guide' },
+  { game: 'Anime Last Stand', gameSlug: 'anime-last-stand', title: 'Anime Last Stand Codes — Free Gems & Summons', type: 'new-version', date: '2026-05-25', slug: 'codes' },
+  { game: 'Anime Defenders', gameSlug: 'anime-defenders', title: 'Anime Defenders Update — New Defenders & Relics', type: 'update', date: '2026-05-25', slug: 'update-guide' },
+  { game: 'Anime Defenders', gameSlug: 'anime-defenders', title: 'Anime Defenders Codes — Free Gems & Rolls', type: 'new-version', date: '2026-05-25', slug: 'codes' },
+  { game: 'Arise Crossover', gameSlug: 'arise-crossover', title: 'Arise Crossover Update — New Characters & Worlds', type: 'update', date: '2026-05-25', slug: 'update-guide' },
+  { game: 'Arise Crossover', gameSlug: 'arise-crossover', title: 'Arise Crossover Codes — Free Summons & Currency', type: 'new-version', date: '2026-05-25', slug: 'codes' },
+  { game: 'Blue Lock Rivals', gameSlug: 'blue-lock-rivals', title: 'Blue Lock Rivals Update — New Characters & Modes', type: 'update', date: '2026-05-25', slug: 'update-guide' },
+  { game: 'Blue Lock Rivals', gameSlug: 'blue-lock-rivals', title: 'Blue Lock Rivals Codes — Free Currency & Rolls', type: 'new-version', date: '2026-05-25', slug: 'codes' },
+  { game: 'Anime Saga', gameSlug: 'anime-saga', title: 'Anime Saga Update — New Heroes & Dungeons', type: 'update', date: '2026-05-25', slug: 'update-guide' },
+  { game: 'Anime Saga', gameSlug: 'anime-saga', title: 'Anime Saga Codes — Free Gems & Summons', type: 'new-version', date: '2026-05-25', slug: 'codes' },
 ];

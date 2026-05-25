@@ -73,6 +73,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.whatIs': 'What is {game}?',
     'game.latestCodes': 'Latest Codes',
     'game.bestGuides': 'Best Guides',
+    'game.popularTopics': 'Popular Topics',
     'game.beginnerGuide': 'Beginner Guide',
 
     // Category labels
@@ -276,6 +277,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.whatIs': '什么是{game}？',
     'game.latestCodes': '最新兑换码',
     'game.bestGuides': '最佳攻略',
+    'game.popularTopics': '热门专题',
     'game.beginnerGuide': '新手攻略',
 
     'category.codes': '兑换码',
@@ -467,6 +469,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.whatIs': '{game}とは？',
     'game.latestCodes': '最新コード',
     'game.bestGuides': 'ベストガイド',
+    'game.popularTopics': '人気トピック',
     'game.beginnerGuide': '初心者ガイド',
 
     'category.codes': 'コード',
@@ -658,6 +661,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.whatIs': '¿Qué es {game}?',
     'game.latestCodes': 'Últimos Códigos',
     'game.bestGuides': 'Mejores Guías',
+    'game.popularTopics': 'Temas Populares',
     'game.beginnerGuide': 'Guía para Principiantes',
 
     'category.codes': 'Códigos',
@@ -849,6 +853,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.whatIs': 'O que é {game}?',
     'game.latestCodes': 'Últimos Códigos',
     'game.bestGuides': 'Melhores Guias',
+    'game.popularTopics': 'Tópicos Populares',
     'game.beginnerGuide': 'Guia para Iniciantes',
 
     'category.codes': 'Códigos',
