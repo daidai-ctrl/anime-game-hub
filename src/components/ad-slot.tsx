@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface AdSlotProps {
   slot: 'header-banner' | 'sidebar' | 'in-content' | 'footer' | 'mobile-sticky';
@@ -8,31 +8,23 @@ interface AdSlotProps {
   responsive?: boolean;
 }
 
-declare global {
-  interface Window {
-    adsbygoogle: Array<Record<string, unknown>>;
-  }
-}
-
 export function AdSlot({ slot, format = 'auto', responsive = true }: AdSlotProps) {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      (window as unknown as { adsbygoogle: Array<Record<string, unknown>> }).adsbygoogle =
+        (window as unknown as { adsbygoogle: Array<Record<string, unknown>> }).adsbygoogle || [];
+      (window as unknown as { adsbygoogle: Array<Record<string, unknown>> }).adsbygoogle.push({});
     } catch {
       // AdSense not loaded yet or blocked by ad blocker
     }
-  }, []);
-
-  // In development, show placeholder
-  const isDev = process.env.COZE_PROJECT_ENV === 'DEV';
-
-  const slotIds: Record<string, string> = {
-    'header-banner': 'auto',
-    'sidebar': 'auto',
-    'in-content': 'auto',
-    'footer': 'auto',
-    'mobile-sticky': 'auto',
-  };
+  }, [mounted]);
 
   const sizeClasses: Record<string, string> = {
     'header-banner': 'h-[90px] w-full',
@@ -42,10 +34,11 @@ export function AdSlot({ slot, format = 'auto', responsive = true }: AdSlotProps
     'mobile-sticky': 'h-[50px] w-full',
   };
 
-  if (isDev) {
+  // Always render placeholder first (SSR-safe), then replace with ad on client
+  if (!mounted) {
     return (
       <div
-        className={`${sizeClasses[slot]} flex items-center justify-center rounded border border-dashed border-border bg-muted/30 text-xs text-muted-foreground`}
+        className={`${sizeClasses[slot]} flex items-center justify-center rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30 text-xs text-[#94a3b8]`}
       >
         Ad Space ({slot})
       </div>
@@ -53,12 +46,11 @@ export function AdSlot({ slot, format = 'auto', responsive = true }: AdSlotProps
   }
 
   return (
-    <div className="ad-container my-4">
+    <div className={`${sizeClasses[slot]} overflow-hidden rounded`}>
       <ins
         className="adsbygoogle"
-        style={{ display: 'block' }}
+        style={{ display: 'block', width: '100%', height: '100%' }}
         data-ad-client="ca-pub-4857703822591488"
-        data-ad-slot={slotIds[slot]}
         data-ad-format={format}
         data-full-width-responsive={responsive}
       />
