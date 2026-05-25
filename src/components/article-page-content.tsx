@@ -7,6 +7,7 @@ import type { Article, ArticleMeta } from '@/lib/content';
 import { useLanguage } from '@/components/language-provider';
 import { getCategoryLabel, formatDate, t as translate } from '@/lib/i18n';
 import { AdSlot } from '@/components/ad-slot';
+import { RelatedArticles } from '@/components/related-articles';
 
 function extractTOC(content: string): { id: string; text: string; level: number }[] {
   const headings: { id: string; text: string; level: number }[] = [];
@@ -25,12 +26,10 @@ export function ArticlePageContent({
   article,
   game,
   relatedArticles,
-  allArticles,
 }: {
   article: Article;
   game: Game | undefined;
   relatedArticles: ArticleMeta[];
-  allArticles: ArticleMeta[];
 }) {
   const { locale, t } = useLanguage();
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
@@ -41,13 +40,6 @@ export function ArticlePageContent({
   // Parse codes from content
   const activeCodes = isCodesArticle ? parseCodesFromContent(article.content, 'active') : [];
   const expiredCodes = isCodesArticle ? parseCodesFromContent(article.content, 'expired') : [];
-
-  // Get related codes articles from other games
-  const relatedCodesArticles = isCodesArticle
-    ? allArticles.filter(
-        (a) => a.category === 'codes' && a.game !== article.game && a.slug !== article.slug
-      )
-    : [];
 
   // JSON-LD structured data
   const jsonLd = {
@@ -327,48 +319,12 @@ export function ArticlePageContent({
               <AdSlot slot="in-content" />
             </div>
 
-            {/* Related Articles - Include other games' codes */}
-            {(relatedArticles.length > 0 || relatedCodesArticles.length > 0) && (
-              <section className="mt-8">
-                <h2 className="mb-4 text-xl font-bold text-foreground">{t('article.relatedArticles')}</h2>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {relatedArticles.map((related) => (
-                    <Link
-                      key={`${related.game}-${related.slug}`}
-                      href={`/${related.game}/${related.slug}`}
-                      className="group rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/50"
-                    >
-                      <span className="text-xs font-medium text-primary">
-                        {getCategoryLabel(related.category, locale)}
-                      </span>
-                      <h3 className="mt-1 font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {related.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
-                        {related.description}
-                      </p>
-                    </Link>
-                  ))}
-                  {relatedCodesArticles.map((related) => (
-                    <Link
-                      key={`${related.game}-${related.slug}`}
-                      href={`/${related.game}/${related.slug}`}
-                      className="group rounded-lg border border-border bg-card p-4 transition-all hover:border-primary/50"
-                    >
-                      <span className="text-xs font-medium text-primary">
-                        {getCategoryLabel(related.category, locale)}
-                      </span>
-                      <h3 className="mt-1 font-semibold text-foreground group-hover:text-primary transition-colors">
-                        {related.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
-                        {related.description}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </section>
-            )}
+            {/* Related Articles — Grouped by type: Codes / Tier Lists / Guides */}
+            <RelatedArticles
+              game={article.game}
+              currentSlug={article.slug}
+              currentType={article.category}
+            />
 
             {/* Trending Searches */}
             <section className="mt-8">

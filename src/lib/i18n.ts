@@ -217,6 +217,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.blox-fruits.desc': 'Become a master swordsman or a powerful blox fruit user as you train to become the strongest player. Explore the world, find new fruits, and battle enemies!',
     'game.anime-rangers.desc': 'Collect and battle with your favorite anime characters! Build the ultimate team, level up your rangers, and conquer challenging quests.',
     'game.anime-vanguards.desc': 'Defend your base with powerful anime heroes! Strategically place your vanguards, upgrade their abilities, and protect against waves of enemies.',
+
+    // Related Articles
+    'related.title': 'Related Articles',
+    'related.codes': 'Related Codes',
+    'related.tierList': 'Related Tier Lists',
+    'related.guides': 'Related Guides',
+    'related.viewAll': 'View All',
   },
 
   zh: {
@@ -392,6 +399,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.blox-fruits.desc': '成为剑术大师或强大的果实能力者，训练成为最强玩家。探索世界、寻找新果实、与敌人战斗！',
     'game.anime-rangers.desc': '收集并与您最喜爱的动漫角色一起战斗！组建最强队伍、升级您的角色、征服挑战任务。',
     'game.anime-vanguards.desc': '用强大的动漫英雄保卫基地！策略性部署守卫、升级技能、抵御敌人的进攻浪潮。',
+
+    // Related Articles
+    'related.title': '相关文章',
+    'related.codes': '相关兑换码',
+    'related.tierList': '相关排行榜',
+    'related.guides': '相关攻略',
+    'related.viewAll': '查看全部',
   },
 
   ja: {
@@ -567,6 +581,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.blox-fruits.desc': '剣術マスターまたは強力なフルーツ使いとなり、最強のプレイヤーを目指して修行しましょう。',
     'game.anime-rangers.desc': 'お気に入りのアニメキャラを集めてバトル！最強チームを組み、レンジャーをレベルアップしよう。',
     'game.anime-vanguards.desc': '強力なアニメヒーローでベースを防衛！戦略的にヴァンガードを配置し、敵の波から守ろう。',
+
+    // Related Articles
+    'related.title': '関連記事',
+    'related.codes': '関連コード',
+    'related.tierList': '関連ティアリスト',
+    'related.guides': '関連攻略',
+    'related.viewAll': 'すべて見る',
   },
 
   es: {
@@ -742,6 +763,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.blox-fruits.desc': 'Conviértete en un maestro espadachín o un poderoso usuario de frutas mientras entrenas para ser el jugador más fuerte.',
     'game.anime-rangers.desc': '¡Recoge y lucha con tus personajes de anime favoritos! Construye el equipo definitivo.',
     'game.anime-vanguards.desc': '¡Defiende tu base con poderosos héroes de anime! Coloca estratégicamente a tus vanguardias.',
+
+    // Related Articles
+    'related.title': 'Artículos Relacionados',
+    'related.codes': 'Códigos Relacionados',
+    'related.tierList': 'Tier Lists Relacionadas',
+    'related.guides': 'Guías Relacionadas',
+    'related.viewAll': 'Ver Todo',
   },
 
   pt: {
@@ -914,6 +942,13 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.blox-fruits.desc': 'Torne-se um mestre espadachim ou um poderoso usuário de frutas enquanto treina para ser o jogador mais forte.',
     'game.anime-rangers.desc': 'Colete e lute com seus personagens de anime favoritos! Monte o time definitivo.',
     'game.anime-vanguards.desc': 'Defenda sua base com poderosos heróis de anime! Posicione estrategicamente suas vanguardas.',
+
+    // Related Articles
+    'related.title': 'Artigos Relacionados',
+    'related.codes': 'Códigos Relacionados',
+    'related.tierList': 'Tier Lists Relacionadas',
+    'related.guides': 'Guias Relacionados',
+    'related.viewAll': 'Ver Tudo',
   },
 };
 
