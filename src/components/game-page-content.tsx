@@ -109,7 +109,7 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
         <div className="mx-auto max-w-7xl px-4">
           <nav className="flex gap-1 overflow-x-auto py-2" aria-label="Game categories">
             <button
-              onClick={() => { setActiveCategory(null); document.getElementById('articles-section')?.scrollIntoView({ behavior: 'smooth' }); }}
+              onClick={() => { setActiveCategory(null); document.getElementById('articles')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
               className={`shrink-0 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                 !activeCategory
                   ? 'bg-primary text-primary-foreground'
@@ -123,7 +123,7 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
               return (
                 <button
                   key={cat}
-                  onClick={() => { setActiveCategory(cat); document.getElementById('articles-section')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  onClick={() => { setActiveCategory(cat); document.getElementById('articles')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                   disabled={!hasContent}
                   className={`shrink-0 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                     activeCategory === cat
@@ -265,7 +265,7 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
             )}
 
             {/* All Articles List */}
-            <section id="articles">
+            <section id="articles" className="scroll-mt-20">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-foreground">{translate('game.latestContent', locale)}</h2>
                 {activeCategory && (
