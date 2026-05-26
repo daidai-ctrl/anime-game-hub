@@ -3,7 +3,8 @@ import { getAllArticles } from '@/lib/content';
 import { games } from '@/lib/games';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = `https://${process.env.COZE_PROJECT_DOMAIN_DEFAULT || 'animegamehub.com'}`;
+  const rawDomain = process.env.COZE_PROJECT_DOMAIN_DEFAULT || 'animegamehub.xyz';
+  const baseUrl = rawDomain.startsWith('https://') ? rawDomain : `https://${rawDomain}`;
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
