@@ -170,6 +170,21 @@ export const articles: ArticleEntry[] = [
   { slug: 'update-guide', title: 'Anime Saga Update Guide (2026) – All Updates & Patch Notes', game: 'anime-saga', type: 'guides' },
   { slug: 'patch-notes', title: 'Anime Saga Patch Notes (2026) – Latest Balance Changes', game: 'anime-saga', type: 'guides' },
   { slug: 'challenge-guide', title: 'Anime Saga Challenge Guide (2026) – How to Beat All Challenges', game: 'anime-saga', type: 'guides' },
+  // Roll an Anime
+  { slug: 'beginner-guide', title: 'Roll an Anime Beginner Guide (2026) – How to Start Strong', game: 'roll-an-anime', type: 'guides' },
+  { slug: 'best-characters', title: 'Roll an Anime Best Characters (2026) – Top 10 Must-Have Units', game: 'roll-an-anime', type: 'tier-list' },
+  { slug: 'cash-farming-guide', title: 'Roll an Anime Cash Farming Guide (2026) – Fastest Methods to Earn Cash', game: 'roll-an-anime', type: 'guides' },
+  { slug: 'codes', title: 'Roll an Anime Codes (2026) – Free Rolls, Cash & Luck Boosts', game: 'roll-an-anime', type: 'codes' },
+  { slug: 'expired-codes', title: 'Roll an Anime Expired Codes (2026) – List of All Inactive Codes', game: 'roll-an-anime', type: 'codes' },
+  { slug: 'luck-boost-guide', title: 'Roll an Anime Luck Boost Guide (2026) – Maximize Your Rare Pulls', game: 'roll-an-anime', type: 'guides' },
+  { slug: 'tier-list', title: 'Roll an Anime Tier List (2026) – All Characters Ranked from S to D', game: 'roll-an-anime', type: 'tier-list' },
+  // Anime Story 2
+  { slug: 'beginner-guide', title: 'Anime Story 2 Beginner Guide (2026) – Complete Walkthrough for New Players', game: 'anime-story-2', type: 'guides' },
+  { slug: 'best-units', title: 'Anime Story 2 Best Units (2026) – Top 10 Units for Every Game Mode', game: 'anime-story-2', type: 'tier-list' },
+  { slug: 'codes', title: 'Anime Story 2 Codes (2026) – Free Gems, Upgrades & Unlocks', game: 'anime-story-2', type: 'codes' },
+  { slug: 'how-to-unlock-units', title: 'Anime Story 2 How to Unlock Units (2026) – All Unlock Methods & Requirements', game: 'anime-story-2', type: 'guides' },
+  { slug: 'tier-list', title: 'Anime Story 2 Tier List (2026) – All Units Ranked from S to D', game: 'anime-story-2', type: 'tier-list' },
+  { slug: 'upgrade-guide', title: 'Anime Story 2 Upgrade Guide (2026) – Fastest Upgrade Paths & Materials', game: 'anime-story-2', type: 'guides' },
 ];
 
 /**

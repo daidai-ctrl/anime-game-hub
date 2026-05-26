@@ -228,6 +228,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.arise-crossover.desc': 'Explore multiple anime worlds, collect iconic characters, and master unique abilities! Conquer crossover challenges and build the strongest team.',
     'game.blue-lock-rivals.desc': 'Compete in intense anime soccer battles! Build your dream team, unlock powerful players, and dominate the field in this competitive Roblox experience.',
     'game.anime-saga.desc': 'Embark on an epic anime adventure! Collect heroes, explore dungeons, evolve your team, and become the strongest in this Roblox RPG saga.',
+    'game.roll-an-anime.desc': 'Roll for your favorite anime characters! Test your luck, collect rare units, boost your rolls, and build the ultimate anime team in this gacha-style Roblox game.',
+    'game.anime-story-2.desc': 'Continue your anime story! Collect powerful units, upgrade your roster, unlock secret characters, and battle through an immersive campaign in this Roblox sequel.',
 
     // Related Articles
     'related.title': 'Related Articles',
@@ -420,6 +422,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.arise-crossover.desc': '探索多个动漫世界、收集标志性角色、掌握独特技能！征服跨界挑战，组建最强团队。',
     'game.blue-lock-rivals.desc': '在激烈的动漫足球对战中竞技！组建梦之队、解锁强力球员、统治球场。',
     'game.anime-saga.desc': '踏上史诗般的动漫冒险！收集英雄、探索地牢、进化团队，成为这个Roblox RPG传奇中最强者。',
+    'game.roll-an-anime.desc': '抽取你最喜欢的动漫角色！测试运气、收集稀有角色、提升抽卡概率，打造最强动漫团队。',
+    'game.anime-story-2.desc': '继续你的动漫故事！收集强力角色、升级阵容、解锁隐藏角色，在这个Roblox续作中征战沉浸式战役。',
 
     // Related Articles
     'related.title': '相关文章',
@@ -612,6 +616,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.arise-crossover.desc': '複数のアニメ世界を探索、象徴的なキャラを集め、ユニークな能力をマスター！クロスオーバーチャレンジを征服しよう。',
     'game.blue-lock-rivals.desc': '激しいアニメサッカーバトルで競え！ドリームチームを組み、強力な選手を解放し、フィールドを支配しよう。',
     'game.anime-saga.desc': '壮大なアニメ冒険に出発！ヒーローを集め、ダンジョンを探索、チームを進化させ、最強を目指そう。',
+    'game.roll-an-anime.desc': 'お気に入りのアニメキャラをガチャで入手！運を試し、レアユニットを集め、ガシャ確率をブーストして最強チームを構築しよう。',
+    'game.anime-story-2.desc': 'アニメストーリーの続編！強力なユニットを集め、ロスターをアップグレード、隠しキャラをアンロックして戦い抜こう。',
 
     // Related Articles
     'related.title': '関連記事',
@@ -804,6 +810,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.arise-crossover.desc': '¡Explora múltiples mundos de anime, colecciona personajes icónicos y domina habilidades únicas! Conquista los desafíos crossover.',
     'game.blue-lock-rivals.desc': '¡Compite en intensas batallas de fútbol anime! Construye tu equipo soño, desbloquea jugadores poderosos y domina el campo.',
     'game.anime-saga.desc': '¡Embárcate en una épica aventura anime! Colecciona héroes, explora mazmorras, evoluciona tu equipo y conviértete en el más fuerte.',
+    'game.roll-an-anime.desc': '¡Haz rolls para conseguir tus personajes anime favoritos! Pon a prueba tu suerte, colecciona unidades raras y forma el equipo definitivo.',
+    'game.anime-story-2.desc': '¡Continúa tu historia anime! Colecciona unidades poderosas, mejora tu elenco, desbloquea personajes secretos y combate en la campaña.',
 
     // Related Articles
     'related.title': 'Artículos Relacionados',
@@ -993,6 +1001,8 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.arise-crossover.desc': 'Explore múltiplos mundos de anime, coleccione personagens icônicos e domine habilidades únicas! Conquiste desafios crossover.',
     'game.blue-lock-rivals.desc': 'Compita em intensas batalhas de futebol anime! Construa seu time dos sonhos, desbloqueie jogadores poderosos e domine o campo.',
     'game.anime-saga.desc': 'Embarque em uma épica aventura anime! Colete heróis, explore masmorras, evolua seu time e torne-se o mais forte.',
+    'game.roll-an-anime.desc': 'Faça rolls para conseguir seus personagens anime favoritos! Teste sua sorte, coleione unidades raras e monte o time definitivo.',
+    'game.anime-story-2.desc': 'Continue sua história anime! Colete unidades poderosas, melhore seu elenco, desbloqueie personagens secretos e lute na campanha.',
 
     // Related Articles
     'related.title': 'Artigos Relacionados',
