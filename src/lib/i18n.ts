@@ -69,6 +69,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Game page
     'game.latestContent': 'Latest Content',
+    'game.allContent': 'All',
     'game.noContent': 'No content available yet for {game}.',
     'game.whatIs': 'What is {game}?',
     'game.latestCodes': 'Latest Codes',
@@ -275,6 +276,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.lastUpdated': '{date} 更新',
 
     'game.latestContent': '最新内容',
+    'game.allContent': '全部',
     'game.noContent': '{game} 暂无可用内容。',
     'game.whatIs': '什么是{game}？',
     'game.latestCodes': '最新兑换码',
@@ -469,6 +471,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.lastUpdated': '{date} 更新',
 
     'game.latestContent': '最新コンテンツ',
+    'game.allContent': 'すべてのコンテンツ',
     'game.noContent': '{game}のコンテンツはまだありません。',
     'game.whatIs': '{game}とは？',
     'game.latestCodes': '最新コード',
@@ -663,6 +666,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.lastUpdated': 'Actualizado {date}',
 
     'game.latestContent': 'Último Contenido',
+    'game.allContent': 'Todo el Contenido',
     'game.noContent': 'No hay contenido disponible para {game} todavía.',
     'game.whatIs': '¿Qué es {game}?',
     'game.latestCodes': 'Últimos Códigos',
@@ -857,6 +861,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'game.lastUpdated': 'Atualizado {date}',
 
     'game.latestContent': 'Último Conteúdo',
+    'game.allContent': 'Todo o Conteúdo',
     'game.noContent': 'Nenhum conteúdo disponível para {game} ainda.',
     'game.whatIs': 'O que é {game}?',
     'game.latestCodes': 'Últimos Códigos',

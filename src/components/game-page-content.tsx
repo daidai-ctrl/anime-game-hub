@@ -14,11 +14,17 @@ const categorySlugs = ['codes', 'tier-list', 'guides', 'updates', 'fixes'] as co
 export function GamePageContent({ game, articles }: { game: Game; articles: ArticleMeta[] }) {
   const { locale } = useLanguage();
   const description = getGameDescription(game.slug, locale);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   // Split articles by category
   const codesArticles = articles.filter((a) => a.category === 'codes').slice(0, 3);
   const tierListArticles = articles.filter((a) => a.category === 'tier-list').slice(0, 3);
   const guidesArticles = articles.filter((a) => a.category === 'guides').slice(0, 6);
+  
+  // Filtered articles for the list section
+  const filteredArticles = activeCategory
+    ? articles.filter((a) => a.category === activeCategory)
+    : articles;
 
   return (
     <>
@@ -98,24 +104,37 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
         </div>
       )}
 
-      {/* Category Navigation */}
+      {/* Category Navigation - local filter */}
       <div className="border-b border-border bg-card">
         <div className="mx-auto max-w-7xl px-4">
           <nav className="flex gap-1 overflow-x-auto py-2" aria-label="Game categories">
+            <button
+              onClick={() => { setActiveCategory(null); document.getElementById('articles-section')?.scrollIntoView({ behavior: 'smooth' }); }}
+              className={`shrink-0 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+                !activeCategory
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-foreground hover:bg-muted hover:text-primary'
+              }`}
+            >
+              {translate('game.allContent', locale)}
+            </button>
             {categorySlugs.map((cat) => {
               const hasContent = articles.some((a) => a.category === cat);
               return (
-                <Link
+                <button
                   key={cat}
-                  href={`/${game.slug}/${cat}`}
+                  onClick={() => { setActiveCategory(cat); document.getElementById('articles-section')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  disabled={!hasContent}
                   className={`shrink-0 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
-                    hasContent
-                      ? 'text-foreground hover:bg-muted hover:text-primary'
-                      : 'text-muted-foreground/50 pointer-events-none'
+                    activeCategory === cat
+                      ? 'bg-primary text-primary-foreground'
+                      : hasContent
+                        ? 'text-foreground hover:bg-muted hover:text-primary'
+                        : 'text-muted-foreground/50 cursor-not-allowed'
                   }`}
                 >
                   {getCategoryLabel(cat, locale)}
-                </Link>
+                </button>
               );
             })}
           </nav>
@@ -246,11 +265,21 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
             )}
 
             {/* All Articles List */}
-            <section>
-              <h2 className="mb-4 text-xl font-bold text-foreground">{translate('game.latestContent', locale)}</h2>
-              {articles.length > 0 ? (
+            <section id="articles">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-bold text-foreground">{translate('game.latestContent', locale)}</h2>
+                {activeCategory && (
+                  <button
+                    onClick={() => setActiveCategory(null)}
+                    className="text-sm text-primary hover:underline"
+                  >
+                    {translate('common.viewAll', locale)}
+                  </button>
+                )}
+              </div>
+              {filteredArticles.length > 0 ? (
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {articles.map((article) => (
+                  {filteredArticles.map((article) => (
                     <ArticleCard key={`${article.game}-${article.slug}`} article={article} />
                   ))}
                 </div>
