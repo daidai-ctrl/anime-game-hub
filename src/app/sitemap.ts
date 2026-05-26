@@ -24,6 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const communityRankingPages: MetadataRoute.Sitemap = games.map((game) => ({
+    url: `${baseUrl}/${game.slug}/community-ranking`,
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 0.8,
+  }));
+
   const articlePages: MetadataRoute.Sitemap = getAllArticles().map((article) => ({
     url: `${baseUrl}/${article.game}/${article.slug}`,
     lastModified: new Date(article.date),
@@ -31,5 +38,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...gamePages, ...articlePages];
+  return [...staticPages, ...gamePages, ...communityRankingPages, ...articlePages];
 }

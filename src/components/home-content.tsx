@@ -86,6 +86,34 @@ export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
           </div>
         </section>
 
+        {/* Community Rankings */}
+        <section className="mb-10">
+          <div className="mb-5 flex items-center justify-between">
+            <h2 className="text-xl font-bold text-foreground">{t('home.communityRankings')}</h2>
+            <span className="text-sm text-muted-foreground">{t('home.basedOnVotes')}</span>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {games.slice(0, 6).map((game) => (
+              <Link
+                key={game.slug}
+                href={`/${game.slug}/community-ranking`}
+                className="group flex items-center gap-4 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary hover:bg-primary/5"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-xl">
+                  🔥
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{game.name}</h3>
+                  <p className="mt-0.5 text-sm text-muted-foreground">{t('home.viewRankings')}</p>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">

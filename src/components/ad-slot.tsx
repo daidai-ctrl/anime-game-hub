@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 interface AdSlotProps {
-  slot: 'header-banner' | 'sidebar' | 'in-content' | 'footer' | 'mobile-sticky';
+  slot: 'header-banner' | 'sidebar' | 'in-content' | 'footer' | 'mobile-sticky' | 'ranking-mid' | 'ranking-sidebar';
   format?: 'auto' | 'rectangle' | 'horizontal' | 'vertical';
   responsive?: boolean;
 }
