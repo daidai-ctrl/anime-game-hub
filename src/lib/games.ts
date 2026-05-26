@@ -340,7 +340,7 @@ export const games: Game[] = [
       { label: 'Cash Farming', slug: 'cash-farming-guide' },
       { label: 'Beginner Guide', slug: 'beginner-guide' },
       { label: 'Expired Codes', slug: 'expired-codes' },
-      { label: 'Update Guide', slug: 'update-guide' },
+      { label: 'Luck Boost', slug: 'luck-boost-guide' },
     ],
     faqs: [
       { question: 'What is Roll an Anime?', answer: 'Roll an Anime is a Roblox gacha game where you roll for anime-inspired characters of different rarities, build teams, and compete on leaderboards.' },

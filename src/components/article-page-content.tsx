@@ -425,16 +425,113 @@ export function ArticlePageContent({
 }
 
 function getTrendingSearches(gameSlug: string, gameName: string): { label: string; href: string }[] {
-  return [
-    { label: `${gameName} Tier List`, href: `/${gameSlug}/tier-list` },
-    { label: `${gameName} Codes`, href: `/${gameSlug}/codes` },
-    { label: `${gameName} Best Units`, href: `/${gameSlug}/best-dps-units` },
-    { label: `${gameName} Best DPS`, href: `/${gameSlug}/best-dps-units` },
-    { label: `${gameName} Leveling Guide`, href: `/${gameSlug}/leveling-guide` },
-    { label: `${gameName} Best Teams`, href: `/${gameSlug}/best-teams` },
-    { label: `${gameName} Update History`, href: `/${gameSlug}/update-history` },
-    { label: `${gameName} XP Guide`, href: `/${gameSlug}/xp-guide` },
+  // Only link to articles that actually exist for each game
+  const gameArticles: Record<string, { label: string; slug: string }[]> = {
+    'blox-fruits': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best DPS`, slug: 'best-dps-units' },
+      { label: `${gameName} Best Support`, slug: 'best-support-units' },
+      { label: `${gameName} Best Teams`, slug: 'best-teams' },
+      { label: `${gameName} Leveling Guide`, slug: 'leveling-guide' },
+      { label: `${gameName} XP Guide`, slug: 'xp-guide' },
+      { label: `${gameName} Update History`, slug: 'update-history' },
+    ],
+    'anime-rangers': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best DPS`, slug: 'best-dps-units' },
+      { label: `${gameName} Best Support`, slug: 'best-support-units' },
+      { label: `${gameName} Best Teams`, slug: 'best-teams' },
+      { label: `${gameName} Leveling Guide`, slug: 'leveling-guide' },
+      { label: `${gameName} XP Guide`, slug: 'xp-guide' },
+      { label: `${gameName} Update History`, slug: 'update-history' },
+    ],
+    'anime-vanguards': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best DPS`, slug: 'best-dps-units' },
+      { label: `${gameName} Best Support`, slug: 'best-support-units' },
+      { label: `${gameName} Best Teams`, slug: 'best-teams' },
+      { label: `${gameName} Leveling Guide`, slug: 'leveling-guide' },
+      { label: `${gameName} Gems Guide`, slug: 'gems-guide' },
+      { label: `${gameName} Update History`, slug: 'update-history' },
+    ],
+    'anime-last-stand': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best Units`, slug: 'best-units' },
+      { label: `${gameName} Beginner Guide`, slug: 'beginner-guide' },
+      { label: `${gameName} Farming Guide`, slug: 'farming-guide' },
+      { label: `${gameName} Evolution Guide`, slug: 'evolution-guide' },
+      { label: `${gameName} Relic Tier List`, slug: 'relic-tier-list' },
+      { label: `${gameName} Challenge Guide`, slug: 'challenge-guide' },
+    ],
+    'anime-defenders': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best Units`, slug: 'best-units' },
+      { label: `${gameName} Beginner Guide`, slug: 'beginner-guide' },
+      { label: `${gameName} Farming Guide`, slug: 'farming-guide' },
+      { label: `${gameName} Evolution Guide`, slug: 'evolution-guide' },
+      { label: `${gameName} Relic Tier List`, slug: 'relic-tier-list' },
+      { label: `${gameName} Challenge Guide`, slug: 'challenge-guide' },
+    ],
+    'arise-crossover': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best Units`, slug: 'best-units' },
+      { label: `${gameName} Beginner Guide`, slug: 'beginner-guide' },
+      { label: `${gameName} Farming Guide`, slug: 'farming-guide' },
+      { label: `${gameName} Evolution Guide`, slug: 'evolution-guide' },
+      { label: `${gameName} Relic Tier List`, slug: 'relic-tier-list' },
+      { label: `${gameName} Challenge Guide`, slug: 'challenge-guide' },
+    ],
+    'blue-lock-rivals': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best Units`, slug: 'best-units' },
+      { label: `${gameName} Beginner Guide`, slug: 'beginner-guide' },
+      { label: `${gameName} Farming Guide`, slug: 'farming-guide' },
+      { label: `${gameName} Evolution Guide`, slug: 'evolution-guide' },
+      { label: `${gameName} Relic Tier List`, slug: 'relic-tier-list' },
+      { label: `${gameName} Challenge Guide`, slug: 'challenge-guide' },
+    ],
+    'anime-saga': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best Units`, slug: 'best-units' },
+      { label: `${gameName} Beginner Guide`, slug: 'beginner-guide' },
+      { label: `${gameName} Farming Guide`, slug: 'farming-guide' },
+      { label: `${gameName} Evolution Guide`, slug: 'evolution-guide' },
+      { label: `${gameName} Relic Tier List`, slug: 'relic-tier-list' },
+      { label: `${gameName} Challenge Guide`, slug: 'challenge-guide' },
+    ],
+    'roll-an-anime': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best Characters`, slug: 'best-characters' },
+      { label: `${gameName} Beginner Guide`, slug: 'beginner-guide' },
+      { label: `${gameName} Luck Boost Guide`, slug: 'luck-boost-guide' },
+      { label: `${gameName} Cash Farming`, slug: 'cash-farming-guide' },
+      { label: `${gameName} Expired Codes`, slug: 'expired-codes' },
+    ],
+    'anime-story-2': [
+      { label: `${gameName} Tier List`, slug: 'tier-list' },
+      { label: `${gameName} Codes`, slug: 'codes' },
+      { label: `${gameName} Best Units`, slug: 'best-units' },
+      { label: `${gameName} Beginner Guide`, slug: 'beginner-guide' },
+      { label: `${gameName} Upgrade Guide`, slug: 'upgrade-guide' },
+      { label: `${gameName} How to Unlock Units`, slug: 'how-to-unlock-units' },
+    ],
+  };
+
+  const articles = gameArticles[gameSlug] || [
+    { label: `${gameName} Tier List`, slug: 'tier-list' },
+    { label: `${gameName} Codes`, slug: 'codes' },
   ];
+
+  return articles.map(a => ({ label: a.label, href: `/${gameSlug}/${a.slug}` }));
 }
 
 interface ParsedCode {
