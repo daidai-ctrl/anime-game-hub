@@ -185,6 +185,9 @@ export const articles: ArticleEntry[] = [
   { slug: 'how-to-unlock-units', title: 'Anime Story 2 How to Unlock Units (2026) – All Unlock Methods & Requirements', game: 'anime-story-2', type: 'guides' },
   { slug: 'tier-list', title: 'Anime Story 2 Tier List (2026) – All Units Ranked from S to D', game: 'anime-story-2', type: 'tier-list' },
   { slug: 'upgrade-guide', title: 'Anime Story 2 Upgrade Guide (2026) – Fastest Upgrade Paths & Materials', game: 'anime-story-2', type: 'guides' },
+  { slug: 'best-teams', title: 'Anime Story 2 Best Teams (2026) – Optimal Team Compositions for Every Mode', game: 'anime-story-2', type: 'guides' },
+  { slug: 'farming-guide', title: 'Anime Story 2 Farming Guide (2026) – Best Stages for Gems, Materials & XP', game: 'anime-story-2', type: 'guides' },
+  { slug: 'best-traits', title: 'Anime Story 2 Best Traits (2026) – All Traits Ranked & Best Combinations', game: 'anime-story-2', type: 'tier-list' },
 ];
 
 /**
