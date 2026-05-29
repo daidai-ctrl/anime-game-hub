@@ -106,6 +106,20 @@ export function CommunityRankingContent({ gameSlug }: CommunityRankingContentPro
 
   const currentRankings = rankings[activeCategory] || [];
 
+  // Fallback to ranking-items.ts candidate list when API returns empty
+  const activeCategoryData = categories.find((cat) => cat.id === activeCategory);
+  const fallbackRankings: RankingResult[] = activeCategoryData
+    ? activeCategoryData.items.map((item) => ({
+        item_id: item.id,
+        item_name: item.name,
+        avg_score: 0,
+        total_votes: 0,
+        recent_votes: 0,
+      }))
+    : [];
+
+  const displayRankings = currentRankings.length > 0 ? currentRankings : fallbackRankings;
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
       {/* Breadcrumb */}
@@ -165,13 +179,13 @@ export function CommunityRankingContent({ gameSlug }: CommunityRankingContentPro
                 <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
                 {t('ranking.loading')}
               </div>
-            ) : currentRankings.length === 0 ? (
+            ) : displayRankings.length === 0 ? (
               <div className="p-8 text-center text-muted-foreground">
                 {t('ranking.noRankings')}
               </div>
             ) : (
               <div className="divide-y divide-border">
-                {currentRankings.map((item, index) => (
+                {displayRankings.map((item, index) => (
                   <RankingItemRow
                     key={item.item_id}
                     item={item}

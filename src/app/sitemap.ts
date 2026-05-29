@@ -2,6 +2,9 @@ import type { MetadataRoute } from 'next';
 import { getAllArticles } from '@/lib/content';
 import { games } from '@/lib/games';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const rawDomain = process.env.COZE_PROJECT_DOMAIN_DEFAULT || 'animegamehub.xyz';
   const baseUrl = rawDomain.startsWith('https://') ? rawDomain : `https://${rawDomain}`;
@@ -15,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
     { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.2 },
     { url: `${baseUrl}/disclaimer`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${baseUrl}/anime-story-2/community-rankings`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
   ];
 
   const gamePages: MetadataRoute.Sitemap = games.map((game) => ({
