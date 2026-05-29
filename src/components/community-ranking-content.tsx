@@ -155,6 +155,11 @@ export function CommunityRankingContent({ gameSlug }: CommunityRankingContentPro
 
           {/* Rankings List */}
           <div className="rounded-lg border border-border bg-card">
+            {totalVotes === 0 && (
+              <div className="border-b border-border bg-muted/30 px-5 py-3 text-sm text-muted-foreground">
+                {t('ranking.noVotesYet')}
+              </div>
+            )}
             {loading ? (
               <div className="p-8 text-center text-muted-foreground">
                 <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
@@ -185,23 +190,28 @@ export function CommunityRankingContent({ gameSlug }: CommunityRankingContentPro
 
           {/* Editor's Starter Ranking — shown when community votes are low */}
           {totalVotes < 10 && editorStarterRankings[gameSlug] && (
-            <section className="rounded-lg border border-border bg-card p-6">
-              <h2 className="mb-2 text-lg font-bold text-foreground">{t('ranking.editorTitle')}</h2>
-              <p className="mb-4 text-sm text-muted-foreground">{t('ranking.editorNote')}</p>
+            <section className="rounded-lg border-2 border-primary/30 bg-card p-6">
+              <div className="mb-3 flex items-center gap-2">
+                <span className="text-xl">📝</span>
+                <h2 className="text-xl font-bold text-foreground">{t('ranking.editorTitle')}</h2>
+              </div>
+              <div className="mb-5 rounded-md border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-foreground">
+                {t('ranking.editorNote')}
+              </div>
               <ol className="space-y-3">
                 {editorStarterRankings[gameSlug].items.map((item, index) => (
                   <li key={item.name} className="flex items-start gap-3">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
                       {index + 1}
                     </span>
                     <div>
-                      <span className="font-medium text-foreground">{item.name}</span>
+                      <span className="font-semibold text-foreground">{item.name}</span>
                       <span className="text-muted-foreground"> – {item.description}</span>
                     </div>
                   </li>
                 ))}
               </ol>
-              <p className="mt-4 text-xs text-muted-foreground">{t('ranking.editorDisclaimer')}</p>
+              <p className="mt-5 text-xs text-muted-foreground italic">{t('ranking.editorDisclaimer')}</p>
             </section>
           )}
 

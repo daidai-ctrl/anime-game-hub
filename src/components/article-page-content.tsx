@@ -598,6 +598,10 @@ function renderMarkdownToHtml(content: string): string {
   let html = content;
 
   // Process headers with IDs
+  html = html.replace(/^#### (.+)$/gm, (_match: string, text: string) => {
+    const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    return `<h4 id="${id}">${text}</h4>`;
+  });
   html = html.replace(/^### (.+)$/gm, (_match: string, text: string) => {
     const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
     return `<h3 id="${id}">${text}</h3>`;
@@ -606,6 +610,13 @@ function renderMarkdownToHtml(content: string): string {
     const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
     return `<h2 id="${id}">${text}</h2>`;
   });
+  html = html.replace(/^# (.+)$/gm, (_match: string, text: string) => {
+    const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    return `<h1 id="${id}">${text}</h1>`;
+  });
+
+  // Process images
+  html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />');
 
   // Bold
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
