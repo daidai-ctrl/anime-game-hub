@@ -303,7 +303,7 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
                     {topic.label}
                   </Link>
                 ))}
-                <Link href={`/${game.slug}/community-ranking`} className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                <Link href={`/${game.slug}/community-rankings`} className="flex items-center gap-2 text-sm font-medium text-primary hover:underline">
                   <span className="text-xs">🔥</span>
                   {translate('ranking.title', locale)}
                 </Link>

@@ -318,7 +318,7 @@ export function CommunityRankingContent({ gameSlug }: CommunityRankingContentPro
                   return (
                     <li key={slug}>
                       <Link
-                        href={`/${slug}/community-ranking`}
+                        href={`/${slug}/community-rankings`}
                         className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
                       >
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
@@ -343,7 +343,7 @@ export function CommunityRankingContent({ gameSlug }: CommunityRankingContentPro
             '@type': 'WebPage',
             name: `${game.name} Community Rankings (2026)`,
             description: `Vote and view community rankings for ${game.name}. Updated daily based on player votes.`,
-            url: `/${gameSlug}/community-ranking`,
+            url: `/${gameSlug}/community-rankings`,
             isPartOf: {
               '@type': 'WebSite',
               name: 'AnimeGameHub',

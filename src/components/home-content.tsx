@@ -96,7 +96,7 @@ export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
             {games.slice(0, 6).map((game) => (
               <Link
                 key={game.slug}
-                href={`/${game.slug}/community-ranking`}
+                href={`/${game.slug}/community-rankings`}
                 className="group flex items-center gap-4 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary hover:bg-primary/5"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-xl">

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: CommunityRankingPageProps): P
       description,
     },
     alternates: {
-      canonical: `/${gameSlug}/community-ranking`,
+      canonical: `/${gameSlug}/community-rankings`,
     },
   };
 }

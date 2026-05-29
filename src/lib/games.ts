@@ -383,7 +383,7 @@ export const games: Game[] = [
       { label: 'How to Get Gems', slug: 'how-to-get-gems' },
       { label: 'Reroll Guide', slug: 'reroll-guide' },
       { label: 'Discord / Trello / Wiki', slug: 'discord-trello-wiki' },
-      { label: 'Community Rankings', slug: 'community-ranking' },
+      { label: 'Community Rankings', slug: 'community-rankings' },
     ],
     faqs: [
       { question: 'What is Anime Story 2?', answer: 'Anime Story 2 is a Roblox RPG where you explore anime worlds, unlock powerful units, upgrade your team, and progress through story chapters.' },

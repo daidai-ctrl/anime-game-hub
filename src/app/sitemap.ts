@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const communityRankingPages: MetadataRoute.Sitemap = games.map((game) => ({
-    url: `${baseUrl}/${game.slug}/community-ranking`,
+    url: `${baseUrl}/${game.slug}/community-rankings`,
     lastModified: new Date(),
     changeFrequency: 'daily' as const,
     priority: 0.8,
