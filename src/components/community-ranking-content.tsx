@@ -7,6 +7,34 @@ import { getRankingCategories, type RankingCategory, type RankingResult, scoreLa
 import { getGame } from '@/lib/games';
 import { AdSlot } from '@/components/ad-slot';
 
+const editorStarterRankings: Record<string, { name: string; items: { name: string; description: string }[] }> = {
+  'anime-story-2': {
+    name: 'Anime Story 2',
+    items: [
+      { name: 'Dragon Emperor', description: 'Strong damage and reliable carry potential.' },
+      { name: 'Celestial Knight', description: 'Durable frontline option for many teams.' },
+      { name: 'Phoenix Healer', description: 'Valuable support unit for longer fights.' },
+      { name: 'Shadow Assassin', description: 'High burst damage and strong PvP pressure.' },
+      { name: 'Thunder Lord', description: 'Useful area damage for PvE and group fights.' },
+      { name: 'Ice Sorceress', description: 'Strong control option for difficult stages.' },
+      { name: 'Nature Druid', description: 'Helpful support and sustain utility.' },
+      { name: 'Flame Samurai', description: 'Consistent damage over time.' },
+      { name: 'Wind Ranger', description: 'Flexible ranged option for balanced teams.' },
+      { name: 'Lightning Mage', description: 'Good chain damage against grouped enemies.' },
+    ],
+  },
+  'blox-fruits': {
+    name: 'Blox Fruits',
+    items: [
+      { name: 'Dragon', description: 'Dominant PvP fruit with massive damage output.' },
+      { name: 'Leopard', description: 'Fast and powerful transformation fruit.' },
+      { name: 'Venom', description: 'Excellent DoT damage and area control.' },
+      { name: 'Dough', description: 'Strong combo potential and mobility.' },
+      { name: 'Shadow', description: 'Great damage boost and undead summoning.' },
+    ],
+  },
+};
+
 interface CommunityRankingContentProps {
   gameSlug: string;
 }
@@ -154,6 +182,54 @@ export function CommunityRankingContent({ gameSlug }: CommunityRankingContentPro
           </div>
 
           <AdSlot slot="ranking-mid" />
+
+          {/* Editor's Starter Ranking — shown when community votes are low */}
+          {totalVotes < 10 && editorStarterRankings[gameSlug] && (
+            <section className="rounded-lg border border-border bg-card p-6">
+              <h2 className="mb-2 text-lg font-bold text-foreground">{t('ranking.editorTitle')}</h2>
+              <p className="mb-4 text-sm text-muted-foreground">{t('ranking.editorNote')}</p>
+              <ol className="space-y-3">
+                {editorStarterRankings[gameSlug].items.map((item, index) => (
+                  <li key={item.name} className="flex items-start gap-3">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                      {index + 1}
+                    </span>
+                    <div>
+                      <span className="font-medium text-foreground">{item.name}</span>
+                      <span className="text-muted-foreground"> – {item.description}</span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-4 text-xs text-muted-foreground">{t('ranking.editorDisclaimer')}</p>
+            </section>
+          )}
+
+          {/* How Community Voting Works */}
+          <section className="rounded-lg border border-border bg-card p-6">
+            <h2 className="mb-2 text-lg font-bold text-foreground">{t('ranking.howVotingWorks')}</h2>
+            <p className="text-sm text-muted-foreground">{t('ranking.howVotingDesc')}</p>
+          </section>
+
+          {/* Related Guides */}
+          <section className="rounded-lg border border-border bg-card p-6">
+            <h2 className="mb-3 text-lg font-bold text-foreground">{t('ranking.relatedGuides')}</h2>
+            <ul className="space-y-2">
+              {[  
+                { href: `/${gameSlug}/tier-list`, label: `${game.name} Tier List` },
+                { href: `/${gameSlug}/best-units`, label: `${game.name} Best Units` },
+                { href: `/${gameSlug}/best-traits`, label: `${game.name} Best Traits` },
+                { href: `/${gameSlug}/best-teams`, label: `${game.name} Best Teams` },
+                { href: `/${gameSlug}/pvp-guide`, label: `${game.name} PvP Guide` },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-primary hover:underline">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
 
           {/* Recent Activity */}
           {currentRankings.filter((r) => r.recent_votes > 0).length > 0 && (

@@ -188,6 +188,11 @@ export const articles: ArticleEntry[] = [
   { slug: 'best-teams', title: 'Anime Story 2 Best Teams (2026) – Optimal Team Compositions for Every Mode', game: 'anime-story-2', type: 'guides' },
   { slug: 'farming-guide', title: 'Anime Story 2 Farming Guide (2026) – Best Stages for Gems, Materials & XP', game: 'anime-story-2', type: 'guides' },
   { slug: 'best-traits', title: 'Anime Story 2 Best Traits (2026) – All Traits Ranked & Best Combinations', game: 'anime-story-2', type: 'tier-list' },
+  { slug: 'update-guide', title: 'Anime Story 2 Update Guide (2026) – Latest Changes, Codes & New Units', game: 'anime-story-2', type: 'guides' },
+  { slug: 'pvp-guide', title: 'Anime Story 2 PvP Guide (2026) – Best Units, Traits & Teams', game: 'anime-story-2', type: 'guides' },
+  { slug: 'discord-trello-wiki', title: 'Anime Story 2 Discord, Trello & Wiki Links', game: 'anime-story-2', type: 'guides' },
+  { slug: 'how-to-get-gems', title: 'How to Get Gems Fast in Anime Story 2 – Best Farming Methods', game: 'anime-story-2', type: 'guides' },
+  { slug: 'reroll-guide', title: 'Anime Story 2 Reroll Guide – Best Units to Reroll For', game: 'anime-story-2', type: 'guides' },
 ];
 
 /**
