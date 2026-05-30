@@ -61,6 +61,12 @@ export const articles: ArticleEntry[] = [
   { slug: 'update-12-5', title: 'Anime Vanguards Update 12.5 Guide (2026) – Turning Tides & New Units', game: 'anime-vanguards', type: 'update' },
   { slug: 'update-history', title: 'Anime Vanguards Update History (2026) – All Patch Notes & Changes', game: 'anime-vanguards', type: 'guides' },
   { slug: 'xp-guide', title: 'Anime Vanguards XP Guide (2026) – Fastest Leveling Methods & XP Farming', game: 'anime-vanguards', type: 'guides' },
+  { slug: 'discord-trello-wiki', title: 'Anime Vanguards Discord, Trello & Wiki Links', game: 'anime-vanguards', type: 'guides' },
+  { slug: 'value-list', title: 'Anime Vanguards Value List (2026) – Trading Values & Unit Demand', game: 'anime-vanguards', type: 'tier-list' },
+  { slug: 'memoria-guide', title: 'Anime Vanguards Memoria Guide (2026) – How to Unlock & Best Memoria', game: 'anime-vanguards', type: 'guides' },
+  { slug: 'familiar-guide', title: 'Anime Vanguards Familiar Guide (2026) – Best Familiars & How to Unlock', game: 'anime-vanguards', type: 'guides' },
+  { slug: 'madara-guide', title: 'Anime Vanguards Madara Guide (2026) – Best Build, Traits & Teams', game: 'anime-vanguards', type: 'guides' },
+  { slug: 'ichigo-guide', title: 'Anime Vanguards Ichigo Guide (2026) – Best Build, Traits & Teams', game: 'anime-vanguards', type: 'guides' },
 
   // ========================
   // Blox Fruits
