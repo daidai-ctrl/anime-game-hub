@@ -210,6 +210,11 @@ export const articles: ArticleEntry[] = [
 /**
  * 按游戏 + 类型过滤文章（排除当前文章自身）
  */
+/** 获取指定游戏的所有文章（用于 Related Guides 等模块，只链接真实存在的页面） */
+export function getArticlesByGame(game: string): ArticleEntry[] {
+  return articles.filter((a) => a.game === game);
+}
+
 export function getRelatedByType(
   game: string,
   currentSlug: string,

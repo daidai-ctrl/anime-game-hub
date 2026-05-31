@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getGame, games } from '@/lib/games';
 import { getRankingCategories } from '@/lib/ranking-items';
+import { getArticlesByGame } from '@/lib/articles';
 import { CommunityRankingContent } from '@/components/community-ranking-content';
 
 interface CommunityRankingPageProps {
@@ -54,5 +55,7 @@ export default async function CommunityRankingPage({ params }: CommunityRankingP
   const categories = getRankingCategories(gameSlug);
   if (categories.length === 0) notFound();
 
-  return <CommunityRankingContent gameSlug={gameSlug} />;
+  const existingArticles = getArticlesByGame(gameSlug);
+
+  return <CommunityRankingContent gameSlug={gameSlug} existingArticleSlugs={existingArticles.map((a) => a.slug)} />;
 }
