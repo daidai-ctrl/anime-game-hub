@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: CommunityRankingPageProps): P
   const categories = getRankingCategories(gameSlug);
   const categoryNames = categories.map((c) => c.label.toLowerCase()).join(', ');
 
-  const title = `${game.name} Community Rankings (2026) – Player Votes & Starter Unit Rankings`;
+  const title = `${game.name} Community Rankings (2026)`;
   const description = gameSlug === 'anime-story-2'
     ? `Vote on Anime Story 2 units and compare community rankings with our editor starter list while player votes are still being collected.`
     : `Vote and view community rankings for ${game.name} ${categoryNames}. Updated daily based on player votes.`;
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: CommunityRankingPageProps): P
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: `${title} | AnimeGameHub`,
       description,
     },
     alternates: {

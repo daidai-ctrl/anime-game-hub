@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: GamePageProps): Promise<Metad
   const game = getGame(gameSlug);
   if (!game) return {};
   return {
-    title: `${game.name} - Codes, Tier List & Guides`,
+    title: `${game.name} Codes & Guides`,
     description: game.description,
     openGraph: {
-      title: `${game.name} - Codes, Tier List & Guides | AnimeGameHub`,
+      title: `${game.name} Codes & Guides | AnimeGameHub`,
       description: game.description,
     },
   };
