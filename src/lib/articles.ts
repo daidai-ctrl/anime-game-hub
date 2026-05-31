@@ -39,6 +39,7 @@ export const articles: ArticleEntry[] = [
   { slug: 'tier-list', title: 'Anime Rangers X Tier List (2026) – Best Characters Ranked S to D', game: 'anime-rangers', type: 'tier-list' },
   { slug: 'update-history', title: 'Anime Rangers X Update History (2026) – All Patch Notes & Changes', game: 'anime-rangers', type: 'guides' },
   { slug: 'xp-guide', title: 'Anime Rangers X XP Guide (2026) – Fastest Leveling Methods & XP Farming', game: 'anime-rangers', type: 'guides' },
+  { slug: 'pvp-guide', title: 'Anime Rangers PvP Guide (2026) – Best Units, Traits & Team Strategies', game: 'anime-rangers', type: 'guides' },
 
   // ========================
   // Anime Vanguards
@@ -68,6 +69,7 @@ export const articles: ArticleEntry[] = [
   { slug: 'madara-guide', title: 'Anime Vanguards Madara Guide (2026) – Best Build, Traits & Teams', game: 'anime-vanguards', type: 'guides' },
   { slug: 'ichigo-guide', title: 'Anime Vanguards Ichigo Guide (2026) – Best Build, Traits & Teams', game: 'anime-vanguards', type: 'guides' },
   { slug: 'best-units', title: 'Anime Vanguards Best Units (2026) – Top Units for DPS, Support & Farming', game: 'anime-vanguards', type: 'guides' },
+  { slug: 'pvp-guide', title: 'Anime Vanguards PvP Guide (2026) – Best Units, Traits & Teams for PvP', game: 'anime-vanguards', type: 'guides' },
 
   // ========================
   // Blox Fruits
@@ -99,6 +101,7 @@ export const articles: ArticleEntry[] = [
   { slug: 'free-fruit-codes', title: 'Blox Fruits Free Fruit Codes (2026) – How to Get Free Fruits & Notifier', game: 'blox-fruits', type: 'codes' },
   { slug: 'level-guide', title: 'Blox Fruits Level Guide (2026) – Fastest Leveling Route from 1 to Max', game: 'blox-fruits', type: 'guides' },
   { slug: 'updates', title: 'Blox Fruits Updates (2026) – Latest Update Notes, New Fruits & Changes', game: 'blox-fruits', type: 'guides' },
+  { slug: 'best-units', title: 'Blox Fruits Best Units (2026) – Top Characters for Every Game Mode', game: 'blox-fruits', type: 'guides' },
 
   // ========================
   // Anime Last Stand
@@ -134,6 +137,7 @@ export const articles: ArticleEntry[] = [
   { slug: 'update-guide', title: 'Anime Defenders Update Guide (2026) – All Updates & Patch Notes', game: 'anime-defenders', type: 'guides' },
   { slug: 'patch-notes', title: 'Anime Defenders Patch Notes (2026) – Latest Balance Changes', game: 'anime-defenders', type: 'guides' },
   { slug: 'challenge-guide', title: 'Anime Defenders Challenge Guide (2026) – How to Beat All Challenges', game: 'anime-defenders', type: 'guides' },
+  { slug: 'pvp-guide', title: 'Anime Defenders PvP Guide (2026) – Best Units, Traits & Team Strategies', game: 'anime-defenders', type: 'guides' },
   // Arise Crossover
   { slug: 'codes', title: 'Arise Crossover Codes (May 2026) – Free Crystals, Summons & Rewards', game: 'arise-crossover', type: 'codes' },
   { slug: 'expired-codes', title: 'Arise Crossover Expired Codes (2026) – All Expired Code List', game: 'arise-crossover', type: 'codes' },
