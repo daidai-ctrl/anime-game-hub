@@ -2,9 +2,18 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useLanguage } from '@/components/language-provider';
-import { LanguageSwitcher } from '@/components/language-switcher';
-import { SearchBox } from '@/components/search-box';
+
+const SearchBox = dynamic(
+  () => import('@/components/search-box').then((mod) => mod.SearchBox),
+  { ssr: false }
+);
+
+const LanguageSwitcher = dynamic(
+  () => import('@/components/language-switcher').then((mod) => mod.LanguageSwitcher),
+  { ssr: false }
+);
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);

@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import { DevInspector } from '@/components/dev-inspector';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { LanguageProvider } from '@/components/language-provider';
 import Script from 'next/script';
 import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -51,15 +58,19 @@ export default function RootLayout({
   const isDev = process.env.COZE_PROJECT_ENV === 'DEV';
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${inter.variable}`}>
       <body className="antialiased">
         {!isDev && (
-          <Script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4857703822591488"
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
+          <>
+            <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+            <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+            <Script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4857703822591488"
+              crossOrigin="anonymous"
+              strategy="lazyOnload"
+            />
+          </>
         )}
         {isDev && <DevInspector />}
         <LanguageProvider>

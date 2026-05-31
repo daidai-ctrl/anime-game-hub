@@ -4,6 +4,9 @@ import { getGame, games } from '@/lib/games';
 import { getArticlesByGame } from '@/lib/content';
 import { GamePageContent } from '@/components/game-page-content';
 
+// Revalidate game pages every 6 hours for ISR
+export const revalidate = 21600;
+
 interface GamePageProps {
   params: Promise<{ game: string }>;
 }

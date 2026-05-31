@@ -3,12 +3,20 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import type { ArticleMeta } from '@/lib/content';
 import { games } from '@/lib/games';
 import { useLanguage } from '@/components/language-provider';
 import { ArticleCard } from '@/components/article-card';
-import { AdSlot } from '@/components/ad-slot';
 import { Pagination } from '@/components/pagination';
+
+const AdSlot = dynamic(
+  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
+  {
+    ssr: false,
+    loading: () => <div className="h-[250px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
+  }
+);
 
 interface CategoryPageContentProps {
   category: 'codes' | 'tier-list' | 'guides';

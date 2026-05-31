@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import type { ArticleMeta } from '@/lib/content';
 import { useLanguage } from '@/components/language-provider';
 import { getCategoryLabel, formatShortDate } from '@/lib/i18n';
@@ -36,9 +37,11 @@ export function ArticleListItem({ article }: { article: ArticleMeta }) {
     >
       {/* Thumbnail */}
       <div className="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-lg overflow-hidden">
-        <img
+        <Image
           src={categoryThumbs[article.category] || '/images/guides-thumb.jpeg'}
           alt={categoryLabel}
+          width={48}
+          height={48}
           className="h-full w-full object-cover"
           loading="lazy"
         />

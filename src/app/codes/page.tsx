@@ -6,6 +6,9 @@ const BASE_DESCRIPTION = 'Find the latest Roblox anime game codes, including Ani
 
 const baseUrl = process.env.COZE_PROJECT_DOMAIN_DEFAULT || 'https://animegamehub.xyz';
 
+// Revalidate every 6 hours
+export const revalidate = 21600;
+
 export const metadata: Metadata = {
   title: 'Roblox Anime Game Codes',
   description: BASE_DESCRIPTION,

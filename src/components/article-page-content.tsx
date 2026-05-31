@@ -2,12 +2,20 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import type { Game } from '@/lib/games';
 import type { Article, ArticleMeta } from '@/lib/content';
 import { useLanguage } from '@/components/language-provider';
 import { getCategoryLabel, formatDate, t as translate } from '@/lib/i18n';
-import { AdSlot } from '@/components/ad-slot';
 import { RelatedArticles } from '@/components/related-articles';
+
+const AdSlot = dynamic(
+  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
+  {
+    ssr: false,
+    loading: () => <div className="h-[90px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
+  }
+);
 
 function extractTOC(content: string): { id: string; text: string; level: number }[] {
   const headings: { id: string; text: string; level: number }[] = [];

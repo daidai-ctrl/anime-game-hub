@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Game } from '@/lib/games';
 import { useLanguage } from '@/components/language-provider';
 import { getGameDescription, formatMonthDay } from '@/lib/i18n';
@@ -15,11 +16,13 @@ export function GameCard({ game }: { game: Game }) {
       href={`/${game.slug}`}
       className="group block overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
     >
-      <div className="aspect-video bg-muted flex items-center justify-center overflow-hidden">
-        <img
+      <div className="relative aspect-video bg-muted flex items-center justify-center overflow-hidden">
+        <Image
           src={game.coverImage}
           alt={game.name}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
         />
       </div>

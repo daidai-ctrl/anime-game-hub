@@ -1,13 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { games, latestUpdates } from '@/lib/games';
 import { useLanguage } from '@/components/language-provider';
 import { getGameDescription, getCategoryLabel, formatMonthDay } from '@/lib/i18n';
 import { GameCard } from '@/components/game-card';
 import { ArticleListItem } from '@/components/article-list-item';
-import { AdSlot } from '@/components/ad-slot';
 import type { ArticleMeta } from '@/lib/content';
+
+const AdSlot = dynamic(
+  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
+  {
+    ssr: false,
+    loading: () => <div className="h-[90px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
+  }
+);
 
 const trendingSearches = [
   { label: 'Blox Fruits Codes', href: '/blox-fruits/codes' },

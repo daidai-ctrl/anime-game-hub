@@ -2,12 +2,21 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import type { Game } from '@/lib/games';
 import type { ArticleMeta } from '@/lib/content';
 import { useLanguage } from '@/components/language-provider';
 import { getCategoryLabel, getGameDescription, t as translate } from '@/lib/i18n';
 import { ArticleCard } from '@/components/article-card';
-import { AdSlot } from '@/components/ad-slot';
+
+const AdSlot = dynamic(
+  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
+  {
+    ssr: false,
+    loading: () => <div className="h-[250px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
+  }
+);
 
 const categorySlugs = ['codes', 'tier-list', 'guides', 'updates', 'fixes'] as const;
 
@@ -31,11 +40,13 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
       {/* Game Banner */}
       <section className="border-b border-border relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src={game.coverImage}
             alt={game.name}
-            className="h-full w-full object-cover opacity-20"
-            loading="eager"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-20"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0f1117] via-[#0f1117]/80 to-[#0f1117]" />
         </div>

@@ -6,6 +6,9 @@ const BASE_DESCRIPTION = 'Comprehensive tier lists for Roblox anime games. Find 
 
 const baseUrl = process.env.COZE_PROJECT_DOMAIN_DEFAULT || 'https://animegamehub.xyz';
 
+// Revalidate every 6 hours
+export const revalidate = 21600;
+
 export const metadata: Metadata = {
   title: 'Roblox Anime Game Tier Lists',
   description: BASE_DESCRIPTION,
