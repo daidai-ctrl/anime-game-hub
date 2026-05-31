@@ -37,6 +37,26 @@ export function PrivacyContent() {
           <h2 className="text-lg font-semibold text-foreground mb-3">{t('privacy.children')}</h2>
           <p className="text-sm text-muted-foreground">{t('privacy.childrenContent')}</p>
         </section>
+
+        <section className="rounded-lg border border-border bg-card p-6">
+          <h2 className="text-lg font-semibold text-foreground mb-3">{t('privacy.data')}</h2>
+          <p className="text-sm text-muted-foreground">{t('privacy.dataContent')}</p>
+        </section>
+
+        <section className="rounded-lg border border-border bg-card p-6">
+          <h2 className="text-lg font-semibold text-foreground mb-3">{t('privacy.voting')}</h2>
+          <p className="text-sm text-muted-foreground">{t('privacy.votingContent')}</p>
+        </section>
+
+        <section className="rounded-lg border border-border bg-card p-6">
+          <h2 className="text-lg font-semibold text-foreground mb-3">{t('privacy.changes')}</h2>
+          <p className="text-sm text-muted-foreground">{t('privacy.changesContent')}</p>
+        </section>
+
+        <section className="rounded-lg border border-border bg-card p-6">
+          <h2 className="text-lg font-semibold text-foreground mb-3">{t('privacy.contactInfo')}</h2>
+          <p className="text-sm text-muted-foreground">{t('privacy.contactInfoContent')}</p>
+        </section>
       </div>
     </div>
   );

@@ -344,6 +344,19 @@ export const scoreLabels: Record<number, string> = {
   1: 'Very Poor',
 };
 
+export const gameRankingDescriptions: Record<string, string> = {
+  'blox-fruits': 'Blox Fruits is one of the most popular Roblox anime games. Players collect powerful fruits, fight enemies, and explore vast seas. Community rankings help players compare fruit values, weapon strength, and race advantages based on real player votes.',
+  'anime-rangers': 'Anime Rangers features a wide roster of anime-inspired units that players can collect and upgrade. Community rankings show which units perform best in different game modes based on player votes.',
+  'anime-vanguards': 'Anime Vanguards lets players build teams of anime characters with unique abilities and traits. Community rankings help players compare character value and performance across PvE and PvP content.',
+  'anime-last-stand': 'Anime Last Stand is a tower defense style Roblox game where players place anime-inspired units to defend against waves. Community rankings help players choose the best units and traits for each challenge.',
+  'anime-defenders': 'Anime Defenders is a defense-focused Roblox game where players collect and evolve anime units. Community rankings show which units and evolutions are most effective based on player experience.',
+  'arise-crossover': 'Arise Crossover combines anime characters with shadow-based combat mechanics. Community rankings help players compare shadow units and weapons based on real player votes.',
+  'blue-lock-rivals': 'Blue Lock Rivals brings anime soccer action to Roblox. Community rankings help players compare players and styles based on their in-game performance and player votes.',
+  'anime-saga': 'Anime Saga is an anime-themed Roblox RPG with hero collection and team building. Community rankings help players compare heroes and traits based on community voting.',
+  'roll-an-anime': 'Roll an Anime is a gacha-style Roblox game where players roll for anime characters. Community rankings show which characters are most valued by players.',
+  'anime-story-2': 'Anime Story 2 is a story-driven Roblox RPG with unit collection and progression. Community rankings help players compare unit value and performance based on community votes.',
+};
+
 export const scoreEmojis: Record<number, string> = {
   5: '⭐⭐⭐⭐⭐',
   4: '⭐⭐⭐⭐',

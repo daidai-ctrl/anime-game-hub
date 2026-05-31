@@ -216,6 +216,54 @@ export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
                 })}
               </div>
             </section>
+
+            {/* What You Can Find */}
+            <section className="rounded-lg border border-border bg-card p-6">
+              <h2 className="mb-4 text-xl font-bold text-foreground">{t('home.whatYouCanFind')}</h2>
+              <p className="mb-4 text-muted-foreground leading-relaxed">{t('home.whatYouCanFindDesc')}</p>
+              <ul className="space-y-2 text-muted-foreground">
+                <li className="flex items-start gap-2"><span className="text-primary mt-1">&#10003;</span><span>{t('home.featureCodes')}</span></li>
+                <li className="flex items-start gap-2"><span className="text-primary mt-1">&#10003;</span><span>{t('home.featureTierList')}</span></li>
+                <li className="flex items-start gap-2"><span className="text-primary mt-1">&#10003;</span><span>{t('home.featureGuides')}</span></li>
+                <li className="flex items-start gap-2"><span className="text-primary mt-1">&#10003;</span><span>{t('home.featureRankings')}</span></li>
+                <li className="flex items-start gap-2"><span className="text-primary mt-1">&#10003;</span><span>{t('home.featureUpdates')}</span></li>
+              </ul>
+            </section>
+
+            {/* How to Use */}
+            <section className="rounded-lg border border-border bg-card p-6">
+              <h2 className="mb-4 text-xl font-bold text-foreground">{t('home.howToUse')}</h2>
+              <p className="mb-4 text-muted-foreground leading-relaxed">{t('home.howToUseDesc')}</p>
+              <ol className="space-y-2 text-muted-foreground list-decimal list-inside">
+                <li>{t('home.step1')}</li>
+                <li>{t('home.step2')}</li>
+                <li>{t('home.step3')}</li>
+                <li>{t('home.step4')}</li>
+              </ol>
+            </section>
+
+            {/* FAQ */}
+            <section className="rounded-lg border border-border bg-card p-6">
+              <h2 className="mb-4 text-xl font-bold text-foreground">FAQ</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-medium text-foreground">{t('home.faq1Q')}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{t('home.faq1A')}</p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground">{t('home.faq2Q')}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{t('home.faq2A')}</p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground">{t('home.faq3Q')}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{t('home.faq3A')}</p>
+                </div>
+                <div>
+                  <h3 className="font-medium text-foreground">{t('home.faq4Q')}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{t('home.faq4A')}</p>
+                </div>
+              </div>
+            </section>
           </div>
 
           {/* Sidebar */}

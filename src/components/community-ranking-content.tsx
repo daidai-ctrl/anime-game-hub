@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/components/language-provider';
-import { getRankingCategories, type RankingCategory, type RankingResult, scoreLabels, scoreEmojis } from '@/lib/ranking-items';
+import { getRankingCategories, type RankingCategory, type RankingResult, scoreLabels, scoreEmojis, gameRankingDescriptions } from '@/lib/ranking-items';
 import { getGame } from '@/lib/games';
 import { AdSlot } from '@/components/ad-slot';
 
@@ -140,6 +140,11 @@ export function CommunityRankingContent({ gameSlug, existingArticleSlugs }: Comm
         <p className="mt-2 text-muted-foreground">
           {t('ranking.description', { game: game.name })}
         </p>
+        {gameRankingDescriptions[gameSlug] && (
+          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            {gameRankingDescriptions[gameSlug]}
+          </p>
+        )}
         <div className="mt-3 flex items-center gap-4 text-sm">
           <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-primary font-medium">
             {totalVotes.toLocaleString()} {t('ranking.totalVotes')}

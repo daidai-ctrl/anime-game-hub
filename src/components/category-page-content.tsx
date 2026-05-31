@@ -190,6 +190,117 @@ export function CategoryPageContent({ category, articles, currentPage = 1 }: Cat
           ) : (
             <p className="text-muted-foreground">{t(emptyKeys[category])}</p>
           )}
+
+          {/* Category-specific SEO content */}
+          {category === 'codes' && (
+            <div className="mt-8 space-y-6">
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">{t('cat.codesHowTrack')}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t('cat.codesHowTrackText')}</p>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">{t('cat.codesWhatGive')}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t('cat.codesWhatGiveText')}</p>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">{t('cat.codesSafety')}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t('cat.codesSafetyText')}</p>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-4">{t('cat.codesFAQ')}</h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.codesFAQ1Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.codesFAQ1A')}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.codesFAQ2Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.codesFAQ2A')}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.codesFAQ3Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.codesFAQ3A')}</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          )}
+
+          {category === 'guides' && (
+            <div className="mt-8 space-y-6">
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">{t('cat.guidesWhatLearn')}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t('cat.guidesWhatLearnText')}</p>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">{t('cat.guidesCategories')}</h2>
+                <div className="space-y-2">
+                  <p className="text-muted-foreground text-sm">{t('cat.guidesCatBeginner')}</p>
+                  <p className="text-muted-foreground text-sm">{t('cat.guidesCatFarming')}</p>
+                  <p className="text-muted-foreground text-sm">{t('cat.guidesCatPvP')}</p>
+                  <p className="text-muted-foreground text-sm">{t('cat.guidesCatTeam')}</p>
+                  <p className="text-muted-foreground text-sm">{t('cat.guidesCatUpdate')}</p>
+                </div>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-4">{t('cat.guidesFAQ')}</h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.guidesFAQ1Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.guidesFAQ1A')}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.guidesFAQ2Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.guidesFAQ2A')}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.guidesFAQ3Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.guidesFAQ3A')}</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          )}
+
+          {category === 'tier-list' && (
+            <div className="mt-8 space-y-6">
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">{t('cat.tierHowWork')}</h2>
+                <p className="text-muted-foreground leading-relaxed">{t('cat.tierHowWorkText')}</p>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">S &amp; A Tier</h2>
+                <div className="space-y-2">
+                  <p className="text-muted-foreground text-sm">{t('cat.tierS')}</p>
+                  <p className="text-muted-foreground text-sm">{t('cat.tierA')}</p>
+                </div>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-3">B &amp; C Tier</h2>
+                <div className="space-y-2">
+                  <p className="text-muted-foreground text-sm">{t('cat.tierB')}</p>
+                  <p className="text-muted-foreground text-sm">{t('cat.tierC')}</p>
+                </div>
+              </section>
+              <section className="rounded-xl bg-[#1a1d2e] border border-[#2a2d3e] p-6">
+                <h2 className="text-xl font-bold text-foreground mb-4">{t('cat.tierFAQ')}</h2>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.tierFAQ1Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.tierFAQ1A')}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.tierFAQ2Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.tierFAQ2A')}</p>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{t('cat.tierFAQ3Q')}</h3>
+                    <p className="text-muted-foreground text-sm mt-1">{t('cat.tierFAQ3A')}</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          )}
         </div>
 
         {/* Sidebar */}
