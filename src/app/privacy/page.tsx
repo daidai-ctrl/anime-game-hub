@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { PrivacyContent } from '@/components/privacy-content';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - AnimeGameHub',
+  title: 'Privacy Policy',
   description: 'Privacy Policy for AnimeGameHub. Learn how we collect, use, and protect your information.',
 };
 

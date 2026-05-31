@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { ContactContent } from '@/components/contact-content';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - AnimeGameHub',
+  title: 'Contact Us',
   description: 'Contact AnimeGameHub for questions, suggestions, or error reports.',
 };
 
