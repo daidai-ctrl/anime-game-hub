@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/components/language-provider';
-import { getRankingCategories, type RankingCategory, type RankingResult, scoreLabels, scoreEmojis, gameRankingDescriptions } from '@/lib/ranking-items';
+import { getRankingCategories, type RankingCategory, type RankingResult, scoreLabels, scoreEmojis } from '@/lib/ranking-items';
 import { getGame } from '@/lib/games';
 import { AdSlot } from '@/components/ad-slot';
 
@@ -140,11 +140,7 @@ export function CommunityRankingContent({ gameSlug, existingArticleSlugs }: Comm
         <p className="mt-2 text-muted-foreground">
           {t('ranking.description', { game: game.name })}
         </p>
-        {gameRankingDescriptions[gameSlug] && (
-          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-            {gameRankingDescriptions[gameSlug]}
-          </p>
-        )}
+
         <div className="mt-3 flex items-center gap-4 text-sm">
           <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-primary font-medium">
             {totalVotes.toLocaleString()} {t('ranking.totalVotes')}
@@ -235,69 +231,6 @@ export function CommunityRankingContent({ gameSlug, existingArticleSlugs }: Comm
             </section>
           )}
 
-          {/* How Community Voting Works */}
-          <section className="rounded-lg border border-border bg-card p-6">
-            <h2 className="mb-2 text-lg font-bold text-foreground">{t('ranking.howVotingWorks')}</h2>
-            <p className="text-sm text-muted-foreground">{t('ranking.howVotingDesc')}</p>
-          </section>
-
-          {/* Related Guides — Only links to real existing articles */}
-          {(() => {
-            // Build guide links only from slugs that actually exist
-            const guideLinks: { slug: string; label: string }[] = [];
-            const slugSet = new Set(existingArticleSlugs);
-
-            // Prioritized guide links to check
-            const candidateLinks = [
-              { slug: 'codes', label: `${game?.name || ''} Codes` },
-              { slug: 'tier-list', label: `${game?.name || ''} Tier List` },
-              { slug: 'best-units', label: `${game?.name || ''} Best Units` },
-              { slug: 'best-teams', label: `${game?.name || ''} Best Teams` },
-              { slug: 'best-traits', label: `${game?.name || ''} Best Traits` },
-              { slug: 'beginner-guide', label: `${game?.name || ''} Beginner Guide` },
-              { slug: 'pvp-guide', label: `${game?.name || ''} PvP Guide` },
-              { slug: 'farming-guide', label: `${game?.name || ''} Farming Guide` },
-              { slug: 'level-guide', label: `${game?.name || ''} Level Guide` },
-              { slug: 'leveling-guide', label: `${game?.name || ''} Leveling Guide` },
-              { slug: 'value-list', label: `${game?.name || ''} Value List` },
-              { slug: 'memoria-guide', label: `${game?.name || ''} Memoria Guide` },
-              { slug: 'familiar-guide', label: `${game?.name || ''} Familiar Guide` },
-            ];
-
-            for (const candidate of candidateLinks) {
-              if (slugSet.has(candidate.slug)) {
-                guideLinks.push(candidate);
-              }
-              if (guideLinks.length >= 6) break;
-            }
-
-            // Also add any remaining slugs not already included
-            for (const slug of existingArticleSlugs) {
-              if (guideLinks.length >= 6) break;
-              if (!guideLinks.some((g) => g.slug === slug) && slug !== 'community-rankings') {
-                const name = game?.name || '';
-                const label = slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-                guideLinks.push({ slug, label: `${name} ${label}` });
-              }
-            }
-
-            if (guideLinks.length === 0) return null;
-            return (
-              <section className="rounded-lg border border-border bg-card p-6">
-                <h2 className="mb-3 text-lg font-bold text-foreground">{t('ranking.relatedGuides')}</h2>
-                <ul className="space-y-2">
-                  {guideLinks.map((link) => (
-                    <li key={link.slug}>
-                      <Link href={`/${gameSlug}/${link.slug}`} className="text-sm text-primary hover:underline">
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            );
-          })()}
-
           {/* Recent Activity */}
           {currentRankings.filter((r) => r.recent_votes > 0).length > 0 && (
             <section>
@@ -320,29 +253,6 @@ export function CommunityRankingContent({ gameSlug, existingArticleSlugs }: Comm
               </div>
             </section>
           )}
-
-          {/* FAQ */}
-          <section>
-            <h2 className="mb-4 text-lg font-bold text-foreground">FAQ</h2>
-            <div className="space-y-3">
-              <FaqItem
-                question={t('ranking.faq1Q')}
-                answer={t('ranking.faq1A')}
-              />
-              <FaqItem
-                question={t('ranking.faq2Q')}
-                answer={t('ranking.faq2A')}
-              />
-              <FaqItem
-                question={t('ranking.faq3Q')}
-                answer={t('ranking.faq3A')}
-              />
-              <FaqItem
-                question={t('ranking.faq4Q')}
-                answer={t('ranking.faq4A')}
-              />
-            </div>
-          </section>
         </div>
 
         {/* Sidebar */}
