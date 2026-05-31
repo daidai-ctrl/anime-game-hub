@@ -67,6 +67,7 @@ export const articles: ArticleEntry[] = [
   { slug: 'familiar-guide', title: 'Anime Vanguards Familiar Guide (2026) – Best Familiars & How to Unlock', game: 'anime-vanguards', type: 'guides' },
   { slug: 'madara-guide', title: 'Anime Vanguards Madara Guide (2026) – Best Build, Traits & Teams', game: 'anime-vanguards', type: 'guides' },
   { slug: 'ichigo-guide', title: 'Anime Vanguards Ichigo Guide (2026) – Best Build, Traits & Teams', game: 'anime-vanguards', type: 'guides' },
+  { slug: 'best-units', title: 'Anime Vanguards Best Units (2026) – Top Units for DPS, Support & Farming', game: 'anime-vanguards', type: 'guides' },
 
   // ========================
   // Blox Fruits
@@ -93,6 +94,11 @@ export const articles: ArticleEntry[] = [
   { slug: 'update-30', title: 'Blox Fruits Update 30 Guide (2026) – Fourth Sea, Magnet Fruit & All Leaks', game: 'blox-fruits', type: 'update' },
   { slug: 'update-history', title: 'Blox Fruits Update History (2026) – All Patch Notes & Changes', game: 'blox-fruits', type: 'guides' },
   { slug: 'xp-guide', title: 'Blox Fruits XP Guide (2026) – Fastest Leveling Methods & XP Farming', game: 'blox-fruits', type: 'guides' },
+  { slug: '2x-exp-codes', title: 'Blox Fruits 2x EXP Codes (2026) – All Double XP Boosts & How to Use Them', game: 'blox-fruits', type: 'codes' },
+  { slug: 'stat-reset-codes', title: 'Blox Fruits Stat Reset Codes (2026) – Free Stat Refunds & How to Reset Stats', game: 'blox-fruits', type: 'codes' },
+  { slug: 'free-fruit-codes', title: 'Blox Fruits Free Fruit Codes (2026) – How to Get Free Fruits & Notifier', game: 'blox-fruits', type: 'codes' },
+  { slug: 'level-guide', title: 'Blox Fruits Level Guide (2026) – Fastest Leveling Route from 1 to Max', game: 'blox-fruits', type: 'guides' },
+  { slug: 'updates', title: 'Blox Fruits Updates (2026) – Latest Update Notes, New Fruits & Changes', game: 'blox-fruits', type: 'guides' },
 
   // ========================
   // Anime Last Stand
