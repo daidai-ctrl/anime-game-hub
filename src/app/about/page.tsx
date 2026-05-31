@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { AboutContent } from '@/components/about-content';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about AnimeGameHub - your go-to source for Roblox anime game codes, tier lists, and guides.',
+  title: 'About Us - Roblox Anime Game Codes & Guides',
+  description: 'Learn about AnimeGameHub, a Roblox anime game resource site for codes, tier lists, rankings, guides, and player progression tips.',
 };
 
 export default function AboutPage() {
