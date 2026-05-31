@@ -9,6 +9,11 @@ interface PaginationProps {
   basePath: string;
 }
 
+function getPageHref(basePath: string, page: number): string {
+  if (page <= 1) return basePath;
+  return `${basePath}/page/${page}`;
+}
+
 export function Pagination({ currentPage, totalPages, basePath }: PaginationProps) {
   const { t } = useLanguage();
 
@@ -31,7 +36,7 @@ export function Pagination({ currentPage, totalPages, basePath }: PaginationProp
     <nav className="flex items-center justify-center gap-2 mt-8" aria-label="Pagination">
       {currentPage > 1 ? (
         <Link
-          href={`${basePath}?page=${currentPage - 1}`}
+          href={getPageHref(basePath, currentPage - 1)}
           className="flex items-center gap-1 px-3 py-2 rounded-lg bg-[#1a1d2e] text-muted-foreground hover:text-foreground hover:bg-[#2a2d3e] transition-colors text-sm"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
@@ -51,7 +56,7 @@ export function Pagination({ currentPage, totalPages, basePath }: PaginationProp
           ) : (
             <Link
               key={page}
-              href={`${basePath}?page=${page}`}
+              href={getPageHref(basePath, page)}
               className={`min-w-[36px] h-9 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                 page === currentPage
                   ? 'bg-[#00d4aa] text-[#0f1117]'
@@ -66,7 +71,7 @@ export function Pagination({ currentPage, totalPages, basePath }: PaginationProp
 
       {currentPage < totalPages ? (
         <Link
-          href={`${basePath}?page=${currentPage + 1}`}
+          href={getPageHref(basePath, currentPage + 1)}
           className="flex items-center gap-1 px-3 py-2 rounded-lg bg-[#1a1d2e] text-muted-foreground hover:text-foreground hover:bg-[#2a2d3e] transition-colors text-sm"
         >
           {t('pagination.next')}
