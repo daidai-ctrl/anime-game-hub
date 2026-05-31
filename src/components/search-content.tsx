@@ -23,7 +23,9 @@ export function SearchContent({ articles }: { articles: ArticleMeta[] }) {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
-      <h1 className="text-2xl font-bold text-foreground mb-2">{t('search.title')}</h1>
+      <h1 className="text-2xl font-bold text-foreground mb-2">
+        {query ? `Search results for "${query}"` : t('search.title')}
+      </h1>
       <p className="text-muted-foreground mb-6">
         {results.length > 0
           ? `${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`

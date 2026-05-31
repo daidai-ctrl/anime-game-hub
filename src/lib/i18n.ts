@@ -253,6 +253,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.mostViewedTierLists': 'Most Viewed Tier Lists',
     'sidebar.latestUpdates': 'Latest Updates',
     'sidebar.trendingSearches': 'Trending Searches',
+    'sidebar.trendingPages': 'Trending Pages',
     'sidebar.quickLinks': 'Quick Links',
 
     // Pagination
@@ -563,6 +564,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.mostViewedTierLists': '最多浏览排行榜',
     'sidebar.latestUpdates': '最新更新',
     'sidebar.trendingSearches': '热门搜索',
+    'sidebar.trendingPages': '热门页面',
 
     // Pagination
     'pagination.prev': '上一页',
@@ -867,6 +869,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.mostViewedTierLists': '閲覧数トップのティアリスト',
     'sidebar.latestUpdates': '最新アップデート',
     'sidebar.trendingSearches': 'トレンド検索',
+    'sidebar.trendingPages': '人気ページ',
 
     // Pagination
     'pagination.prev': '前へ',
@@ -1153,6 +1156,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.mostViewedTierLists': 'Tier Lists Más Vistos',
     'sidebar.latestUpdates': 'Últimas Actualizaciones',
     'sidebar.trendingSearches': 'Búsquedas Populares',
+    'sidebar.trendingPages': 'Páginas Populares',
 
     // Pagination
     'pagination.prev': 'Anterior',
@@ -1439,6 +1443,7 @@ const translations: Record<Locale, Record<string, string>> = {
     'sidebar.mostViewedTierLists': 'Tier Lists Mais Vistos',
     'sidebar.latestUpdates': 'Últimas Atualizações',
     'sidebar.trendingSearches': 'Pesquisas em Alta',
+    'sidebar.trendingPages': 'Páginas em Alta',
 
     // Pagination
     'pagination.prev': 'Anterior',
