@@ -2,18 +2,9 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { useLanguage } from '@/components/language-provider';
 import { getRankingCategories, type RankingCategory, type RankingResult, scoreLabels, scoreEmojis } from '@/lib/ranking-items';
 import { getGame } from '@/lib/games';
-
-const AdSlot = dynamic(
-  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
-  {
-    ssr: false,
-    loading: () => <div className="h-[250px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
-  }
-);
 
 const editorStarterRankings: Record<string, { name: string; items: { name: string; description: string }[] }> = {
   'anime-story-2': {
@@ -210,8 +201,6 @@ export function CommunityRankingContent({ gameSlug, existingArticleSlugs }: Comm
             )}
           </div>
 
-          <AdSlot slot="ranking-mid" />
-
           {/* Editor's Starter Ranking — shown when community votes are low */}
           {totalVotes < 10 && editorStarterRankings[gameSlug] && (
             <section className="rounded-lg border-2 border-primary/30 bg-card p-6">
@@ -265,7 +254,6 @@ export function CommunityRankingContent({ gameSlug, existingArticleSlugs }: Comm
 
         {/* Sidebar */}
         <aside className="space-y-6">
-          <AdSlot slot="ranking-sidebar" />
 
           {/* Back to Game */}
           <div className="rounded-lg border border-border bg-card p-4">

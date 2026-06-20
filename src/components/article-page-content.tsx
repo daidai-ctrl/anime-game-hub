@@ -2,20 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import type { Game } from '@/lib/games';
 import type { Article, ArticleMeta } from '@/lib/content';
 import { useLanguage } from '@/components/language-provider';
 import { getCategoryLabel, formatDate, t as translate } from '@/lib/i18n';
 import { RelatedArticles } from '@/components/related-articles';
-
-const AdSlot = dynamic(
-  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
-  {
-    ssr: false,
-    loading: () => <div className="h-[90px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
-  }
-);
 
 function extractTOC(content: string): { id: string; text: string; level: number }[] {
   const headings: { id: string; text: string; level: number }[] = [];
@@ -165,11 +156,6 @@ export function ArticlePageContent({
                 </div>
               )}
             </header>
-
-            {/* Top Ad */}
-            <div className="mb-4">
-              <AdSlot slot="header-banner" />
-            </div>
 
             {/* What Are [Game] Codes - SEO section */}
             {isCodesArticle && (
@@ -322,11 +308,6 @@ export function ArticlePageContent({
               </section>
             )}
 
-            {/* In-content Ad */}
-            <div className="my-8">
-              <AdSlot slot="in-content" />
-            </div>
-
             {/* Related Articles — Grouped by type: Codes / Tier Lists / Guides */}
             <RelatedArticles
               game={article.game}
@@ -419,14 +400,8 @@ export function ArticlePageContent({
               </div>
             )}
 
-            <AdSlot slot="sidebar" />
           </aside>
         </div>
-      </div>
-
-      {/* Footer Ad */}
-      <div className="mx-auto max-w-7xl px-4 pb-8">
-        <AdSlot slot="footer" />
       </div>
     </>
   );

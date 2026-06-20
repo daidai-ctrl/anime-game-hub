@@ -1,21 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { games, latestUpdates } from '@/lib/games';
 import { useLanguage } from '@/components/language-provider';
 import { getGameDescription, getCategoryLabel, formatMonthDay } from '@/lib/i18n';
 import { GameCard } from '@/components/game-card';
 import { ArticleListItem } from '@/components/article-list-item';
 import type { ArticleMeta } from '@/lib/content';
-
-const AdSlot = dynamic(
-  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
-  {
-    ssr: false,
-    loading: () => <div className="h-[90px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
-  }
-);
 
 const trendingSearches = [
   { label: 'Blox Fruits Codes', href: '/blox-fruits/codes' },
@@ -77,11 +68,6 @@ export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
       </section>
 
       <div className="mx-auto max-w-7xl px-4 py-8">
-        {/* Ad Banner */}
-        <div className="mb-8">
-          <AdSlot slot="header-banner" />
-        </div>
-
         {/* Popular Games */}
         <section id="games" className="mb-10">
           <div className="mb-5 flex items-center justify-between">
@@ -276,8 +262,6 @@ export function HomeContent({ articles }: { articles: ArticleMeta[] }) {
 
           {/* Sidebar */}
           <aside className="space-y-6">
-            <AdSlot slot="sidebar" />
-
             {/* Popular Posts */}
             <div className="rounded-lg border border-border bg-card p-4">
               <h3 className="mb-3 text-sm font-semibold text-foreground">{t('sidebar.popularPosts')}</h3>

@@ -3,20 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import type { Game } from '@/lib/games';
 import type { ArticleMeta } from '@/lib/content';
 import { useLanguage } from '@/components/language-provider';
 import { getCategoryLabel, getGameDescription, t as translate } from '@/lib/i18n';
 import { ArticleCard } from '@/components/article-card';
-
-const AdSlot = dynamic(
-  () => import('@/components/ad-slot').then((mod) => mod.AdSlot),
-  {
-    ssr: false,
-    loading: () => <div className="h-[250px] w-full rounded border border-dashed border-[#2a2d3e] bg-[#1a1d2e]/30" />,
-  }
-);
 
 const categorySlugs = ['codes', 'tier-list', 'guides', 'updates', 'fixes'] as const;
 
@@ -303,7 +294,6 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
 
           {/* Sidebar */}
           <aside className="space-y-6">
-            <AdSlot slot="sidebar" />
             {/* Quick Links */}
             <div className="rounded-lg border border-border bg-card p-4">
               <h3 className="mb-3 text-sm font-semibold text-foreground">{translate('sidebar.quickLinks', locale)}</h3>
@@ -320,7 +310,6 @@ export function GamePageContent({ game, articles }: { game: Game; articles: Arti
                 </Link>
               </div>
             </div>
-            <AdSlot slot="footer" />
           </aside>
         </div>
       </div>
